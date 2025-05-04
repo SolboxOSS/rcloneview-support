@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+}
+
+.mainWrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Docusaurus-specific utility class */
+:global(.docusaurus-mt-lg) {
+  margin-top: 3rem;
+}
+
+:global(#__docusaurus) {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* RcloneView Navibar class */
+
+.topNavBar {
+  background-color: #FF8225;          /* RcloneView 헤더와 동일한 주황색 배경 */
+  padding: 8px 16px;                  /* 상하 8px, 좌우 16px 여백으로 높이 확보 */
+}
+.topNavInner {
+  max-width: 1200px;                  /* 내용 컨테이너의 최대 너비 (중앙 정렬용) */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logoLink .logoImage {
+  height: 32px;                       /* 로고 이미지 높이 조절 (필요에 따라 변경) */
+  vertical-align: middle;
+}
+.navItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navItems li {
+  margin-left: 24px;                  /* 각 메뉴 항목 사이 간격 */
+}
+.navLink {
+  color: #ffffff;                     /* 메뉴 텍스트 색: 흰색 */
+  text-decoration: none;              /* 밑줄 제거 */
+  font-weight: 500;                   /* 약간 두껍게 (중간 정도 굵기) */
+  font-size: 16px;
+}
+.navLink:hover {
+  text-decoration: underline;         /* 마우스 오버 시 밑줄로 강조 */
+}
