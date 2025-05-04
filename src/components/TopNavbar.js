@@ -18,8 +18,8 @@ export default function TopNavbar() {
 
         {/* 우측 메뉴 링크 목록 */}
         <ul className={styles.navItems}>
-          <li><a href="https://rcloneview.com/pricing.html" className={styles.navLink}>Plus</a></li>
-          <li><a href="https://rcloneview.com/download.html" className={styles.navLink}>Download</a></li>
+          <li><a href="/src/pricing.html" className={styles.navLink}>Plus</a></li>
+          <li><a href="/src/download.html" className={styles.navLink}>Download</a></li>
           <li><Link to="/" className={styles.navLink}>Support</Link></li>
           <li><a href="https://forum.rcloneview.com" className={styles.navLink} target="_blank" rel="noopener">Forum</a></li>
         </ul>
