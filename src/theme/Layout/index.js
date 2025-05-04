@@ -16,6 +16,7 @@ import ErrorPageContent from '@theme/ErrorPageContent';
 import styles from './styles.module.css';
 
 import CustomNavbar from '@site/src/components/TopNavbar'; // Importing the custom navbar component - jay
+//import CustomNavbar from '@site/src/components/CustomNavbar'; // Importing the custom navbar component - jay
 
 
 

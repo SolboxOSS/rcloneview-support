@@ -8,7 +8,7 @@ export default function TopNavbar() {
     <nav className={styles.topNavBar}>
       <div className={styles.topNavInner}>
         {/* 좌측 로고 영역: 로고 이미지 + 사이트명 링크 */}
-        <a href="https://rcloneview.com" className={styles.logoLink}>
+        <a href="/index.html" className={styles.logoLink}>
           <img 
             src={useBaseUrl('/img/logo_allWhite.svg')} 
             alt="RcloneView logo" 
