@@ -48,20 +48,44 @@ const config = {
         },
       };
     },
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'howto',                         // 고유 ID
+        path: 'howto',                       // 폴더 경로 (Help Guides 콘텐츠)
+        routeBasePath: 'howto',              // URL 경로
+        sidebarPath: require.resolve('./sidebarsHowto.js'),
+        // ... (기타 옵션 필요 시 지정)
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'tutorials',
+        routeBasePath: 'tutorials',
+        sidebarPath: require.resolve('./sidebarsTutorials.js'),
+      },
+    ],
   ],
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
+        docs: false, // 문서 기능 비활성화
+        /*
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        */
+        blog: false, // 블로그 기능 비활성화
+        /*
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -77,6 +101,8 @@ const config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
+        */
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -88,6 +114,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
+      /*
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'My Site',
@@ -159,6 +186,7 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      */
     }),
 };
 
