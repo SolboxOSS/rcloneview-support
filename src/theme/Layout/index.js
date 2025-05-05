@@ -44,8 +44,10 @@ export default function Layout(props) {
       </div>
 
     {/* RcloneView 네비바를 추가 -jay */}
-      <CustomNavbar />
-
+ 
+      <div style={{ paddingTop: '58px' }}>
+       <CustomNavbar />
+      </div>
   
 
       <div
