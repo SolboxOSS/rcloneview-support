@@ -36,3 +36,12 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+.breadcrumbs__item a,
+.breadcrumbs__item span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
