@@ -7,7 +7,11 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',   // 페이지 컴포넌트
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 }
