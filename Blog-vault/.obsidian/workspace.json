@@ -11,14 +11,10 @@
             "id": "94d8608410a351ff",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "support/How to do.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "How to do"
+              "title": "New tab"
             }
           }
         ]
@@ -181,13 +177,13 @@
   },
   "active": "94d8608410a351ff",
   "lastOpenFiles": [
+    "template/tips.md",
     "template/tailwind-blog-template.md",
     "template/obsidian-to-docusaurus-image-converter.md",
     "template/markdown-card-template.md",
-    "support/How to do.md",
-    "template/tips.md",
     "template/convert_obsidian_images_with_check.py",
     "template",
+    "support/How to do.md",
     "support",
     "Welcome.md"
   ]
