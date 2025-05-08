@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "ee74d3abda4ec2cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "aaa9f7ff270bfcac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "94d8608410a351ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "howto/Quick Start Guide.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Quick Start Guide"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4b762c063e0dc919",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab4da7d41692a540",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8815d0b0aaec973",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "2884ab241f7f8bf2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "aee522a7992cc523",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 254.5
+  },
+  "right": {
+    "id": "8dfcf98a6e663631",
+    "type": "split",
+    "children": [
+      {
+        "id": "1277a8e7a3cd6036",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2c290bbe22391f00",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "howto/Quick Start Guide.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Quick Start Guide"
+            }
+          },
+          {
+            "id": "29321272ce9e9b75",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "howto/Quick Start Guide.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Quick Start Guide"
+            }
+          },
+          {
+            "id": "ee70fef1730dd27c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2484dc70dfcd2fb3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "howto/Quick Start Guide.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Quick Start Guide"
+            }
+          },
+          {
+            "id": "3830129b278d9355",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {},
+              "icon": "viewIcon",
+              "title": "Markdown-Autocomplete"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 287.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false
+    }
+  },
+  "active": "94d8608410a351ff",
+  "lastOpenFiles": [
+    "howto/img/Pasted image 20250506191753.png",
+    "img/Pasted.md",
+    "wikilkinks.md",
+    "template/Info. Boxes (=callout).md",
+    "template/img/Pasted image 20250505230112.png",
+    "template/markdown-card-template.md",
+    "template/obsidian-to-docusaurus-image-converter.md",
+    "template/tailwind-blog-template.md",
+    "howto/Quick Start Guide.md",
+    "Settings/Docusaurus/Github 설치.md",
+    "template/img",
+    "template/convert_obsidian_images_with_check.py",
+    "img",
+    "howto/img",
+    "Settings/Obsidian/img/obsidian.css",
+    "Settings/Obsidian/img/convert_obsidian_images_with_check.py",
+    "Settings/Obsidian/img/Pasted image 20250506002845.png",
+    "Settings/Obsidian/img/Pasted image 20250506002726.png",
+    "Settings/Obsidian/img/Pasted image 20250506000919.png",
+    "Settings/Obsidian/img/Pasted image 20250505210815.png",
+    "Settings/Obsidian/img/Pasted image 20250502184615.png",
+    "Settings/Obsidian/img/Pasted image 20250502182725.png",
+    "Settings/Obsidian/img/Pasted image 20250502175335.png",
+    "Settings/Obsidian/img/Pasted image 20250502173348.png",
+    "Settings/Obsidian/img",
+    "Settings/Obsidian/Quick Start.md",
+    "Settings/Docusaurus/Quick Start.md",
+    "Settings/Docusaurus",
+    "Settings",
+    "Settings/Obsidian",
+    "support/How to do.md",
+    "Welcome.md"
+  ]
+}
