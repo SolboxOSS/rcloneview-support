@@ -1,0 +1,28 @@
+/* 📘 Docusaurus Classic Theme-inspired styles for Obsidian preview */
+
+/* 이미지에 스타일 적용 */
+.theme-doc-markdown img {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  padding: 0.2rem !important;
+  background-color: white !important;
+  display: block !important;
+  margin: 1.5rem auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  transition: transform 0.2s ease !important;
+}
+.theme-doc-markdown img:hover {
+  transform: scale(1.03);
+}
+
+/* 캡션 스타일 */
+.theme-doc-markdown figure {
+  text-align: center;
+  margin: 1rem auto;
+}
+.theme-doc-markdown figcaption {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}

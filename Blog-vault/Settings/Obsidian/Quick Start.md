@@ -77,6 +77,10 @@
 ![[img/Pasted image 20250502165129.png]]
 
 
+## 이미지 링크 표준 .md 스타일로 저장하도록 수정.
+* Files and links 에서 Use [[wikilkinks]] 를 비활성화.
+![](img/Pasted%20image%2020250506002845.png)
+
 
 # Obsidian에서 TailwindCSS 실시간 적용하는 방법
 
@@ -120,7 +124,9 @@ Obsidian 좌측 하단 Settings(⚙️) →
 
 1. Obsidian Vault 루트의  .obsidian/snippets/ 아래에 obsidian.css 파일 생성 혹은 저장. ![[img/obsidian.css]]
 2. Obsidian Settings → Appearance → **CSS Snippets**에서 활성화
-3. 3. Markdown 문서 안에서 Tailwind 유틸리티 클래스 사용!
+3. Markdown 문서 안에서 Tailwind 유틸리티 클래스 사용!
+
+![[img/Pasted image 20250506000919.png]]
 
 ###  **예시**
 
@@ -133,6 +139,7 @@ Obsidian 좌측 하단 Settings(⚙️) →
 
 > [!success] 
 > 아래와 같이 파란 바탕색에 흰색 글자가 보이면 제대로 적용 된 것임. 
+
 <div class="p-4 bg-blue-500 text-center text-white rounded-lg">
   Hello, Tailwind in Obsidian!
 </div>
@@ -143,4 +150,3 @@ Obsidian 좌측 하단 Settings(⚙️) →
 **🧩 추천 커뮤니티 플러그인: Dangling Links Plugin**
 
 ![[img/Pasted image 20250502170202.png]]
-

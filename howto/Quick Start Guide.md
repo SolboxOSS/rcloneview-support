@@ -18,29 +18,7 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 author: Jay
 ---
 
-# Quick Start Guide
-
-
-[RcloneView homepage](https://rcloneview.com/src/download.html) 에서 설치파일을 다운로드 후 프로그램 설치를 완료
-하세요. 
-:::note
-설치시에 license agreement에 동의하셔야 합니다. 
-![](img/Pasted%20image%2020250506191753.png)
-:::
-
-설치완료 후 아래의 화면이 보이실 겁니다. 
-다음으로 구글 드라이브를 추가해 보겠습니다. 
-
-:::note
-새로운 Remote를 추가하기 전에 구글 드라이브 계정을 미리 만들어 두시길 바랍니다. 
-:::
-
-
-
-
-
-
-한번 설치 후에는 자동으로 업데이트가 됩니다. 
+# RcloneView 클라우드 동기화 완전 가이드
 
 
   이 가이드는 다양한 클라우드 서비스를 손쉽게 동기화하는 방법을 알려드립니다.
@@ -92,7 +70,7 @@ rcloneview config
 
 ## 이미지 효과 테스트
 
-![[./img/Pasted image 20250505230638.png]]
+![imagetest](img/Pasted%20image%2020250505230638.png)
 
 ## tailwind css 테스트
 
