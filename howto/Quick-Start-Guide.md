@@ -25,9 +25,8 @@ author: Jay
 하세요. 
 :::note
 설치시에 license agreement에 동의하셔야 합니다. 
-![](img/Pasted-image-20250506191753.png)
 :::
-
+dl
 설치완료 후 아래의 화면이 보이실 겁니다. 
 다음으로 구글 드라이브를 추가해 보겠습니다. 
 
@@ -67,7 +66,6 @@ SSO를 지원하는 클라우드 스토리지 중 Options 항목 입력이 필�
 
 혹은, 'Use another account'를 선택하여 구글 계정으로 로그인을 시도 합니다.
 ![](img/Pasted%20image%2020250508164017.png)
-![](img/Pasted%20image%2020250508163753.png)
 
 
 미리 설정해둔 로그인 방법을 이용하여 로그인을 완료 합니다. 

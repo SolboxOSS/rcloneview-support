@@ -1,5 +1,82 @@
 /* 📘 Docusaurus Classic Theme-inspired styles for Obsidian preview */
 
+/* Images */
+.markdown-preview-view img {
+  //  border-top: 4px solid #3b82f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0.2rem;
+    background-color: white;
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s ease;
+  }
+  .markdown-preview-view img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Captions */
+  .markdown-preview-view figure {
+    text-align: center;
+    margin: 1rem auto;
+  }
+  .markdown-preview-view figcaption {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+  }
+
+  /* 이미지 크기 정의 */
+.img-small {
+  width: 200px;
+  height: auto;
+}
+
+.img-medium {
+  width: 400px;
+  height: auto;
+}
+
+.img-large {
+  width: 800px;
+  height: auto;
+}
+
+/* 이미지 컬럼 컨테이너 수정 (flexbox 기반) */
+.img-grid-2,
+.img-grid-3 {
+  display: flex;
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+  gap: 1rem;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+/* 이미지 크기와 상관없이 균등 너비 유지 */
+.img-grid-2 img {
+  width: calc(50% - 0.5rem); /* 2열이므로 50% - 간격 조정 */
+  height: auto;
+  object-fit: contain; /* 이미지 비율 유지 */
+  border-radius: 8px;
+}
+
+.img-grid-3 img {
+  width: calc(33.33% - 0.66rem); /* 3열이므로 약 33% 너비로 설정 */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
 /* Typography */
 body {
   font-family: "Segoe UI", "Roboto", sans-serif;
@@ -89,33 +166,6 @@ pre {
   color: #c586c0;
 }
 
-/* Images */
-.markdown-preview-view img {
-//  border-top: 4px solid #3b82f6;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 0.2rem;
-  background-color: white;
-  display: block;
-  margin: 1.5rem auto;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.2s ease;
-}
-.markdown-preview-view img:hover {
-  transform: scale(1.03);
-}
-
-/* Captions */
-.markdown-preview-view figure {
-  text-align: center;
-  margin: 1rem auto;
-}
-.markdown-preview-view figcaption {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 0.25rem;
-}
 
 /* Tip body indentation */
 .alert .tip-body {
