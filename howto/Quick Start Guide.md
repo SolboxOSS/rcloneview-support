@@ -45,10 +45,10 @@ author: Jay
 ![](img/Pasted%20image%2020250508144524.png)
 
 - html image insert test
-<img src="/support/images/Pasted%20image%2020250508144524.png" alt="large image" width="auto" class="img-small image-zoom" />
+<img src="/support/images/Pasted%20image%2020250508144524.png" alt="large image" width="auto" class="img-small" />
 <div class="img-grid-2">
-  <img src="/support/images/Pasted%20image%2020250508144524.png" alt="이미지1" class="image-zoom" />
-  <img src="/support/images/Pasted%20image%2020250508144524.png" alt="이미지2" class="image-zoom" />
+  <img src="/support/images/Pasted%20image%2020250508144524.png" alt="이미지1" />
+  <img src="/support/images/Pasted%20image%2020250508144524.png" alt="이미지2" />
 </div>
 
 
