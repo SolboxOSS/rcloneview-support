@@ -52,11 +52,14 @@ author: Jay
 
 
 <div class="img-grid-2">
+  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" />
+  <img src="/support/images/Pasted%20image%2020250508160223.png" alt="Image 2" />
+</div>
 
-  <img src="img/Pasted%20image%2020250508154442.png" alt="Image 1" />
-
-  <img src="img/Pasted%20image%2020250508160223.png" alt="Image 2" />
-
+<div class="img-grid-3">
+  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" />
+  <img src="/support/images/Pasted%20image%2020250508160223.png" alt="Image 2" />
+  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 3" />
 </div>
 
 :::note 참고
@@ -68,7 +71,10 @@ SSO를 지원하는 클라우드 스토리지 중 Options 항목 입력이 필�
 추가하는 드라이브에 대한 이름을 지정 합니다. 
 ![](img/Pasted%20image%2020250508160259.png#img-small)
 
-<img src="img/Pasted%image%20250508160259.png" alt="small image" width="400" heigh="auto" />
+  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" class="img-small img-left" />
+  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" class="img-medium" />
+  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" class="img-large" />
+
 
 
 저장 버튼을 눌러 리모트 추가를 완료 합니다. 
