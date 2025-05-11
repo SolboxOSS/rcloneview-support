@@ -112,6 +112,14 @@ const config = {
       }),
     ],
   ],
+  
+// image zoom-in을 위한 javascript 설정 - jay
+  scripts: [
+    {
+      src: '/js/image-zoom.js',
+      async: true,
+    },
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
