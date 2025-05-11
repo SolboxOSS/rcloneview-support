@@ -1,0 +1,8 @@
+{
+  "label": "Cloud Storage Settings",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Guide to learn how to set cloud storages."
+  }
+}

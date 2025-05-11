@@ -1,8 +1,8 @@
 ---
 sidebar_position: "1"
-id: quick-start-guide
+id: Quick-start-guide
 title: Quick Start Guide
-slug: /howto/quick-start-guide
+slug: /intro
 description: Quick start guide to use RcloneView.
 keywords:
   - rclone
@@ -40,7 +40,17 @@ author: Jay
 :::
 
 화면의 오른쪽 창에서 '+' 버튼을 눌러서 remote 추가 창을 뛰웁니다.
+
+- Markdown image insert test
 ![](img/Pasted%20image%2020250508144524.png)
+
+- html image insert test
+<img src="/support/images/Pasted%20image%2020250508144524.png" alt="large image" width="auto" class="img-small" />
+<div class="img-grid-2">
+  <img src="/support/images/Pasted%20image%2020250508144524.png" alt="이미지1" />
+  <img src="/support/images/Pasted%20image%2020250508144524.png" alt="이미지2" />
+</div>
+
 
 
 검색창에서 'google' 을 검색한 후 'Google Drive'를 선택합니다. 
@@ -50,18 +60,8 @@ author: Jay
 다음 화면은 입력을 하지 않고 스킵합니다. 
 ![](img/Pasted%20image%2020250508160223.png)
 
-
-<div class="img-grid-2">
-  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" />
-  <img src="/support/images/Pasted%20image%2020250508160223.png" alt="Image 2" />
-</div>
-
-<div class="img-grid-3">
-  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" />
-  <img src="/support/images/Pasted%20image%2020250508160223.png" alt="Image 2" />
-  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 3" />
-</div>
-
+  
+     
 :::note 참고
 Google 등 SSO(Sing Sign On)를 지원하는 클라우드 스토리지들은 Options을 그냥 스킵하시면 SSO 인증 후 연결이 완료 됩니다.
 Google Drive와 같이 SSO 방식의 접속을 지원하는 클라우드 스토리지는 Dropbox, Google photos, Microsoft Onedrive, Box, pCloud, Yandex Disk, premiumize.me, put.io,HiDrive 등이 있습니다.
@@ -69,13 +69,7 @@ SSO를 지원하는 클라우드 스토리지 중 Options 항목 입력이 필�
 :::
 
 추가하는 드라이브에 대한 이름을 지정 합니다. 
-![](img/Pasted%20image%2020250508160259.png#img-small)
-
-  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" class="img-small img-left" />
-  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" class="img-medium" />
-  <img src="/support/images/Pasted%20image%2020250508154442.png" alt="Image 1" class="img-large" />
-
-
+![](img/Pasted%20image%2020250508160259.png)
 
 저장 버튼을 눌러 리모트 추가를 완료 합니다. 
 ![](img/Pasted%20image%2020250508160511.png)
@@ -97,6 +91,7 @@ SSO를 지원하는 클라우드 스토리지 중 Options 항목 입력이 필�
 미리 설정해둔 로그인 방법을 이용하여 로그인을 완료 합니다. 
 
 
+![](img/Pasted%20image%2020250508164537.png)
 
 :::note 참고
 위의 Password 방식이 아닌 다른 방식으로 로그인을 하실 경우 다음의 링크를 참조하시어 진행을 완료하시길 바랍니다. https://support.google.com/accounts/answer/12849458 
@@ -125,5 +120,4 @@ RcloneView를 이용한 파일 동기화.
 
 - 👉[기초 설치 가이드](app://obsidian.md/tutorials/install-guide)
 - 👉[고급 동기화 팁](app://obsidian.md/guides/advanced-sync)
-
 

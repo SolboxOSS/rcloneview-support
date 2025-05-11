@@ -37,7 +37,7 @@
   display: block !important;      /* 명시적 block 설정 */
 }
 
-.img-medium {
+.img-medium{
   width: 400px !important;
   height: auto !important;
   margin: 1.5rem auto !important; /* 중앙정렬 */
