@@ -4,6 +4,12 @@
 # Production
 /build
 
+# Obsidian user settings (local only)
+obsidian-vault/.obsidian/workspace.json
+obsidian-vault/.obsidian/workspace
+obsidian-vault/.obsidian/cache
+
+
 # Generated files
 .docusaurus
 .cache-loader
