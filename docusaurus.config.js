@@ -112,11 +112,11 @@ const config = {
       }),
     ],
   ],
-  
+
 // image zoom-in을 위한 javascript 설정 - jay
   scripts: [
     {
-      src: '/js/image-zoom.js',
+      src: '/support/js/image-zoom.js',
       async: true,
     },
   ],
