@@ -11,8 +11,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'RcloneView Support Center',
-  tagline: 'RcloneView Support Center',
-  favicon: 'img/favicon.ico',
+  tagline: 'Support Center for RcloneView — Cloud Sync & Backup Made Easy',
+  favicon: 'img/favicon-32x32.png',
 
   // Set the production url of your site here
   url: 'https://rcloneview.com',
@@ -22,8 +22,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'RcloneView', // Usually your GitHub org/user name.
+  // projectName: 'support', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -124,6 +124,58 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+
+      metadata: [
+        { name: 'keywords', content: 'rclone, cloud storage, sync, backup, support, rcloneview, multicloud' },
+        { name: 'author', content: 'RcloneView Team' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'theme-color', content: '#2563eb' },
+      ],
+      headTags: [
+        { tagName: 'meta', attributes: { property: 'og:type', content: 'website' } },
+        { tagName: 'meta', attributes: { property: 'og:title', content: 'RcloneView Support - Help Center & Tutorials' } },
+        { tagName: 'meta', attributes: { property: 'og:description', content: 'Browse RcloneView help guides, tutorials, and FAQs. Easily sync and manage your cloud storage with our powerful GUI.' } },
+        { tagName: 'meta', attributes: { property: 'og:url', content: 'https://rcloneview.com/support/' } },
+        { tagName: 'meta', attributes: { property: 'og:image', content: 'https://rcloneview.com/support/img/og-image.png' } },
+  
+        { tagName: 'meta', attributes: { name: 'twitter:card', content: 'summary_large_image' } },
+        { tagName: 'meta', attributes: { name: 'twitter:title', content: 'RcloneView Support - Help Center' } },
+        { tagName: 'meta', attributes: { name: 'twitter:description', content: 'Need help with RcloneView? Find guides and answers in our Support Center.' } },
+        { tagName: 'meta', attributes: { name: 'twitter:image', content: 'https://rcloneview.com/support/img/og-image.png' } },
+  
+        { tagName: 'link', attributes: { rel: 'canonical', href: 'https://rcloneview.com/support/' } },
+  
+        {
+          tagName: 'script',
+          attributes: { type: 'application/ld+json' },
+          innerHTML: `
+          {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://rcloneview.com/support/"
+            },
+            "headline": "RcloneView Support Center",
+            "description": "Support documentation and tutorials for RcloneView, a GUI for managing cloud sync and backup.",
+            "image": "https://rcloneview.com/support/img/og-image.png",
+            "author": {
+              "@type": "Organization",
+              "name": "RcloneView"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "RcloneView",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://rcloneview.com/support/img/logo-white.svg"
+              }
+            },
+            "datePublished": "2025-05-15"
+          }`
+        }
+      ],
+
       // Replace with your project's social card
       /*
       image: 'img/docusaurus-social-card.jpg',

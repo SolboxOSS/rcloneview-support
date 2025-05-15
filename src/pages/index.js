@@ -29,13 +29,13 @@ export default function SupportPage() {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto mt-12">
-          <Link to="/tutorials/intro" className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition duration-300 text-center">
+          <Link to="/tutorials/intro/" className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition duration-300 text-center">
             <div className="text-5xl mb-4">📖</div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Tutorials</h3>
             <p className="text-gray-600">Step-by-step guides to master RcloneView.</p>
           </Link>
 
-          <Link to="/howto/intro" className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition duration-300 text-center">
+          <Link to="/howto/intro/" className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition duration-300 text-center">
             <div className="text-5xl mb-4 text-red-600">❓</div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Help Guides</h3>
             <p className="text-gray-600">Learn how to use RcloneView.</p>
