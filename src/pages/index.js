@@ -3,6 +3,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import styles from './index.module.css';
 // import styles from './Support.module.css';  // CSS 모듈 또는 custom.css에서 클래스 정의
 
 export default function SupportPage() {
@@ -19,15 +20,12 @@ export default function SupportPage() {
             <h1 className="text-4xl font-bold text-center mb-6 text-gray-900">
               RcloneView Support Center
             </h1>
-            <div className="relative w-full max-w-xl">
-              <input
-                type="text"
-                placeholder="Search for anything..."
-                className="w-full border border-gray-300 rounded-md px-5 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
-              <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-400">
-                🔍
-              </div>
+            <div className={styles.buttons}>
+              <Link
+                className="button button--secondary button--lg"
+                to="/howto/intro/">
+                RcloneView Tutorial - 3min ⏱️
+              </Link>
             </div>
           </div>
         </div>
