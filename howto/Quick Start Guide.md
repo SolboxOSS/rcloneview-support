@@ -58,8 +58,8 @@ However, certain SSO-compatible storages like Zoho WorkDrive, Google Cloud Stora
 7. Click "Save" to complete adding the remote.
 
 <div class="img-grid-2">
-<img src="/support/images/howto/add-remote-step3.png" alt="add google drive step3" class="img-small img-center" />
-<img src="/support/images/howto/add-remote-step4.png" alt="add google drive step4" class="img-small img-center" />
+<img src="/support/images/howto/add-remote-step3.png" alt="add google drive step3" class="img-medium img-center" />
+<img src="/support/images/howto/add-remote-step4.png" alt="add google drive step4" class="img-medium img-center" />
 </div>
 
 :::note
@@ -101,6 +101,10 @@ You are now ready to manage and synchronize your Google Drive files using Rclone
 - Basic File Management with RcloneView
 - File Synchronization with RcloneView
 
+
+## Markdown Image Insert Test
+
+![](attachments/Pasted%20image%2020250520182148.png)
 
 ## 📎 Related documents
 
