@@ -31,22 +31,22 @@
 
 /* 이미지 크기 클래스 정의 (중앙정렬 추가) */
 .img-small {
-  width: 200px !important;
-  height: auto !important;
+  height: 150px !important;
+  width: auto !important;
   margin: 1.5rem auto !important; /* 중앙정렬 */
   display: block !important;      /* 명시적 block 설정 */
 }
 
 .img-medium{
-  width: 400px !important;
-  height: auto !important;
+  height: 300px !important;
+  width: auto !important;
   margin: 1.5rem auto !important; /* 중앙정렬 */
   display: block !important;      /* 명시적 block 설정 */
 }
 
 .img-large {
-  width: 800px !important;
-  height: auto !important;
+  height: 500px !important;
+  width: auto !important;
   margin: 1.5rem auto !important; /* 중앙정렬 */
   display: block !important;      /* 명시적 block 설정 */
 }
@@ -70,11 +70,11 @@
 .theme-doc-markdown .img-grid-3 {
   display: flex !important;
   flex-wrap: nowrap !important;
-  gap: 1rem !important; /* 이미지 사이 간격 제거 */
-  justify-content: center !important; /* 좌우 끝까지 채움 */
-  align-items: flex-start !important;
-  margin: 1.5rem auto !important; /* 상하 여백 유지 */
-  padding: 0 !important;
+  gap: 2rem !important; /* 이미지 간격 넓힘 */
+  justify-content: center !important; /* 가운데 정렬 유지 */
+  align-items: center !important; /* 세로 중앙 정렬 추가 */
+  margin: 2rem auto !important; /* 위아래 여백 조금 더 확보 */
+  padding: 0 1rem !important; /* 좌우 내부 여백 추가 */
 }
 
 
@@ -93,6 +93,7 @@
 
 .theme-doc-markdown .img-grid-2 img {
   width: calc(50% - 1rem) !important; /* 정확히 2개로 나눔 */
+
 }
 
 .theme-doc-markdown .img-grid-3 img {
