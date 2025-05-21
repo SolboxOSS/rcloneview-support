@@ -1,0 +1,195 @@
+---
+sidebar_position: "2"
+id: "\bimage-size-adjusting"
+title: Image size adjusting examples
+slug: /template/image-size-templates
+description: Examples of adjusting image size
+keywords:
+  - rcloneview
+  - document
+  - image
+  - adjusting
+tags:
+  - RcloneView
+  - document
+  - filemanagement
+  - adjusting
+date: <% tp.date.now("YYYY-MM-DD") %>
+author: Jay
+---
+
+## Html을 이용한 절대경로 이미지 붙여 넣기
+
+- Small size (width = 200 pixel, high= auto, arrange=left)
+
+```markdown
+<img 
+  src="/support/images/Pasted%20image%2020250509180458.png" 
+  alt="small image" 
+  class="img-small img-left" 
+/>
+```
+
+<img
+  src="/support/images/Pasted%20image%2020250509180458.png"
+  alt="small image"
+  class="img-small img-left"
+/>
+
+- Midium size (width =400 pixel)
+
+```markdown
+<img 
+  src="/support/images/Pasted%20image%2020250509180458.png" 
+  alt="medium image" 
+  class="img-medium" 
+/>
+```
+
+<img
+  src="/support/images/Pasted%20image%2020250509180458.png"
+  alt="medium image"
+  class="img-medium"
+/>
+
+- Large size (width = 800 pixel)
+
+```markdown
+<img 
+  src="/support/images/Pasted%20image%2020250509180458.png" 
+  alt="large image" 
+  class="img-large" 
+/>
+```
+
+<img
+  src="/support/images/Pasted%20image%2020250509180458.png"
+  alt="large image"
+  class="img-large"
+/>
+
+- 2 cloumn 배치
+
+```markdown
+<div class="img-grid-2">
+  <img src="/support/images/Pasted%20image%2020250509180458.png" alt="이미지1" />
+  <img src="/support/images/Pasted%20image%2020250509180458.png" alt="이미지2" />
+</div>
+```
+
+<div class="img-grid-2">
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지1"
+  />
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지2"
+  />
+</div>
+
+- 3 cloumn 배치
+
+```markdown
+<div class="img-grid-3">
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지1"
+  />
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지2"
+  />
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지3"
+  />
+</div>
+```
+
+<div class="img-grid-3">
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지1"
+  />
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지2"
+  />
+  <img
+    src="/support/images/Pasted%20image%2020250509180458.png"
+    alt="이미지3"
+  />
+</div>
+
+## JSX를 이용한 절대경로 이미지 붙여 넣기
+
+- Small size (width = 200 pixel, high= auto, arrange=left)
+
+```jsx
+<img
+  src={require("./attatchments/test.png").default}
+  alt="small image"
+  className="img-small img-left"
+/>
+```
+
+<img
+  src={require("./attatchments/test.png").default}
+  alt="exmample image"
+  className="img-small img-left"
+/>
+- Midium size (width =400 pixel) 
+
+```jsx
+<img
+  src={require("./attatchments/test.png").default}
+  alt="medium image"
+  className="img-medium"
+/>
+```
+<img
+  src={require("./attatchments/test.png").default}
+  alt="medium image"
+  className="img-medium"
+/>
+- Large size (width = 800 pixel) 
+
+```jsx
+<img
+  src={require("./attatchments/test.png").default}
+  alt="large image"
+  className="img-large"
+/>
+```
+<img
+  src={require("./attatchments/test.png").default}
+  alt="large image"
+  className="img-large"
+/>
+- 2 cloumn 배치 
+
+```jsx
+<div className="img-grid-2">
+  <img src={require("./attatchments/test.png").default} alt="이미지1" />
+  <img src={require("./attatchments/test.png").default} alt="이미지2" />
+</div>
+```
+<div className="img-grid-2">
+  <img src={require("./attatchments/test.png").default} alt="이미지1" />
+  <img src={require("./attatchments/test.png").default} alt="이미지2" />
+</div>
+- 3 cloumn 배치 
+
+```jsx
+<div className="img-grid-3">
+  <img src={require("./attatchments/test.png").default} alt="이미지1" />
+  <img src={require("./attatchments/test.png").default} alt="이미지2" />
+  <img src={require("./attatchments/test.png").default} alt="이미지3" />
+</div>
+```
+<div className="img-grid-3">
+  <img src={require("./attatchments/test.png").default} alt="이미지1" />
+  <img src={require("./attatchments/test.png").default} alt="이미지2" />
+  <img src={require("./attatchments/test.png").default} alt="이미지3" />
+</div>
