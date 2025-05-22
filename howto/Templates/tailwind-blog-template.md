@@ -1,8 +1,5 @@
 ---
 sidebar_position: "1"
-id: example-post
-title: RcloneView 샘플 포스트
-slug: /template/tailwind-blog-template
 description: Post Examples
 keywords:
   - document
@@ -18,6 +15,8 @@ tags:
 date: <% tp.date.now("YYYY-MM-DD") %>
 author: Jay
 ---
+
+# RcloneView 샘플 포스트
 
 ```md title="howto/hello.md"
 ---

@@ -16,7 +16,6 @@ tags:
 date: <% tp.date.now("YYYY-MM-DD") %>
 author: Jay
 ---
-
 # File management
 
 ## 리모트 열기

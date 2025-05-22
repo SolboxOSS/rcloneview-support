@@ -1,8 +1,5 @@
 ---
 sidebar_position: "3"
-id: example-info-box
-title: Information Box Examples
-slug: /template/info-box-templates
 description: Examples of information box
 keywords:
   - rcloneview
@@ -18,6 +15,9 @@ tags:
 date: <% tp.date.now("YYYY-MM-DD") %>
 author: Jay
 ---
+
+# Example of inforamtion box
+
 ```markdown
 :::note
 

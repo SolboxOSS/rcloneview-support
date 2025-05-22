@@ -1,8 +1,5 @@
 ---
 sidebar_position: 1
-id: add-icloud-drive
-title: Add iCloud Drive
-slug: /en/howto/remote-storage-connection-settings/connect-using-cli/add-icloud-drive
 description: This guide explains how to add iCloud Drive as a remote using CLI commands.
 keywords:
   - rcloneview
@@ -22,6 +19,8 @@ tags:
 date: 2025-05-21
 author: Jay
 ---
+# Add iCloud Drive
+
 The iCloud remote can currently only be added via the Rclone CLI.
 
 :::info
