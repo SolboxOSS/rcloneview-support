@@ -101,7 +101,7 @@ n) No
 y/n> y
 ```
 
-A browser window will open automatically. [Log in with your Google account and grant the requested permissions.](../../Quick%20Start%20Guide.md#connecting-your-remote-storage-sso-single-sign-on)
+A browser window will open automatically. [Log in with your Google account and grant the requested permissions.](../../Quick%20Start%20Guide.md#Connecting-Your-Remote-Storage-SSO-Single-Sign-On)
 
 ### Step 4: Configure Shared Drive
 
