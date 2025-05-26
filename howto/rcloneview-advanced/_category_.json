@@ -1,6 +1,6 @@
 {
   "label": "RcloneView - Advanced",
-  "position": 3,
+  "position": 4,
   "link": {
     "type": "generated-index",
     "description": "Advanced guide to learn the most important RcloneView concepts."

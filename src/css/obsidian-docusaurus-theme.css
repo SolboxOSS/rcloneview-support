@@ -92,7 +92,7 @@
 }
 
 .theme-doc-markdown .img-grid-2 img {
-  width: calc(45% - 1rem) !important; /* 정확히 2개로 나눔 */
+  width: calc(40% - 2rem) !important; /* 정확히 2개로 나눔 */
 
 }
 
