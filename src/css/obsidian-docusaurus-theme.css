@@ -33,21 +33,18 @@
 .img-small {
   height: 150px !important;
   width: auto !important;
-  margin: 1.5rem auto !important;
   display: block !important;
 }
 
 .img-medium {
   height: 300px !important;
   width: auto !important;
-  margin: 1.5rem auto !important;
   display: block !important;
 }
 
 .img-large {
   height: 500px !important;
   width: auto !important;
-  margin: 1.5rem auto !important;
   display: block !important;
 }
 
