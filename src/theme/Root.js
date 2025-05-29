@@ -11,18 +11,16 @@ export default function Root({ children }) {
         import('glightbox/dist/css/glightbox.min.css'),
       ]).then(([GLightbox]) => {
         const initializeGlightbox = () => {
-          const mediaElements = document.querySelectorAll(".theme-doc-markdown img, .theme-doc-markdown video");
+          // 이미지만 선택하도록 수정 (비디오 제외)
+          const images = document.querySelectorAll(".theme-doc-markdown img");
 
-          mediaElements.forEach(media => {
-            if (!media.closest('a.glightbox')) {
+          images.forEach(img => {
+            if (!img.closest('a.glightbox')) {
               const wrapper = document.createElement('a');
-              const src = media.tagName.toLowerCase() === 'video'
-                ? media.querySelector('source').src
-                : media.src;
-              wrapper.href = src;
+              wrapper.href = img.src;
               wrapper.classList.add('glightbox');
-              media.parentNode.insertBefore(wrapper, media);
-              wrapper.appendChild(media);
+              img.parentNode.insertBefore(wrapper, img);
+              wrapper.appendChild(img);
             }
           });
 
@@ -40,7 +38,6 @@ export default function Root({ children }) {
 
           window.lightboxInstance.on('open', () => {
             const container = document.querySelector('.gcontainer');
-
             if (container) {
               container.addEventListener('click', function(event) {
                 const image = event.target.closest('.gslide-image img');

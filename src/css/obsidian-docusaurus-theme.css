@@ -79,25 +79,6 @@
   margin-top: 0.25rem;
 }
 
-/* 이미지 크기 클래스 정의 */
-.img-small {
-  max-height: 150px !important;
-  width: auto !important;
-  display: block !important;
-}
-
-.img-medium {
-  max-height: 300px !important;
-  width: auto !important;
-  display: block !important;
-}
-
-.img-large {
-  max-height: 500px !important;
-  width: auto !important;
-  display: block !important;
-}
-
 /* 이미지 정렬 옵션 클래스 */
 
 /* 왼쪽 정렬 */
@@ -110,6 +91,11 @@
 .img-center {
   margin-left: auto !important;
   margin-right: auto !important;
+}
+/* 중앙 정렬 */
+.img-right {
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 /* 이미지 그리드 스타일 공통 (2열, 3열) */
@@ -156,3 +142,11 @@
 .theme-doc-markdown .img-grid-3 img:hover {
   transform: scale(1.02) !important;
 }
+
+.video-small { width: 40%; }
+.video-medium { width: 70%; }
+.video-large { width: 100%; }
+
+.video-left { display: block; margin: 1rem 0 1rem 0; }
+.video-center { display: block; margin: 1rem auto; }
+.video-right { display: block; margin: 1rem 0 1rem auto; }

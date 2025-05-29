@@ -43,8 +43,8 @@ This guide will walk you step-by-step through installing **RcloneView** and addi
 4. Usually, you can skip this step by directly clicking **`Next`** unless you have specific configurations.
 
 <div class="img-grid-2">
-<img src="/support/images/howto/new-remote-step1.png" alt="Add new google remote" class="img-center" />
-<img src="/support/images/howto/add-remote-step2.png" alt="Add google drive option" class="img-center" />
+<img src="/support/images/howto/new-remote-step1.png" alt="Add new google remote" class="img-medium img-center" />
+<img src="/support/images/howto/add-remote-step2.png" alt="Add google drive option" class="img-medium img-center" />
 </div>
 
 :::note
@@ -64,8 +64,8 @@ However, certain SSO-compatible storages like Zoho WorkDrive, Google Cloud Stora
 7. Review your settings and click **`Save`** to finish adding the remote.
 
 <div class="img-grid-2">
-<img src="/support/images/howto/add-remote-step3.png" alt="add google drive step3" />
-<img src="/support/images/howto/add-remote-step4.png" alt="add google drive step4" />
+<img src="/support/images/howto/add-remote-step3.png" alt="add google drive step3" class="img-medium img-center" />
+<img src="/support/images/howto/add-remote-step4.png" alt="add google drive step4" class="img-medium img-center" />
 </div>
 
 :::note
@@ -87,9 +87,9 @@ If you are using a login method other than the password-based login shown above,
 
 - Click "Continue" to complete the connection to your Google Drive.
 
-<img src="/support/images/howto/google-trust-rclone.png" alt="google trust rclone" class="img-medium img-center"/>
+<img src="/support/images/howto/google-trust-rclone.png" alt="google trust rclone" class="img-medium img-center" />
 - You should see a confirmation page displaying **"Success!"**
-<img src="/support/images/howto/google-login-complete.png" alt="google login complete" class="img-medium img-center"/>
+<img src="/support/images/howto/google-login-complete.png" alt="google login complete" class="img-medium img-center" />
 ✅ **Done!** Your Google Drive remote is now successfully connected and ready to use in RcloneView.
 
 

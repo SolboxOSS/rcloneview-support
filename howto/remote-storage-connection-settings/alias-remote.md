@@ -27,9 +27,9 @@ You can quickly create an Alias Remote to bookmark frequently used remote folder
 2. Enter a name for your new **Alias**.
 3. The remote will be instantly added and opened as an **Alias Remote**, ready for use.
 <div class="img-grid-3">
-<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-alias-remote.png" alt="add new alias remote"  />
-<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-alias-remote-name.png" alt="add new alias remote name"  />
-<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-alias-remote-complete.png" alt="add new alias remote complete"  />
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-alias-remote.png" alt="add new alias remote" class="img-medium img-center" />
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-alias-remote-name.png" alt="add new alias remote name" class="img-medium img-center" />
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-alias-remote-complete.png" alt="add new alias remote complete" class="img-medium img-center" />
 </div>
 
 
