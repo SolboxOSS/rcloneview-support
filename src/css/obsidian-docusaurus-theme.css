@@ -48,6 +48,56 @@
   display: block !important;
 }
 
+/* 📘 Docusaurus Classic Theme-inspired styles for Obsidian preview */
+
+/* 기본 이미지 스타일 (개별 이미지일 경우 적용됨) */
+.theme-doc-markdown img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+  background-color: white;
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.theme-doc-markdown img:hover {
+  transform: scale(1.03);
+}
+
+/* 캡션 스타일 */
+.theme-doc-markdown figure {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.theme-doc-markdown figcaption {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* 이미지 크기 클래스 정의 */
+.img-small {
+  max-height: 150px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+.img-medium {
+  max-height: 300px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+.img-large {
+  max-height: 500px !important;
+  width: auto !important;
+  display: block !important;
+}
+
 /* 이미지 정렬 옵션 클래스 */
 
 /* 왼쪽 정렬 */
@@ -62,43 +112,47 @@
   margin-right: auto !important;
 }
 
-/* 이미지 그리드 스타일 (이미지가 여러개 나열될 경우만 적용) */
+/* 이미지 그리드 스타일 공통 (2열, 3열) */
 .theme-doc-markdown .img-grid-2,
 .theme-doc-markdown .img-grid-3 {
   display: flex !important;
   flex-wrap: nowrap !important;
-  gap: 2rem !important; /* 이미지 간격 넓힘 */
-  justify-content: center !important; /* 가운데 정렬 유지 */
-  align-items: center !important; /* 세로 중앙 정렬 추가 */
-  margin: 2rem auto !important; /* 위아래 여백 조금 더 확보 */
-  padding: 0 1rem !important; /* 좌우 내부 여백 추가 */
+  justify-content: center !important;
+  align-items: flex-start !important;
+  margin: 2rem auto !important;
 }
 
-
-/* 이미지 그리드 내 개별 이미지 스타일 재정의 (호버 충돌 방지) */
-.theme-doc-markdown .img-grid-2 img,
-.theme-doc-markdown .img-grid-3 img {
-  display: inline-block !important;
-  width: 100% !important; /* flex 컨테이너가 폭 조정함 */
-  height: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important; /* 그림자 제거, 선택사항 */
-  border-radius: 8px !important;
-  transition: transform 0.2s ease !important; /* 호버 효과 일관성 유지 */
+/* 2열 이미지 그리드 최적화 */
+.theme-doc-markdown .img-grid-2 {
+  gap: 1rem !important;          /* 두 이미지 사이 간격 좁힘 */
+  padding: 0 3rem !important;    /* 좌우 마진을 더욱 넓게 설정 */
+  justify-content: center !important;
+  align-items: flex-start !important;
+  margin: 2rem auto !important;
 }
 
 .theme-doc-markdown .img-grid-2 img {
-  width: calc(40% - 2rem) !important; /* 정확히 2개로 나눔 */
+  width: 80% !important; /* 이미지 너비를 줄여 여백 확보 */
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
 
+/* 3열 이미지 그리드 스타일 */
+.theme-doc-markdown .img-grid-3 {
+  gap: 1rem !important;
+  padding: 0 1rem !important;
 }
 
 .theme-doc-markdown .img-grid-3 img {
-  width: calc(33% - 1rem) !important; /* 정확히 3개로 나눔 */
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
 }
 
-/* 그리드 내 이미지 호버 효과 (스케일 줄이기) */
+/* 이미지 그리드 내 이미지 호버 효과 유지 */
 .theme-doc-markdown .img-grid-2 img:hover,
 .theme-doc-markdown .img-grid-3 img:hover {
-  transform: scale(1.02) !important; /* 자연스러운 약한 효과 */
+  transform: scale(1.02) !important;
 }
