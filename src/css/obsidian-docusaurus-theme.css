@@ -118,7 +118,7 @@
 }
 
 .theme-doc-markdown .img-grid-2 img {
-  width: 80% !important; /* 이미지 너비를 줄여 여백 확보 */
+  width: 90% !important; /* 이미지 너비를 줄여 여백 확보 */
   height: auto !important;
   max-height: none !important;
   object-fit: contain !important;
@@ -141,6 +141,24 @@
 .theme-doc-markdown .img-grid-2 img:hover,
 .theme-doc-markdown .img-grid-3 img:hover {
   transform: scale(1.02) !important;
+}
+
+/* 🎬 비디오 플레이어 스타일 개선 (세련된 디자인) */
+.theme-doc-markdown video {
+  display: block;
+  border-radius: 8px; /* 둥근 모서리 강조 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 세련된 그림자 효과 */
+  background-color: #000; /* 배경 검정색으로 통일 (일반적으로 비디오에 사용) */
+  margin: 2rem auto; /* 위아래 간격 확보 및 가운데 정렬 */
+  max-width: 100%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  outline: none; /* 클릭 시 나타나는 브라우저 기본 테두리 제거 */
+}
+
+/* 마우스 오버 시 자연스러운 확대 효과 추가 */
+.theme-doc-markdown video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .video-small { width: 40%; }
