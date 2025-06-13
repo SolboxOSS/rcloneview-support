@@ -123,6 +123,7 @@ You can run a **Dry run** to simulate the sync operation without making any actu
 <img src="/support/images/en/howto/rcloneview-basic/sync-dry-run-details.png" alt="sync dry run details" class="img-medium img-center" />
 </div>
 
+
 ## Save sync operation as a Job
 
 If you regularly perform the same sync task, you can save it as a **Job** for easy reuse.
