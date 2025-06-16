@@ -89,9 +89,8 @@ This means **`modifying destination only`**.
 <img src="/support/images/en/howto/rcloneview-basic/job-config-storage-details.png" alt="job config storage details" class="img-medium img-center" />
 
 1. **`Job Name`**. 
-- **`Job Name`**.     
  - ❗Allowed characters: `a–z`, `A–Z`, `0–9`, `-`, `_` 
-1. **Select the source folder**.   
+2. **Select the source folder**.   
  - Click the folder icon in the left panel to choose the source.  
 3. **Select the destination folder**. 
 - Click the folder icon in the right panel to choose the destination.  
