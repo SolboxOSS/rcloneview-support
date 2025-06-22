@@ -28,12 +28,11 @@ RcloneView's **Settings** page allows you to configure language, paths, logging 
 - **Launch at login**: When enabled, RcloneView will automatically start when the user logs into the system.
 
 :::important Auto Start: Scheduling and Mounting
+
 When **Launch at login** is enabled:  
 
-- Any scheduled jobs defined in the [**Job Scheduler**](../rcloneview-advanced/job-scheduling-and-execution.md) will automatically run upon login.
-
-- Any remotes configured for auto-mounting in the [**Mount Manager**](./mount-cloud-storage-as-a-local-drive.md#method-1-mount-from-remote-explorer) will be mounted automatically when RcloneView starts.
-- 
+- Any scheduled jobs defined in the [**Job Scheduler**](../rcloneview-advanced/job-scheduling-and-execution.md) will automatically run upon login.  
+- Any remotes configured for auto-mounting in the [**Mount Manager**](./mount-cloud-storage-as-a-local-drive.md#method-1-mount-from-remote-explorer) will be mounted automatically when RcloneView starts.  
 :::
 
 ### Locations
@@ -47,8 +46,7 @@ Specify the locations for key components:
 :::caution Restart rclone Required to Apply Location Changes
 
 Click **`Restart rclone`** to apply any changes made to the location settings.  
-
-This will restart the embedded Rclone instance and may interrupt any currently running jobs.
+This will restart the embedded Rclone instance and may interrupt any currently running jobs.  
 
 :::
 
@@ -84,8 +82,7 @@ Advanced options:
 :::caution Restart rclone Required to Apply Embedded Rclone Settings
 
 Click **`Restart rclone`** to apply any changes made to the Embedded Rclone settings.  
-
-This will restart the embedded Rclone instance and may interrupt any currently running jobs.
+This will restart the embedded Rclone instance and may interrupt any currently running jobs.  
 
 :::
 
