@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import {
@@ -6,7 +6,7 @@ import {
   SkipToContentFallbackId,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
-import {useKeyboardNavigation} from '@docusaurus/theme-common/internal';
+import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Navbar from '@theme/Navbar';
@@ -15,41 +15,39 @@ import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import styles from './styles.module.css';
 
-//import CustomNavbar from '@site/src/components/TopNavbar'; // Importing the custom navbar component - jay
-import CustomNavbar from '@site/src/components/CustomNavbar'; // Importing the custom navbar component - jay
 
+import { SearchProvider } from '../../contexts/SearchContext';
+import SearchResultOverlay from '@site/src/components/SearchResultOverlay';
 
+import CustomNavbar from '@site/src/components/CustomNavbar';
 
 export default function Layout(props) {
+
+  const [results, setResults] = useState([]); // 이미 이렇게 되어 있다면 OK
+
   const {
     children,
     noFooter,
     wrapperClassName,
-    // Not really layout-related, but kept for convenience/retro-compatibility
     title,
     description,
   } = props;
   useKeyboardNavigation();
+
+
   return (
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
-
       <SkipToContent />
-
       <AnnouncementBar />
-
-      {/* 네비바를 숨김 -jay */}
+      {/* 네비바 숨김 */}
       <div style={{ display: 'none' }}>
         <Navbar />
       </div>
-
-    {/* RcloneView 네비바를 추가 -jay */}
- 
+      {/* 커스텀 네비바 */}
       <div style={{ paddingTop: '58px' }}>
-       <CustomNavbar />
+        <CustomNavbar />
       </div>
-  
-
       <div
         id={SkipToContentFallbackId}
         className={clsx(
@@ -57,11 +55,19 @@ export default function Layout(props) {
           styles.mainWrapper,
           wrapperClassName,
         )}>
-        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
-          {children}
-        </ErrorBoundary>
-      </div>
+        <SearchProvider>
 
+          <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
+            {children}
+            
+          </ErrorBoundary>
+
+          {/* 본문에만 오버레이 표시 */}
+          <SearchResultOverlay />
+          
+        </SearchProvider>
+
+      </div>
       {!noFooter && <Footer />}
     </LayoutProvider>
   );

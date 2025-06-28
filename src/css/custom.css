@@ -45,3 +45,110 @@
   gap: 0.3rem;
 }
 
+/* DocSidebar 첫 제목(Quick Start Guide) 위쪽 여백까지 제어 */
+.theme-doc-sidebar-container nav {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* DocSidebar 전체 영역에 추가 여백 조정 */
+.theme-doc-sidebar-container {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+/* 혹시 목차 항목(ul/li) 쪽에서 여백이 남으면 */
+.theme-doc-sidebar-container ul {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* DocSidebarWrapper에서 div로 감싸는 경우 여백 없애기 */
+.DocSidebarSearchWrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+/* DocSidebar의 검색창 스타일 */
+
+.mySidebarSearchBox {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 0 0 1.2rem; /* 상하 여백 조정 */
+  margin-bottom: -1rem !important;  /* 0~0.5rem에서 조절해 보세요! */
+}
+
+
+.mySidebarSearchBox .ais-SearchBox-form {
+  display: flex !important;
+  align-items: center;
+  width: 90%;
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+}
+
+.mySidebarSearchBox .ais-SearchBox-input {
+  width: 100% !important;
+  height: 2.3rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #247be7;
+  padding: 0 2.2rem 0 1.1rem; /* 좌우 동일하게 1.1rem/2.2rem 등으로 */
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.mySidebarSearchBox .ais-SearchBox-input:focus {
+  border: 2px solid #ff8c00;
+}
+
+.mySidebarSearchBox .ais-SearchBox-submit {
+  position: absolute;
+  right: 2.2rem;   /* 오른쪽 여백 */
+  top: 0.2rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mySidebarSearchBox .ais-SearchBox-reset {
+  position: absolute;
+  right: 0.6rem;   /* 오른쪽 여백 */
+  top: 0.3rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 크롬/사파리 등 브라우저 기본 검색 X 버튼 숨기기 */
+input[type="search"]::-webkit-search-clear-button,
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+  -webkit-appearance: none;
+}
+input[type="search"]::-ms-clear {
+  display: none;
+}
+input[type="search"]::-o-clear {
+  display: none;
+}
+input[type="search"]::-moz-clear {
+  display: none;
+}

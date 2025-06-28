@@ -127,7 +127,24 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      
+      themes: ['docusaurus-theme-search-typesense'],
+      typesense: {
+        typesenseCollectionName: 'docs',  // 본인의 컬렉션 이름
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'ec2-18-117-197-178.us-east-2.compute.amazonaws.com',
+              port: 8108,
+              protocol: 'http',
+            },
+          ],
+          apiKey: 'greatercloneview1!',
+        },
+        typesenseSearchParameters: {
+          query_by: 'hierarchy.lvl1,content',
+        }, // 옵션
+        contextualSearch: true,        // 옵션
+      },
   // 목차 깊이를 위한 themeConfig 설정 추가
       tableOfContents: {
         minHeadingLevel: 2,
