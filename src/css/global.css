@@ -1,0 +1,34 @@
+.navbar {
+  box-shadow: none !important;
+}
+.navbar__inner {
+  background-color: #ff9012;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff901259;
+}
+.navbar__inner > * {
+  color: #fff;
+}
+.navbar__inner:hover {
+  background-color: #ff790c;
+  box-shadow: 0 0 30px #ff790c85;
+}
+.navbar__items {
+  margin-left: 20px;
+}
+.navbar__toggle {
+  margin-right: 0;
+}
+.toggleButton_gllP {
+  display: none !important;
+}
+.navbar--fixed-top {
+  background: transparent;
+  height: 10px;
+}

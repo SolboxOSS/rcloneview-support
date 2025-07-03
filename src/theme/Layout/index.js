@@ -10,6 +10,7 @@ import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
 import ErrorPageContent from "@theme/ErrorPageContent";
 import styles from "./styles.module.css";
+import "@site/src/css/global.css";
 
 //import CustomNavbar from '@site/src/components/TopNavbar'; // Importing the custom navbar component - jay
 import CustomNavbar from "@site/src/components/CustomNavbar"; // Importing the custom navbar component - jay
@@ -30,12 +31,13 @@ export default function Layout(props) {
       <PageMetadata title={title} description={description} />
       <SkipToContent />
       <AnnouncementBar />
-      {/* 네비바를 숨김 -jay */}
-      <div style={{ display: "none" }}>
-        <Navbar />
-      </div>
+
       {/* RcloneView 네비바를 추가 -jay */}
       <CustomNavbar />
+
+      {/* 네비바를 숨김 -jay */}
+      <Navbar />
+
       <NavbarScript />
       {/* ← 이거 반드시 넣어야 실행됨 */}
       <div id={SkipToContentFallbackId} className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}>
