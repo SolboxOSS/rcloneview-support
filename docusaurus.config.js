@@ -57,6 +57,7 @@ const config = {
         routeBasePath: 'howto',              // URL 경로
         sidebarPath: require.resolve('./sidebarsHowto.js'),
         // ... (기타 옵션 필요 시 지정)
+
       },
     ],
     [
@@ -66,6 +67,8 @@ const config = {
         path: 'tutorials',
         routeBasePath: 'tutorials',
         sidebarPath: require.resolve('./sidebarsTutorials.js'),
+        // ... (기타 옵션 필요 시 지정)
+
       },
     ],
   ],
@@ -124,6 +127,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      
+  // 목차 깊이를 위한 themeConfig 설정 추가
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4, // ← 여기서 4로 설정하여 ####까지 목차 표시
+      },
 
       metadata: [
         { name: 'keywords', content: 'rclone, cloud storage, sync, backup, support, rcloneview, multicloud' },
