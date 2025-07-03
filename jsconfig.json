@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@site/*": ["./*"]
-      }
-    },
-    "include": ["src"]
-  }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@site/*": ["./*"]
+    }
+  },
+  "include": ["src"]
+}
