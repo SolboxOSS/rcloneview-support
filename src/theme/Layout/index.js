@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import clsx from "clsx";
 import ErrorBoundary from "@docusaurus/ErrorBoundary";
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from "@docusaurus/theme-common";
@@ -16,16 +16,23 @@ import "@site/src/css/global.css";
 import CustomNavbar from "@site/src/components/CustomNavbar"; // Importing the custom navbar component - jay
 import NavbarScript from "@site/src/components/NavbarScript";
 
+import { SearchProvider } from "../../contexts/SearchContext";
+import SearchResultOverlay from "@site/src/components/SearchResultOverlay";
+
 export default function Layout(props) {
+
+  const [results, setResults] = useState([]); // 이미 이렇게 되어 있다면 OK
+
   const {
     children,
     noFooter,
     wrapperClassName,
-    // Not really layout-related, but kept for convenience/retro-compatibility
     title,
     description,
   } = props;
   useKeyboardNavigation();
+
+
   return (
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
@@ -40,8 +47,24 @@ export default function Layout(props) {
 
       <NavbarScript />
       {/* ← 이거 반드시 넣어야 실행됨 */}
-      <div id={SkipToContentFallbackId} className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}>
-        <ErrorBoundary fallback={params => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>
+      <div
+        id={SkipToContentFallbackId}
+        className={clsx(
+          ThemeClassNames.wrapper.main,
+          styles.mainWrapper,
+          wrapperClassName,
+        )}>
+        <SearchProvider>
+
+          <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
+            {children}
+            
+          </ErrorBoundary>
+
+          {/* 본문에만 오버레이 표시 */}
+          <SearchResultOverlay />
+          
+        </SearchProvider>
       </div>
       {!noFooter && <Footer />}
     </LayoutProvider>
