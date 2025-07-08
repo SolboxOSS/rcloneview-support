@@ -39,11 +39,11 @@ export default function CustomNavbar() {
                   Support
                 </a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="https://forum.rcloneview.com/" target="_blank">
                   Forum
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
