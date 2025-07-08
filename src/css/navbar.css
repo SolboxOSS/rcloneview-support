@@ -436,6 +436,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #ff9012;
+  height: 67px;
 }
 #mainNav .navbar-toggler {
   padding: 3px 6px;
@@ -447,7 +448,7 @@
 
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 18.4px;
   color: #fff;
   letter-spacing: 0.0625em;
 }
@@ -468,7 +469,6 @@
     transition: font-size 0.3s ease-in-out;
   }
   #mainNav .navbar-brand img {
-    height: 2rem;
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
@@ -478,10 +478,6 @@
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
-  }
-  #mainNav.navbar-shrink .navbar-brand svg,
-  #mainNav.navbar-shrink .navbar-brand img {
-    height: 2rem;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
@@ -586,4 +582,32 @@
   .navbar {
     padding: 0;
   }
+}
+
+/*밑줄넣기 부분*/
+.nav-item > .nav-link {
+  position: relative;
+}
+.nav-item > .nav-link:after {
+  content: "";
+  width: 0%;
+  left: 50%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 8px;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover > .nav-link:after {
+  content: "";
+  width: 100%;
+  left: 0px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 6px;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
 }

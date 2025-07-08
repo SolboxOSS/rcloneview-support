@@ -1,7 +1,11 @@
 .navbar {
   box-shadow: none !important;
 }
+/* docusaurus 콘텐츠부분 헤더 커스텀 */
+/* /support 페이지에서도 보이는 문제가 있어서, 7/11 오픈때 가리기로 결정 */
+
 .navbar__inner {
+  display: block;
   background-color: #ff9012;
   width: 70px;
   height: 70px;

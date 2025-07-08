@@ -5,8 +5,7 @@ import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from "@docusau
 import { useKeyboardNavigation } from "@docusaurus/theme-common/internal";
 import SkipToContent from "@theme/SkipToContent";
 import AnnouncementBar from "@theme/AnnouncementBar";
-import Navbar from "@theme/Navbar";
-import Footer from "@theme/Footer";
+//import Navbar from "@theme/Navbar";
 import LayoutProvider from "@theme/Layout/Provider";
 import ErrorPageContent from "@theme/ErrorPageContent";
 import styles from "./styles.module.css";
@@ -35,15 +34,15 @@ export default function Layout(props) {
       {/* RcloneView 네비바를 추가 -jay */}
       <CustomNavbar />
 
-      {/* 네비바를 숨김 -jay */}
-      <Navbar />
+      {/* docusaurus 콘텐츠부분 헤더 커스텀 */}
+      {/* /support 페이지에서도 보이는 문제가 있어서, 7/11 오픈때 가리기로 결정 */}
+      {/* <Navbar /> */}
 
       <NavbarScript />
       {/* ← 이거 반드시 넣어야 실행됨 */}
       <div id={SkipToContentFallbackId} className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}>
         <ErrorBoundary fallback={params => <ErrorPageContent {...params} />}>{children}</ErrorBoundary>
       </div>
-      {!noFooter && <Footer />}
     </LayoutProvider>
   );
 }
