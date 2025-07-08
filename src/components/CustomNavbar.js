@@ -9,7 +9,7 @@ export default function CustomNavbar() {
       <nav className="navbar navbar-expand-lg" id="mainNav">
         <div className="newNav_container">
           {/* Logo */}
-          <a href="/index.html" className="navbar-brand">
+          <a href="/index.html" className="navbar-brand" style={{ display: "flex", alignItems: "center" }}>
             <img alt="RcloneView Logo" src={useBaseUrl("/img/logo_allWhite.svg")} className="logo_white" />
           </a>
 
@@ -23,7 +23,7 @@ export default function CustomNavbar() {
 
           {/* Navigation Links */}
           <div className="navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ms-auto py-4 py-lg-0">
+            <ul className="navbar-nav ms-auto py-lg-0">
               <li className="nav-item">
                 <a className="nav-link" href="/src/pricing.html">
                   Plus
@@ -39,11 +39,11 @@ export default function CustomNavbar() {
                   Support
                 </a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="https://forum.rcloneview.com/" target="_blank">
                   Forum
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

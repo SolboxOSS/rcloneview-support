@@ -1,3 +1,6 @@
+:root {
+  font-size: 1.15rem;
+}
 .navbar {
   position: sticky;
   top: 0;
@@ -35,6 +38,13 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+@media all and (max-width: 991px) {
+  .navbar-nav {
+    flex-grow: 1;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -436,6 +446,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #ff9012;
+  height: 67px;
 }
 #mainNav .navbar-toggler {
   padding: 3px 6px;
@@ -447,9 +458,10 @@
 
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 18.4px;
   color: #fff;
   letter-spacing: 0.0625em;
+  flex-grow: 1;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -468,7 +480,6 @@
     transition: font-size 0.3s ease-in-out;
   }
   #mainNav .navbar-brand img {
-    height: 2rem;
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
@@ -478,10 +489,6 @@
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
-  }
-  #mainNav.navbar-shrink .navbar-brand svg,
-  #mainNav.navbar-shrink .navbar-brand img {
-    height: 2rem;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
@@ -551,7 +558,7 @@
     display: block; /* show 클래스가 붙으면 보이게 함 */
   }
   .show {
-    display: block;
+    display: flex;
     background-color: #ff9012;
     position: absolute;
     top: 60px;
@@ -559,17 +566,17 @@
     right: 0;
   }
   .nav-item {
-    display: inline-block;
+    display: flex;
     padding: 8px 0;
     position: relative;
     margin: 0 4%;
   }
   /* 호버 효과 */
-  .nav-item .nav-link::after {
+  /* .nav-item .nav-link::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -3px; /* 링크 아래에 위치 */
+    bottom: -3px; 
     width: 0;
     height: 2px;
     background-color: #fff;
@@ -585,5 +592,33 @@
   }
   .navbar {
     padding: 0;
-  }
+  }*/
+}
+
+/*밑줄넣기 부분*/
+.nav-item > .nav-link {
+  position: relative;
+}
+.nav-item > .nav-link:after {
+  content: "";
+  width: 0%;
+  left: 50%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 8px;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover > .nav-link:after {
+  content: "";
+  width: 100%;
+  left: 0px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 6px;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
 }
