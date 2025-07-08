@@ -1,0 +1,18 @@
+.footerMobile {
+  justify-content: space-between;
+}
+
+@media all and (max-width: 991px) {
+  .footerMobile {
+    justify-content: center;
+  }
+}
+
+.titleMobile {
+  font-size: 46px;
+}
+@media all and (max-width: 991px) {
+  .titleMobile {
+    font-size: 35px;
+  }
+}

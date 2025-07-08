@@ -1,11 +1,12 @@
 import React from "react";
+import "../css/footer.css";
 
 export default function Footer() {
   return (
     <>
-      <footer className="footer py-4" style={{ background: "#fff", fontFamily: "Poppins" }}>
+      <footer className="footer py-4" style={{ background: "#fff", fontFamily: "Poppins", fontSize: "0.9rem" }}>
         <div className="container">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div className="footerMobile" style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
             <div className="col-lg-6 text-lg-start" style={{ color: "#6c757d" }}>
               Copyright &copy; Bdrive lnc. All rights reserved.
             </div>

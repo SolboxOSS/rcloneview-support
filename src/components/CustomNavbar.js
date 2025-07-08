@@ -10,7 +10,7 @@ export default function CustomNavbar() {
         <div className="newNav_container">
           {/* Logo */}
           <a href="/index.html" className="navbar-brand">
-            <img alt="RcloneView Logo" src={useBaseUrl("/img/logo_allWhite.svg")} className="logo_white" />
+            <img alt="RcloneView Logo" src={useBaseUrl("/img/logo_allWhite.svg")} className="logo_white" style={{ marginTop: 8 }} />
           </a>
 
           {/* Toggle Button for mobile */}
@@ -23,7 +23,7 @@ export default function CustomNavbar() {
 
           {/* Navigation Links */}
           <div className="navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ms-auto py-4 py-lg-0">
+            <ul className="navbar-nav ms-auto py-lg-0">
               <li className="nav-item">
                 <a className="nav-link" href="/src/pricing.html">
                   Plus

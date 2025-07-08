@@ -19,7 +19,7 @@ export default function SupportPage() {
           style={{ height: 270, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
         >
           <article>
-            <h1 className="text-center mb-6 text-gray-900" style={{ fontSize: 46, color: "#555", fontFamily: "Poppins", fontWeight: 600 }}>
+            <h1 className="text-center mb-6 text-gray-900 titleMobile" style={{ color: "#555", fontFamily: "Poppins", fontWeight: 600 }}>
               RcloneView Support Center
             </h1>
             <div className={styles.buttons}>

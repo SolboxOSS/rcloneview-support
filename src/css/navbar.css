@@ -1,3 +1,6 @@
+:root {
+  font-size: 1.15rem;
+}
 .navbar {
   position: sticky;
   top: 0;
@@ -35,6 +38,13 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+@media all and (max-width: 991px) {
+  .navbar-nav {
+    flex-grow: 1;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -451,6 +461,7 @@
   font-size: 18.4px;
   color: #fff;
   letter-spacing: 0.0625em;
+  flex-grow: 1;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -547,7 +558,7 @@
     display: block; /* show 클래스가 붙으면 보이게 함 */
   }
   .show {
-    display: block;
+    display: flex;
     background-color: #ff9012;
     position: absolute;
     top: 60px;
@@ -555,17 +566,17 @@
     right: 0;
   }
   .nav-item {
-    display: inline-block;
+    display: flex;
     padding: 8px 0;
     position: relative;
     margin: 0 4%;
   }
   /* 호버 효과 */
-  .nav-item .nav-link::after {
+  /* .nav-item .nav-link::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -3px; /* 링크 아래에 위치 */
+    bottom: -3px; 
     width: 0;
     height: 2px;
     background-color: #fff;
@@ -581,7 +592,7 @@
   }
   .navbar {
     padding: 0;
-  }
+  }*/
 }
 
 /*밑줄넣기 부분*/
