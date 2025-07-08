@@ -9,8 +9,8 @@ export default function CustomNavbar() {
       <nav className="navbar navbar-expand-lg" id="mainNav">
         <div className="newNav_container">
           {/* Logo */}
-          <a href="/index.html" className="navbar-brand">
-            <img alt="RcloneView Logo" src={useBaseUrl("/img/logo_allWhite.svg")} className="logo_white" style={{ marginTop: 8 }} />
+          <a href="/index.html" className="navbar-brand" style={{ display: "flex", alignItems: "center" }}>
+            <img alt="RcloneView Logo" src={useBaseUrl("/img/logo_allWhite.svg")} className="logo_white" />
           </a>
 
           {/* Toggle Button for mobile */}
