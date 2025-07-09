@@ -111,7 +111,14 @@ const config = {
             './src/css/custom.css',
             './src/css/obsidian-docusaurus-theme.css',  
           ],
+        },
+        
+        sitemap: {
+        filename: 'support-sitemap.xml',
+        changefreq: 'weekly',
+        priority: 0.8, // ← SEO 중요도 높이면 0.8~1.0 추천
         }
+
       }),
     ],
   ],
