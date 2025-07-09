@@ -121,6 +121,20 @@ const config = {
 
       // src: '/support/js/image-zoom.js',
       // async: true,
+
+    // Google tag (gtag.js)
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=AW-11506583647',
+      async: true,
+    },
+
+    // Plausible via Cloudflare Worker Proxy
+    {
+      src: 'https://round-breeze-3e9d.jay-e45.workers.dev/workshop/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js?v=20250331',
+      defer: true,
+      'data-domain': 'rcloneview.com',
+      'data-api': 'https://round-breeze-3e9d.jay-e45.workers.dev/calendar/event',
+    },
   
   ],
 
@@ -199,6 +213,16 @@ const config = {
             },
             "datePublished": "2025-05-15"
           }`
+        },
+
+       {
+          tagName: 'script',
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11506583647');
+          `,
         }
       ],
 
