@@ -15,7 +15,7 @@ tags:
 date: 2025-07-03
 author: Jay
 ---
-# Run Rclone Engine on AWS Cloud
+# Run Rclone Engine on AWS EC2
 
   This guide walks through setting up **Rclone’s rcd daemon** on an **Ubuntu-based EC2 instance**, enabling remote API access from outside AWS.
 

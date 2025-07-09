@@ -159,19 +159,19 @@ Still in the EC2-connected RcloneView window:
     
 👉 Learn more: [Add AWS S3 Remote](/support/howto/remote-storage-connection-settings/s3)
 
-### ➕ Add Google Drive Remote
+### ➕ Add Google Drive Remote (Using OAuth Access Token)
 
-1. Repeat **+ New Remote**
-    
-2. Choose drive as provider
-    
-3. Proceed through the OAuth login flow
-    
-4. Name the remote (e.g., ec2-gdrive) and save
-    
+Instead of completing a new browser-based login flow, you can follow the steps in the guide below to use the **OAuth Access Token** obtained earlier:
 
-  
-<img src="/support/images/en/tutorials/browsing-aws-s3-and-google-drive-via-ec2-rclone.png" alt="browsing aws s3 and google drive via ec2 rclone" class="img-medium img-center" />
+👉 See: [Set Up Google Drive on External Rclone Without Browser](/support/howto/remote-storage-connection-settings/ec2-google-drive-connection)
+
+1. Go to **`+ New Remote`** from the `Remote` menu
+2. Select **Google Drive** as the provider
+3. In the **Options** tab, scroll down and click **Show advanced options**
+4. Paste the previously copied token into the **`token`** field
+5. Name the remote (e.g., `ec2-gdrive`) and save
+
+  <img src="/support/images/en/tutorials/browsing-aws-s3-and-google-drive-via-ec2-rclone.png" alt="browsing aws s3 and google drive via ec2 rclone" class="img-medium img-center" />
 
 
 ---
