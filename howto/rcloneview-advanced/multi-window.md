@@ -1,18 +1,20 @@
 ---
 sidebar_position: 3
-description: Learn how to use RcloneView's New Window feature to connect and manage
+description: Learn how to manage both embedded and external Rclone instances in parallel using RcloneView's New Window feature.
 keywords:
   - rcloneview
   - new window
   - multi-connection
   - external rclone
   - embedded rclone
+  - multiple rclone
 tags:
   - RcloneView
   - new-window
   - multi-connection
   - external-rclone
   - embedded-rclone
+  - multi-windows
 date: 2025-06-22
 author: Jay
 ---

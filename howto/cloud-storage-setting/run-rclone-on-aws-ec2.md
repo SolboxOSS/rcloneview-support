@@ -1,17 +1,25 @@
 ---
 sidebar_position: 2
-description: This is sample Post for writer
+description: Step-by-step guide to set up and run the Rclone Remote Control (rcd) daemon on an Ubuntu-based AWS EC2 instance, including API access and systemd service configuration.
 keywords:
   - rcloneview
-  - howto
-  - cloud
-  - sync
   - rclone
+  - aws
+  - ec2
+  - remote control
+  - rclone rcd
+  - systemd
+  - ubuntu
+  - daemon
+  - cloud storage
+  - rclone api
 tags:
   - RcloneView
-  - howto
-  - Cloud
-  - Sync
+  - aws
+  - aws-ec2
+  - remote-server
+  - rclone-rcd
+  - external-rclone
 date: 2025-07-03
 author: Jay
 ---

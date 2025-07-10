@@ -1,17 +1,31 @@
 ---
 sidebar_position: 3
-description: This is sample Post for writer
+description: Learn how to sync Google Drive and AWS S3 directly in the cloud using RcloneView connected to an external Rclone instance running on AWS EC2.
 keywords:
   - rcloneview
-  - howto
   - cloud
   - sync
   - rclone
+  - aws
+  - ec2
+  - google drive
+  - aws s3
+  - external rclone
+  - cloud to cloud transfer
+  - cloud sync
+  - Cloud Migration
+  - cloud storage
+  - cloud transfer
+  - file synchronization
 tags:
   - RcloneView
-  - howto
-  - Cloud
+  - aws
+  - aws-ec2
+  - google-drive
+  - s3
   - Sync
+  - cloud-file-transfer
+  - cloud-migration
 date: 2025-06-19
 author: Jay
 ---
@@ -68,10 +82,10 @@ Follow the AWS EC2 guide to launch Ubuntu, open port 5572, install Rclone, and r
 - HTTP Basic auth is set (`--rc-user`, `--rc-pass`)  
 - Run the daemon with:
 
-```bash
-  rclone rcd --rc-user=admin --rc-pass=admin --rc-addr=0.0.0.0:5572
-  ```
- 
+ ```bash
+   rclone rcd --rc-user=admin --rc-pass=admin --rc-addr=0.0.0.0:5572
+```
+
 - You verify access via:
 
 ```bash

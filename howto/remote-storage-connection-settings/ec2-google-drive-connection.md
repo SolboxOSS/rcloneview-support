@@ -1,17 +1,26 @@
 ---
 sidebar_position: 7
-description: This is sample Post for writer
+description: Learn how to add a Google Drive remote to an external Rclone running on AWS EC2 without using a web browser, using OAuth tokens generated locally.
 keywords:
   - rcloneview
-  - howto
-  - cloud
-  - sync
   - rclone
+  - google drive
+  - OAuth
+  - token
+  - ec2
+  - external rclone
+  - no browser login
+  - headless
+  - cloud storage
+  - Remote Connection
+  - remote storage
 tags:
-  - RcloneView
-  - howto
-  - Cloud
-  - Sync
+  - Remote-Storage
+  - google-drive
+  - external-rclone
+  - aws-ec2
+  - remote-connection
+  - cloud-storage
 date: 2025-07-07
 author: Jay
 ---

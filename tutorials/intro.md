@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: Learn how to easily transfer or sync Google Drive files to Microsoft OneDrive using RcloneView.
+description: Learn how to copy, sync, and schedule file transfers between Google Drive and OneDrive using RcloneView's intuitive drag-and-drop GUI and job scheduler.
 keywords:
   - rcloneview
   - Google Drive to OneDrive
@@ -12,6 +12,10 @@ keywords:
   - Onedrive
   - google drive
   - job scheduling
+  - rclone
+  - sync
+  - scheduled jobs
+  - drag and drop
 tags:
   - RcloneView
   - Tutorial
@@ -20,6 +24,8 @@ tags:
   - cloud-migration
   - google-drive
   - onedrive
+  - Sync
+  - job
 date: 2025-05-19
 author: Jay
 ---
