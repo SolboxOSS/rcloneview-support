@@ -3,6 +3,6 @@
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Advanced guide to learn the most important RcloneView concepts."
+    "description": "Explore advanced features such as scheduled jobs, multi-window support, external Rclone integration, and more."
   }
 }

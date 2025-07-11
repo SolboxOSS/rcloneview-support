@@ -3,6 +3,6 @@
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Basic guide to learn the most important RcloneView concepts."
+    "description": "Start here to learn essential RcloneView features such as file comparison, sync, and cloud remote setup — ideal for beginners."
   }
 }

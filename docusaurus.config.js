@@ -112,7 +112,7 @@ const config = {
             './src/css/obsidian-docusaurus-theme.css',  
           ],
         },
-        
+
         sitemap: {
         filename: 'support-sitemap.xml',
         changefreq: 'weekly',
@@ -154,9 +154,9 @@ const config = {
         typesenseServerConfig: {
           nodes: [
             {
-              host: 'ec2-18-117-197-178.us-east-2.compute.amazonaws.com',
-              port: 8108,
-              protocol: 'http',
+              host: 'typesense.rcloneview.com',
+              port: 443,
+              protocol: 'https',
             },
           ],
           apiKey: 'greatercloneview1!',

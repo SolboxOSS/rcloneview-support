@@ -8,9 +8,9 @@ const typesenseAdapter = new TypesenseInstantSearchAdapter({
     apiKey: 'greatercloneview1!',
     nodes: [
       {
-        host: 'ec2-18-117-197-178.us-east-2.compute.amazonaws.com',
-        port: 8108,
-        protocol: 'http',
+        host: 'typesense.rcloneview.com',
+        port: 443,
+        protocol: 'https',
       },
     ],
   },

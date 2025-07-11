@@ -1,8 +1,8 @@
 {
-  "label": "Cloud Storage Settings",
+  "label": "Cloud Setup Prerequisites",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Guide to learn how to set cloud storages."
+    "description": "Learn how to prepare external cloud services for use with RcloneView."
   }
 }

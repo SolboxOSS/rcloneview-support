@@ -1,10 +1,10 @@
 {
   "index_name": "docs",
   "start_urls": [
-    "http://rn.solbox.com/support/"
+    "https://rcloneview.com/support/"
   ],
   "sitemap_urls": [
-    "http://rn.solbox.com/support/sitemap.xml"
+    "https://rcloneview.com/support/support-sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [],
