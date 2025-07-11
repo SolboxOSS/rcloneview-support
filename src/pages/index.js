@@ -24,7 +24,7 @@ export default function SupportPage() {
             </h1>
             <div className={styles.buttons}>
               <Link className="button button--secondary button--lg" to="/howto/intro/" style={{ fontFamily: "Poppins" }}>
-                RcloneView Tutorial - 3min ⏱️
+                Quick Start Guide - 3min ⏱️
               </Link>
             </div>
           </article>
