@@ -1,0 +1,75 @@
+/* src/components/MobileSidebarManager/styles.module.css */
+/* 사이드바 메뉴 내 불릿과 텍스트 수평 정렬 */
+.theme-doc-sidebar-menu ul,
+.theme-doc-sidebar-menu li {
+  list-style: none !important;  /* ✅ 점 완전 제거 */
+  padding-left: 0 !important;
+  margin: 0;
+}
+
+.theme-doc-sidebar-menu li::marker {
+  content: none !important;
+}
+
+.hamburgerButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: var(--ifm-color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200; /* 콘텐츠보다 충분히 높게 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.hamburgerButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+.hamburgerIcon {
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hamburgerIcon span {
+  display: block;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  width: 100%;
+  transition: all 0.2s;
+}
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* 어두운 반투명 오버레이 */
+  z-index: 1100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sidebarPanel {
+  background: #fff;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.18);
+  overflow-y: auto;
+  z-index: 1201;
+  padding-top: 54px; /* ← 탑네비 높이만큼 여백 줌 */
+}
+
+@media (min-width: 997px) {
+  .hamburgerButton,
+  .sidebarOverlay {
+    display: none;
+  }
+}
+

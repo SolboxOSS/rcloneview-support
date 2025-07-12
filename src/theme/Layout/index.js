@@ -18,6 +18,8 @@ import NavbarScript from "@site/src/components/NavbarScript";
 import { SearchProvider } from "../../contexts/SearchContext";
 import SearchResultOverlay from "@site/src/components/SearchResultOverlay";
 
+
+
 export default function Layout(props) {
 
   const [results, setResults] = useState([]); // 이미 이렇게 되어 있다면 OK
