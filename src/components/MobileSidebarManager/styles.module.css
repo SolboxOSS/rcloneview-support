@@ -63,7 +63,7 @@
   box-shadow: 2px 0 16px rgba(0,0,0,0.18);
   overflow-y: auto;
   z-index: 1201;
-  padding-top: 54px; /* ← 탑네비 높이만큼 여백 줌 */
+  padding-top: 64px; /* ← 탑네비 높이만큼 여백 줌 */
 }
 
 @media (min-width: 997px) {

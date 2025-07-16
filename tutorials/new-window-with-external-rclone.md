@@ -19,13 +19,13 @@ keywords:
   - file synchronization
 tags:
   - RcloneView
-  - aws
   - aws-ec2
   - google-drive
-  - s3
   - Sync
   - cloud-file-transfer
   - cloud-migration
+  - cloud-to-cloud
+  - aws-s3
 date: 2025-06-19
 author: Jay
 ---
