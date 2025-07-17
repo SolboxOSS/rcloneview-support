@@ -148,24 +148,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      themes: ['docusaurus-theme-search-typesense'],
-      typesense: {
-        typesenseCollectionName: 'docs',  // 본인의 컬렉션 이름
-        typesenseServerConfig: {
-          nodes: [
-            {
-              host: 'typesense.rcloneview.com',
-              port: 443,
-              protocol: 'https',
-            },
-          ],
-          apiKey: 'greatercloneview1!',
-        },
-        typesenseSearchParameters: {
-          query_by: 'hierarchy.lvl1,content',
-        }, // 옵션
-        contextualSearch: true,        // 옵션
+
+      algolia: {
+      appId: 'UGRR3WR5TO',
+      apiKey: '1bb2a6e53b0388ab8305806bd89350e2',
+      indexName: 'rcloneview-support',
+      contextualSearch: true, // 필요시 옵션
       },
+
   // 목차 깊이를 위한 themeConfig 설정 추가
       tableOfContents: {
         minHeadingLevel: 2,

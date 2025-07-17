@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import clsx from "clsx";
 import ErrorBoundary from "@docusaurus/ErrorBoundary";
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from "@docusaurus/theme-common";
@@ -15,14 +15,8 @@ import "@site/src/css/global.css";
 import CustomNavbar from "@site/src/components/CustomNavbar"; // Importing the custom navbar component - jay
 import NavbarScript from "@site/src/components/NavbarScript";
 
-import { SearchProvider } from "../../contexts/SearchContext";
-import SearchResultOverlay from "@site/src/components/SearchResultOverlay";
-
-
 
 export default function Layout(props) {
-
-  const [results, setResults] = useState([]); // 이미 이렇게 되어 있다면 OK
 
   const {
     children,
@@ -56,17 +50,13 @@ export default function Layout(props) {
           styles.mainWrapper,
           wrapperClassName,
         )}>
-        <SearchProvider>
 
           <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
             {children}
             
           </ErrorBoundary>
 
-          {/* 본문에만 오버레이 표시 */}
-          <SearchResultOverlay />
-          
-        </SearchProvider>
+
       </div>
     </LayoutProvider>
   );
