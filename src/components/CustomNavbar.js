@@ -9,7 +9,7 @@ import "../css/navbar.css";
 export default function CustomNavbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg" id="mainNav">
+      <nav className="navbar navbar-expand-md" id="mainNav">
         <div className="newNav_container">
           {/* Logo */}
           <a href="/index.html" className="navbar-brand" style={{ display: "flex", alignItems: "center" }}>
@@ -43,16 +43,11 @@ export default function CustomNavbar() {
 
           {/* Navigation Links */}
           <div className="navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ms-auto py-lg-0">
-
+            <ul className="navbar-nav ms-auto py-md-0">
               {/* 🔍 DocSearch 버튼 – Plus 앞에 위치 */}
               <li className="nav-item">
                 <div className="docsearch-desktop-only">
-                  <DocSearch
-                    appId="UGRR3WR5TO"
-                    indexName="rcloneview-support"
-                    apiKey="1bb2a6e53b0388ab8305806bd89350e2"
-                  />
+                  <DocSearch appId="UGRR3WR5TO" indexName="rcloneview-support" apiKey="1bb2a6e53b0388ab8305806bd89350e2" />
                 </div>
               </li>
 
