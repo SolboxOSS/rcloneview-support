@@ -16,8 +16,8 @@ export default function CustomNavbar() {
             <img alt="RcloneView Logo" src={useBaseUrl("/img/logo_allWhite.svg")} className="logo_white" />
           </a>
 
-          {/* 🔍 DocSearch 모바일용 – MENU 버튼 왼쪽 
-          <div className="block sm:hidden mr-2" id="mobile-docsearch">
+          {/* 🔍 DocSearch 모바일용 – MENU 버튼 왼쪽           */}
+          <div className="mr-2" id="mobile-docsearch">
             <DocSearch
               appId="UGRR3WR5TO"
               indexName="rcloneview-support"
@@ -31,7 +31,7 @@ export default function CustomNavbar() {
               }}
             />
           </div>
-          */}
+
 
           {/* Toggle Button for mobile */}
           <button className="navbar-toggler" aria-label="Toggle navigation">

@@ -4,7 +4,7 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000000000000000000000000000000000000;
+  z-index: 10000;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -442,7 +442,7 @@
 }
 
 #mainNav {
-  z-index: 100000000;
+  z-index: 10000;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #ff9012;
@@ -632,4 +632,23 @@
   .docsearch-desktop-only {
     display: block;
   }
+}
+
+  /* 기존에 없다면 추가 */
+#mobile-docsearch {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #mobile-docsearch {
+    display: block;
+    margin-right: 0.5rem;
+  }
+}
+/* 모든 DocSearch 레이어 요소에 적용 */
+.DocSearch-Container,
+.DocSearch-Dropdown,
+.DocSearch-Modal,
+.DocSearch-Overlay {
+  z-index: 99999 !important;
 }
