@@ -4,7 +4,9 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
+import "../css/search.css";
 import Footer from "../components/footer";
+import { DocSearch } from "@docsearch/react";
 // import styles from './Support.module.css';  // CSS 모듈 또는 custom.css에서 클래스 정의
 
 export default function SupportPage() {
@@ -23,9 +25,12 @@ export default function SupportPage() {
               RcloneView Support Center
             </h1>
             <div className={styles.buttons}>
-              <Link className="button button--secondary button--lg" to="/howto/intro/" style={{ fontFamily: "Poppins" }}>
+              <div className="docsearch-desktop-only">
+                <DocSearch appId="UGRR3WR5TO" indexName="rcloneview-support" apiKey="1bb2a6e53b0388ab8305806bd89350e2" />
+              </div>
+              {/* <Link className="button button--secondary button--lg" to="/howto/intro/" style={{ fontFamily: "Poppins" }}>
                 Quick Start Guide - 3min ⏱️
-              </Link>
+              </Link> */}
             </div>
           </article>
         </div>
