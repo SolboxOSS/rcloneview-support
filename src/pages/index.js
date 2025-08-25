@@ -38,7 +38,7 @@ export default function SupportPage() {
         <div className="bg-gray-100 w-full py-12" style={{ flex: 1 }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
             <Link
-              to="/tutorials/intro/"
+              to="/tutorials/"
               className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition duration-300 text-center hover:no-underline"
             >
               <div className="text-5xl mb-4">📖</div>
@@ -51,7 +51,7 @@ export default function SupportPage() {
             </Link>
 
             <Link
-              to="/howto/intro/"
+              to="/howto/"
               className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition duration-300 text-center hover:no-underline"
             >
               <div className="text-5xl mb-4 text-red-600">❓</div>
