@@ -87,24 +87,26 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         */
-        blog: false, // 블로그 기능 비활성화
-        /*
+       /* blog: false,  */
+        
         blog: {
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
+          /*
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          */
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
-        */
+        
 
         theme: {
           customCss: [
@@ -117,6 +119,7 @@ const config = {
         filename: 'support-sitemap.xml',
         changefreq: 'weekly',
         priority: 0.8, // ← SEO 중요도 높이면 0.8~1.0 추천
+        ignorePatterns: ['/tags/**'], //tags 는 미 포함...
         }
 
       }),

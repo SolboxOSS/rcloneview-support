@@ -21,3 +21,16 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+jay:
+  name: Jay Kim
+  title: Tech Writer
+  url: https://rcloneview.com
+  image_url: https://avatars.githubusercontent.com/u/73866943?v=4
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-jay-kim-articles'
+  socials:
+    x: rcloneview
+    github: rcloneview
+    newsletter: https://rcloneview.com
