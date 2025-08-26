@@ -95,6 +95,11 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
+
+          // ✅ 추가
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 'ALL', // 또는 충분히 큰 숫자(예: 100)
+
           /*
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -119,7 +124,7 @@ const config = {
         filename: 'support-sitemap.xml',
         changefreq: 'weekly',
         priority: 0.8, // ← SEO 중요도 높이면 0.8~1.0 추천
-        ignorePatterns: ['/tags/**'], //tags 는 미 포함...
+        ignorePatterns: ['**/tags/**'], //tags 는 미 포함...
         }
 
       }),
