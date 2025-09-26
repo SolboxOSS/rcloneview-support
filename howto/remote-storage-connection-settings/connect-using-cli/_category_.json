@@ -1,6 +1,6 @@
 {
   "label": "Connect Remote Storages using CLI",
-  "position": 8,
+  "position": 20,
   "link": {
     "type": "generated-index",
     "description": "Guide to learn how to set remote storage connection using CLI."
