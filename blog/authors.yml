@@ -10,3 +10,15 @@ jay:
     x: rcloneview
     github: rcloneview
     newsletter: https://rcloneview.com
+
+steve:
+  name: Steve
+  title: Senior Engineer
+  url: https://rcloneview.com
+  image_url: https://avatars.githubusercontent.com/u/239593223?s=400&u=7dce367eb7b4c9eae26860e3342e0b511b7aa5a5&v=4
+  page:
+    permalink: '/all-steve-articles'
+  socials:
+    x: rcloneview
+    github: rcloneview
+    newsletter: https://rcloneview.com
