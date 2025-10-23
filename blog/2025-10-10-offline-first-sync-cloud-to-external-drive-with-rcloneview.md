@@ -14,11 +14,11 @@ keywords:
   - cloud backup
   - file synchronization
 tags:
-  - RcloneView
-  - CloudBackup
-  - OfflineSync
-  - ExternalDrive
-  - PortableBackup
+  - rcloneview
+  - cloud-backup
+  - offline-sync
+  - external-drive
+  - portable-backup
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';

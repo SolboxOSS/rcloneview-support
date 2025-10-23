@@ -15,7 +15,7 @@ keywords:
   - rclone GUI
   - google drive management
 tags:
-  - RcloneView
+  - rcloneview
   - hard-drive-backup
   - google-drive-sync
   - file-management

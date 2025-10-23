@@ -12,7 +12,7 @@ keywords:
   - rclone GUI
   - multi-cloud migration
 tags:
-  - RcloneView
+  - rcloneview
   - dropbox
   - google-drive
   - cloud-file-transfer
