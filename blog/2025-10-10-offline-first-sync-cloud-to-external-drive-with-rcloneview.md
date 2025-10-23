@@ -2,7 +2,7 @@
 slug: offline-first-sync-cloud-to-external-drive-with-rcloneview
 title: "Offline First: Keep Your Cloud Data Synced Locally on External Drives with RcloneView"
 authors:
-  - jay
+  - steve
 description: Stay productive anywhere with local copies of your cloud data. Sync Google Drive, OneDrive, Dropbox, or S3 to external drives using RcloneView’s GUI—fast, visual, and automated.
 keywords:
   - cloud sync to hard drive
