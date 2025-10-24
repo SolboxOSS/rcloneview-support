@@ -93,15 +93,17 @@ RcloneView makes creating a crypt remote as simple as a few clicks.
 
 1. Open **RcloneView** → click **`+ New Remote`**.  
 2. Choose **Crypt (Encrypted Storage)** as the **remote type**.  
-3. Select the **underlying storage** (e.g., your existing `Google Drive` or `S3` remote).  
-4. Specify a **path** within that remote (e.g., `/Encrypted/` or `/SecureBackup/`).  
+<img src="/support/images/en/blog/add-crypt-remote-1.png" alt="Create encrypted remote in RcloneView" class="img-medium img-center" />
+3. Select the **underlying storage** (e.g., your existing `WebDav', 'Google Drive` or `S3` remote).  
+4. Specify a **path** within that remote (e.g., `webdav:secure` or `drive:documents/encrypted`).  
+<img src="/support/images/en/blog/add-crypt-remote-2.png" alt="Create encrypted remote in RcloneView" class="img-medium img-center" />
 5. Set your **encryption password** and optional **salt**.  
    - Use a strong, unique password—RcloneView stores it securely on your machine.  
-6. Name your encrypted remote (e.g., `Drive-Encrypted` or `S3-Secure`).  
+6. Name your encrypted remote (e.g., `WebDav-Encrypted` or `S3-Secure`).  
 
 Once complete, your encrypted remote appears alongside your normal remotes in RcloneView’s sidebar.
 
-<img src="/support/images/en/blog/add-encrypted-remote.png" alt="Create encrypted remote in RcloneView" class="img-medium img-center" />
+
 
 ---
 
