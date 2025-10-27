@@ -12,10 +12,10 @@ keywords:
   - cloud sync
   - rclone gui
 tags:
-  - RcloneView
-  - GoogleDrive
-  - AmazonS3
-  - CloudBackup
+  - rcloneview
+  - google-drive
+  - amazon-s3
+  - cloud-backup
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
