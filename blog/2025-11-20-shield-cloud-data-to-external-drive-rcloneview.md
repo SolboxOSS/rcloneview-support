@@ -50,7 +50,7 @@ RcloneView layers a friendly UI on top of rclone so anyone can mirror Google Dri
 3. **Organize Explorer panes** with friendly names using [Browse and manage remote storage](/support/howto/rcloneview-basic/browse-and-manage-remote-storage) so each pane matches a cloud drive vs. an external path.
 4. **Design jobs** using [Create sync jobs](/support/howto/rcloneview-basic/create-sync-jobs) or [Synchronize remote storages](/support/howto/rcloneview-basic/synchronize-remote-storages), and preview risk with [Compare folder contents](/support/howto/rcloneview-basic/compare-folder-contents).
 5. **Automate** refreshes through [Job scheduling and execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution) while keeping an eye on throughput in [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring).
-6. **Verify** the external copy with checksum routines from [Checksum-Verified Cloud Migrations](/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview) and mount the drive read-only for audits via [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive).
+6. **Verify** the external copy with checksum routines from [Checksum-Verified Cloud Migrations](https://rcloneview.com/support/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview) and mount the drive read-only for audits via [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive).
 
 ## Step 1 -- Prep the External Drive and Connect Clouds
 
@@ -85,7 +85,7 @@ RcloneView layers a friendly UI on top of rclone so anyone can mirror Google Dri
 ## Step 5 -- Verify, Mount, and Test Restores
 
 - After each scheduled run, check throughput and error counts in [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring).
-- Run periodic `Check` actions or the checksum workflow from the [Checksum-Verified Cloud Migrations](/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview) article to prove the disk matches the cloud.
+- Run periodic `Check` actions or the checksum workflow from the [Checksum-Verified Cloud Migrations](https://rcloneview.com/support/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview) article to prove the disk matches the cloud.
 - Mount the external folder inside RcloneView's Mount Manager in read-only mode for auditors or engineers who need to browse the backup without touching originals.
 - Test a restore quarterly: copy a random project from the external drive back into a sandbox cloud folder and validate application integrity.
 

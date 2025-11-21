@@ -98,7 +98,7 @@ Scheduler gives you centralized visibility: missed runs are highlighted, and eve
 | Cadence | RcloneView action | Evidence produced |
 | --- | --- | --- |
 | Nightly | Scheduler Copy job from Box to Dropbox + Compare report | Transfer log (CSV), Compare export, checksum summary |
-| Weekly | Checksum verification (see [Checksum-Verified Cloud Migrations](/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview)) | `rclone check` log, remediation notes |
+| Weekly | Checksum verification (see [Checksum-Verified Cloud Migrations](https://rcloneview.com/support/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview)) | `rclone check` log, remediation notes |
 | Cutover day | Manual Sync + Compare + mount-based validation | Screenshot of mount, execution log, stakeholder sign-off |
 | 2 weeks post | Archive Box remote to Wasabi/S3 via Copy job for legal hold | Job memo, backup-dir inventory, retention ticket |
 
