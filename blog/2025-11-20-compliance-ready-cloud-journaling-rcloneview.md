@@ -91,7 +91,7 @@ Because schedules live inside RcloneView, you do not need Task Scheduler, cron, 
 
 Verification is what convinces examiners that the journal is trustworthy:
 
-- Pair each Copy job with a scheduled Compare-only run and the checksum routine outlined in [Checksum-Verified Cloud Migrations with RcloneView](/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview).
+- Pair each Copy job with a scheduled Compare-only run and the checksum routine outlined in [Checksum-Verified Cloud Migrations with RcloneView](https://rcloneview.com/support/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview).
 - Watch progress via [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring) so you can capture timestamps and throughput in screenshots.
 - Use [Execute and manage job](/support/howto/rcloneview-basic/execute-manage-job) to export execution logs; store them next to the journaled data for nonrepudiation.
 - When regulators request samples, mount the immutable bucket read-only and export checksums for the requested folders.

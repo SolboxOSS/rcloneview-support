@@ -1,5 +1,5 @@
 ---
-slug: automate-daily-cloud-backups-rcloneview
+slug: automate-your-backup-routine
 title: "Automate Your Backup Routine: Schedule Daily Sync Jobs Across Clouds"
 authors:
   - steve
