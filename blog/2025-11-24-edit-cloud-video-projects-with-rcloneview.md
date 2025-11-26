@@ -44,7 +44,7 @@ Modern shoots land footage on cameras, recorders, and remote offices at once. Mo
 
 A stable mount is the backbone of cloud editing. RcloneView makes it two clicks.
 
-- Connect remotes: add Google Drive, Dropbox, S3/Wasabi/R2, or your NAS via `+ New Remote`. Guides: [/support/howto/remote-storage-connection-settings/add-oath-online-login](/support/howto/remote-storage-connection-settings/add-oath-online-login), [/support/howto/remote-storage-connection-settings/s3](/support/howto/remote-storage-connection-settings/s3), [/support/howto/cloud-storage-setting](/support/howto/cloud-storage-setting)
+- Connect remotes: add Google Drive, Dropbox, S3/Wasabi/R2, or your NAS via `+ New Remote`. Guides: [/support/howto/remote-storage-connection-settings/add-oath-online-login](/support/howto/remote-storage-connection-settings/add-oath-online-login), [/support/howto/remote-storage-connection-settings/s3](/support/howto/remote-storage-connection-settings/s3)
 - Create the mount: Remote Explorer or Mount Manager keeps things simple: [/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive)
 - Pick an edit-friendly path: drive letter on Windows (`X:` via `cmount`), `/Volumes/Cloud/Edit` on macOS, `/mnt/edit` on Linux.
 
