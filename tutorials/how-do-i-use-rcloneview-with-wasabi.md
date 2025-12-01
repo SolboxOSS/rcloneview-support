@@ -155,12 +155,7 @@ Drag & drop is the simplest way to copy files.
 4. Drag them to the right pane and drop into the desired location.  
 5. RcloneView starts a transfer job; progress appears in the **Transfer** tab.
 
-Behavior:
-
-- Drag **local → Wasabi** to upload files.  
-- Drag **Wasabi → local** to download files.  
-- Drag **Wasabi bucket A → another cloud remote** (or to a different Wasabi bucket) to copy across buckets/clouds.
-
+<img src="/support/images/en/tutorials/wasabi-drag-and-drop.png" alt="wasabi drag and drop" class="img-large img-center" />
 For multi‑selection, right‑click actions, and more, see:  
 - [File Management with RcloneView](/support/howto/rcloneview-basic/browse-and-manage-remote-storage)
 
@@ -215,6 +210,9 @@ Then, in the **Sync** dialog:
 4. Click **Run** to start the sync.
 
 <img src="/support/images/en/tutorials/wasabi-configure-sync-job.png" alt="wasabi configure sync job" class="img-large img-center" />
+After running Sync, you can monitor the progress of transferring file in real-time.
+
+<img src="/support/images/en/tutorials/wasabi-real-time-monitoring-transferring.png" alt="wasabi real time monitoring transferring" class="img-large img-center" />
 
 Reference:  
 - [Synchronize Remote Storages Instantly](/support/howto/rcloneview-basic/synchronize-remote-storages)
@@ -230,7 +228,6 @@ Configure a sync as above (source on the left, Wasabi destination on the right).
 
 <img src="/support/images/en/tutorials/wasabi-saved-sync-job-execution.png" alt="wasabi saved sync job execution" class="img-large img-right" />  
 On supported platforms (such as Windows), RcloneView can show a system notification when the job finishes.
-
 
 Reference:  
 - [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs)  
