@@ -30,8 +30,25 @@ With RcloneView you can:
 - Drag & drop files between **local disk ↔ Wasabi** or **Wasabi ↔ other clouds**  
 - Run one‑time transfers or schedule recurring sync jobs  
 
+If you prefer to see it in action first, you can watch a short demo:
+
+<div className="wasabi-rcloneview-demo">
+  <iframe
+    width="800"
+    height="450"
+    src="https://www.youtube.com/embed/yKc6qS2DG2A"
+    title="Wasabi + RcloneView Demo"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+
+<br />
+<br />
+
 > For more about RcloneView, visit the official site: [https://rcloneview.com](https://rcloneview.com)  
-> Download page: [https://rcloneview.com/src/download](https://rcloneview.com/src/download) (Windows, macOS, Linux)
+
 
 ---
 
@@ -143,13 +160,6 @@ Behavior:
 - Drag **local → Wasabi** to upload files.  
 - Drag **Wasabi → local** to download files.  
 - Drag **Wasabi bucket A → another cloud remote** (or to a different Wasabi bucket) to copy across buckets/clouds.
-
-:::note Screenshot suggestion
-Use the existing drag & drop video or screenshots:  
-- `/support/videos/en/howto/rcloneview-basic/windows-explorer-drag-and-drop.mp4`  
-- `/support/videos/en/howto/rcloneview-basic/rclonview-explorer-drag-and-drop.mp4`  
-plus a still shot showing a local folder on the left and a Wasabi bucket on the right.
-:::
 
 For multi‑selection, right‑click actions, and more, see:  
 - [File Management with RcloneView](/support/howto/rcloneview-basic/browse-and-manage-remote-storage)
