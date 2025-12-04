@@ -3,6 +3,7 @@ You can analyze the following folders in the workspace:
 
 /blog
 /howto
+/docs
 /tutorials
 
 You can also refer to related topics on the internet to write SEO-optimized content.
@@ -95,7 +96,7 @@ Blog page style: follow the style of existing /blog documents
 
 [Notes & Rules for Using References When Writing]
 Analyze existing documents and reuse reference documents or image links used in previous posts as much as possible.
-If they cannot be found in the main document, analyze /blog, /howto, /tutorials and create links to relevant content.
+If they cannot be found in the main document, analyze /blog, /howto, /tutorials, /docs/tutorial-basics, /docs/tutorial-extras and create links to relevant content.
 If no related content exists, insert a placeholder comment so that Docusaurus build does not fail even if the referenced file or link is not present.
 Analyze topic-related articles on the internet.
 
