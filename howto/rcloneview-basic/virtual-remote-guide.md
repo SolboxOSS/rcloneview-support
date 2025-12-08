@@ -45,7 +45,7 @@ RcloneView provides nine Virtual Remote types:
 1. **Alias**  
    Shortcut to jump directly to a specific cloud folder.  
    Example: bookmark a deep Google Drive path for instant access.  
-   👉 See: [Alias Remote Guide](../remote-storage-connection-settings/alias-remote-new.md)
+   👉 See: [Alias Remote Guide](../remote-storage-connection-settings/alias-remote.md)
 
 2. **Crypt**  
    Encrypt filenames, contents, and folders for privacy.  
