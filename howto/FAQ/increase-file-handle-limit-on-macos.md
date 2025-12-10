@@ -18,6 +18,7 @@ tags:
 date: 2025-07-25
 author: Jay
 ---
+
 # Increasing File Handle Limit on macOS
 
 When using RcloneView to process a large number of files (e.g., syncing or copying hundreds of files simultaneously), you may encounter the following error:
@@ -41,8 +42,8 @@ launchctl limit maxfiles  # System-wide soft and hard limits
 
 ## 🛠️ Recommended Configuration
 
-- **Soft Limit:** 65536
-- **Hard Limit:** 65536
+- **Soft Limit:** 524288
+- **Hard Limit:** 524288
 
 This configuration supports parallel jobs, mounting remotes, and large sync operations without hitting file descriptor limits.
 
@@ -72,8 +73,8 @@ Paste the following content:
        <string>launchctl</string>
        <string>limit</string>
        <string>maxfiles</string>
-       <string>65536</string>
-       <string>65536</string>
+       <string>524288</string>
+       <string>524288</string>
    </array>
    <key>RunAtLoad</key>
    <true/>
@@ -100,6 +101,7 @@ launchctl limit maxfiles
 ```
 
 ---
+
 ## 📎 Reference Resources
 
 - Apple Support Community: [Too many open files](https://discussions.apple.com/thread/1449787)
@@ -109,5 +111,3 @@ launchctl limit maxfiles
 ---
 
 For any issues, contact support at **[rcloneview@bdrive.com](mailto:rcloneview@bdrive.com)**.
-
-

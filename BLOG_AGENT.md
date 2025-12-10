@@ -15,7 +15,7 @@ We will always follow the 3-step workflow below.
 STEP 1 – Topic & Purpose Proposal (SEO-focused)
 =====================================================
 
-1. Analyze the documents in /blog, /howto, /tutorials in the workspace,
+1. Analyze the documents in /blog, /howto, /docs, /tutorials in the workspace,
    combine topic ideas related to RcloneView or rclone from the internet,
    and propose new blog topics that do not overlap with existing ones.
 
