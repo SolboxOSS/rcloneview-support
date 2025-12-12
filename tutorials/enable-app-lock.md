@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 12
 description: Enable App Lock in RcloneView to require a password at launch and protect remotes, transfers, jobs, mounts, and the internal database.
 keywords:
   - rcloneview

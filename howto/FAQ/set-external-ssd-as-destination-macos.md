@@ -28,6 +28,13 @@ If RcloneView can’t reach your external SSD on macOS (you don’t see the driv
 
 ---
 
+## Quick fix options (pick one)
+
+- **Use the hotfix build (includes the UX fix):** [Download RcloneView 1.1.517 (macOS)](https://downloads.bdrive.com/rclone_view/builds/RcloneView-1.1.517.dmg) and install it to get the SSD path fix immediately. This is a temporary build shared for users hitting this issue before the next official release.
+- **Stay on the current official release:** Follow the manual steps below to browse `/Volumes` and create an Alias to your SSD. This works on the current public build.
+
+---
+
 ## Step-by-Step: Add Your SSD from /Volumes
 
 You can see **`Local Disk`** in left pane of RcloneView.  
@@ -60,7 +67,7 @@ You can see **`Local Disk`** in left pane of RcloneView.
 
 - Make sure the SSD is mounted in Finder (unplug/replug if needed).
 - Reopen `/Volumes` in the path bar and wait a few seconds for the drive list to populate.
-- Still not visible? Restart RcloneView, then try `/Volumes` again. If it keeps failing, report it on the RcloneView forum with your drive model.
+- Still not visible? Restart RcloneView, then try `/Volumes` again. If it keeps failing, report it on the [RcloneView forum](https://forum.rcloneview.com).
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 description: Learn how to easily transfer or sync files between Dropbox and Google Drive using RcloneView’s intuitive GUI—no terminal or scripting required.
 keywords:
   - rcloneview

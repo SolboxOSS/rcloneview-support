@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 8
 description: Learn how to transfer and sync files between MEGA and Google Drive using RcloneView—secure, fast, and no command line required.
 keywords:
   - rcloneview

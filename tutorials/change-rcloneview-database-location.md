@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 9
 description: Change where RcloneView stores its SQLite database (rclone_view.db) and pick a safe, writable folder for history, jobs, mounts, and UI state.
 keywords:
   - rcloneview

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 10
 description: Learn how to migrate your data from Amazon S3 to Cloudflare R2 using RcloneView.
 keywords:
   - rcloneview

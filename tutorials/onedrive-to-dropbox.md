@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 description: "Learn how to seamlessly transfer files between OneDrive and Dropbox using RcloneView’s GUI features: drag‑and‑drop, comparisons, sync, scheduling, and cloud‑to‑cloud efficiency."
 keywords:
   - rcloneview

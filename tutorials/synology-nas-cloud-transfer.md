@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 description: Learn how to automatically detect Synology NAS on your local network, connect it to RcloneView using WebDAV, SMB, or SFTP.
 keywords:
   - rcloneview

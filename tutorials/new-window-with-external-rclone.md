@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 description: Learn how to sync Google Drive and AWS S3 directly in the cloud using RcloneView connected to an external Rclone instance running on AWS EC2.
 keywords:
   - rcloneview

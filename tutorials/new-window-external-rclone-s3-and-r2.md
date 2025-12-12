@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 11
 description: Learn how to transfer large files from AWS S3 to Cloudflare R2 at high speed using an external Rclone daemon on EC2, fully managed with RcloneView.
 keywords:
   - rcloneview

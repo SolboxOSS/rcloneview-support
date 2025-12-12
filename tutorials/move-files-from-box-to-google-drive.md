@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 description: Learn how to seamlessly transfer and sync files between Box and Google Drive using RcloneView’s GUI—featuring drag-and-drop, folder comparison, and job scheduling.
 keywords:
   - rcloneview
