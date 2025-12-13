@@ -34,8 +34,8 @@ Key elements:
   - In-app header and window icon.
 - Color accents adjusted to match Storj’s brand palette where appropriate.
 
-<img src="/support/images/en/howto/remote-storage-connection-settings/storj-brandkit-example.png" alt="storj brandkit example" class="img-large img-center" />
 
+<img src="/support/images/en/howto/remote-storage-connection-settings/storj-brandkit-example.png" alt="storj brandkit example" class="img-large img-center" />
 
 
 ---
@@ -61,9 +61,7 @@ If the user skips the initial connection or closes the wizard:
 - The right-hand panel of the home screen shows a **large Storj tile**.
 - Clicking the tile reopens the **“Add Storj Remote”** wizard at any time.
 
-
 <img src="/support/images/en/howto/remote-storage-connection-settings/on-home-quick-access-wizard-for-storj.png" alt="on home quick access wizard for storj" class="img-large img-center" />
-
 
 This ensures that connecting Storj is always the most visible next action for new or returning users.
 
@@ -85,6 +83,7 @@ After a Storj remote has been configured:
 - This makes repeated sync or copy operations between local folders and Storj a one-click action, regardless of which side the Storj panel is currently on.
 
 <img src="/support/images/en/howto/remote-storage-connection-settings/storj-panel-pinned-on-re-launch.png" alt="storj panel pinned on re launch" class="img-large img-center" />
+
 
 ### 3.2 Storj First in “New Remote” & “Remote Manager”
 
