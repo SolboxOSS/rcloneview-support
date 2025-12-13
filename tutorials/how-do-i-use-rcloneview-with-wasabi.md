@@ -30,21 +30,18 @@ With RcloneView you can:
 - Drag & drop files between **local disk ↔ Wasabi** or **Wasabi ↔ other clouds**  
 - Run one‑time transfers or schedule recurring sync jobs  
 
-If you prefer to see it in action first, you can watch a short demo:
+If you prefer to see it in action first, you can watch a short demo (auto-resizes, no letterbox):
 
-<div className="wasabi-rcloneview-demo">
-  <iframe
-    width="800"
-    height="450"
-    src="https://www.youtube.com/embed/yKc6qS2DG2A"
-    title="Wasabi + RcloneView Demo"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  ></iframe>
-</div>
+<iframe
+  src="https://www.youtube.com/embed/yKc6qS2DG2A"
+  title="Wasabi + RcloneView Demo"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  loading="lazy"
+  style={{aspectRatio: '16 / 9', width: '100%', maxWidth: '960px', height: 'auto', display: 'block', margin: '0 auto', border: 0}}
+></iframe>
 
-<br />
 <br />
 
 > For more about RcloneView, visit the official site: [https://rcloneview.com](https://rcloneview.com)  
