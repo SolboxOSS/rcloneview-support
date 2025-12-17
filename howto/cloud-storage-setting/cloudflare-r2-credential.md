@@ -66,12 +66,17 @@ To authenticate with R2, you’ll need to create API tokens that provide access 
 
 ### ➕ How to Create an Access Key and Secret Key:
 
-1. Go to **R2 → API** in the Cloudflare dashboard.
-2. Click **Manage R2 API Tokens**.
+1. Go to **Storage & databases -> R2 Object storage → Overview** in the Cloudflare dashboard.
+2. Click **Manage** button next to **API Tokens** in **Account Details** section.
+
    <img src="/support/images/en/howto/cloud-storage-setting/cloudflare-manage-r2-api-token.png" alt="cloudflare manage r2 api token" class="img-medium img-center" />
-3. Click **Create API Token**.
-4. Give the token a name (e.g., `Rclone Access`).
-5. Select the permissions:
+   
+3. Click **Create API Token**. Choose the token type(for Account or User) that fits your usage.
+
+<img src="/support/images/en/howto/cloud-storage-setting/cloudflare-create-user-api-token.png" alt="cloudflare create user api token" class="img-medium img-center" />
+
+3. Give the token a name (e.g., `Rclone Access`).
+4. Select the permissions:
    - `Admin Read & Write` (full access)  
 	❗other permissions may not allow bucket access.
 1. Choose whether to apply to:
