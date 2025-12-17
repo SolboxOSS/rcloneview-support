@@ -22,6 +22,8 @@ tags:
   - R2
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Immutable, Ransomware-Proof Backups with S3 Object Lock in RcloneView
@@ -136,3 +138,5 @@ Verification: Weekly Compare + email notification on mismatch
 ```
 
 Lock your backups once, and let RcloneView keep them safe on autopilot.
+
+<CloudSupportGrid />

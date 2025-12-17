@@ -36,6 +36,8 @@ tags:
   - sync
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Encrypt pCloud Files with RcloneView — Easy GUI for rclone crypt
@@ -103,3 +105,5 @@ pCloud already offers built-in security, but some teams need zero-knowledge encr
 Encrypting pCloud with RcloneView takes minutes: add pCloud, wrap it with crypt, copy or sync data, and schedule ongoing protection. You keep the keys, RcloneView handles the heavy lifting.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

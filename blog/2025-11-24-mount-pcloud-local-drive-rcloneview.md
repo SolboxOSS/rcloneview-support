@@ -38,6 +38,8 @@ tags:
   - sync
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount pCloud as a Local Drive on Windows & macOS with RcloneView — Access Your Files Without Syncing
@@ -107,3 +109,5 @@ pCloud libraries often mix small docs and large media. Tuning cache keeps both s
 Mount pCloud once, tune cache, and keep your storage lean. RcloneView makes cloud drives feel local without risky full-sync overhead.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

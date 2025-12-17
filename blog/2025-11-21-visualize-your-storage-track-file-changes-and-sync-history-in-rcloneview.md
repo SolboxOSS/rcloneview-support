@@ -20,6 +20,8 @@ tags:
   - Visualization
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Visualize Your Storage: Track File Changes and Sync History in RcloneView
@@ -81,3 +83,5 @@ For IT admins and data managers, visibility is key to retention. If you can't pr
 Don't settle for a command-line interface that keeps you guessing. Upgrade to RcloneView and turn the lights on. With visual tracking, detailed history, and side-by-side comparisons, you'll never wonder about the state of your data again.
 
 Experience the difference of a visual cloud manager. Download RcloneView today.
+
+<CloudSupportGrid />

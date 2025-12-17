@@ -20,6 +20,8 @@ tags:
   - Sync
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Multi-Cloud Disaster Recovery: Mirror Data Across Regions and Providers
@@ -81,3 +83,5 @@ Trust but verify. It's essential to ensure that your replicated data is intact a
 Implementing a multi-cloud disaster recovery strategy doesn't have to be complicated or expensive. With RcloneView, you can easily mirror your data across regions and providers, ensuring your business remains resilient against any disruption. By automating your cross-region backups and multi-cloud syncs, you gain peace of mind knowing your data is safe, redundant, and always accessible.
 
 Start building your bulletproof DR strategy today with RcloneView.
+
+<CloudSupportGrid />

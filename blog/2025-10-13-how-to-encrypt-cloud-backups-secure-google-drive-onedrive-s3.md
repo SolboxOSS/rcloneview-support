@@ -25,6 +25,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # How to Encrypt Cloud Backups: Secure Google Drive, OneDrive, and S3 with RcloneView

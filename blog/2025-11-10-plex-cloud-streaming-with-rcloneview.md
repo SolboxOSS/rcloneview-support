@@ -22,6 +22,8 @@ tags:
   - mount
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Stream Cloud Movies with Plex & RcloneView — Mount Google Drive, Dropbox, or S3 as Your Library
@@ -120,3 +122,5 @@ Mounting with RcloneView lets Plex treat your cloud like a fast local drive. You
 Ready to try it? Download RcloneView and build your cloud‑powered Plex library today.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

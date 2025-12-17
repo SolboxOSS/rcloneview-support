@@ -27,13 +27,13 @@ tags:
   - wasabi
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Manage Digital Assets Across Multiple Clouds with RcloneView: A Complete Workflow Guide
 
 > Keep RAW, EDIT, EXPORT, and ARCHIVE in sync across Google Drive, Dropbox, pCloud, Mega, S3/Wasabi, and NAS—without buying an expensive DAM. RcloneView gives media teams a two-pane Explorer, Compare, Sync, and Jobs to tame sprawling cloud folders.
-
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 <!-- truncate -->
 
@@ -47,6 +47,9 @@ import RvCta from '../src/components/RvCta';
 - **Lifecycle pressure:** costly hot storage; need cold S3/Wasabi tiers for archives.
 - **Team access:** different roles, permissions, and storage silos across services.
 - **Fragmentation:** folder conventions differ by cloud, causing collisions and lost time.
+
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 ## RcloneView: multi-cloud Explorer for media pipelines
 
@@ -105,9 +108,8 @@ RcloneView’s role: maintain this structure across all clouds with drag-and-dro
 ## Archive to low-cost storage (Wasabi/S3)
 
 - Run **Compare** between RAW on primary storage and the archive bucket to move only changes.
-- Use **Sync** (one-way) with **checksum** enabled where supported.
+- Use **Sync** (one-way).
 - Create a **Job** to run weekly (e.g., Monday 03:00) so RAW stays mirrored off-site.
-- Consider bucket versioning + lifecycle rules for cost control and rollbacks.
 
 ## Share and collaborate via Google Drive/Dropbox
 
@@ -135,7 +137,6 @@ RcloneView’s role: maintain this structure across all clouds with drag-and-dro
 ## Logging, retries, and integrity
 
 - Watch **Transfer** for throughput and retries; pause/resume if needed.
-- Enable **checksum** on S3/Wasabi-capable targets.
 - If throttled (429/5xx), lower concurrency or set bandwidth limits, then rerun; only missing changes move.
 
 ## Why choose RcloneView over a heavy DAM or single-cloud tool?
@@ -149,3 +150,5 @@ RcloneView’s role: maintain this structure across all clouds with drag-and-dro
 ## Summary
 
 RcloneView gives creators, studios, and media teams a practical way to manage RAW → EDIT → EXPORT → ARCHIVE across multiple clouds. Standardize your structure, automate backups and archives, verify with Compare and checksums, and keep collaborators in sync—all without buying a complex DAM or writing scripts.
+
+<CloudSupportGrid />

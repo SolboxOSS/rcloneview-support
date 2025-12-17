@@ -21,6 +21,8 @@ tags:
   - S3
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Automate Daily Cloud Backups with RcloneView Scheduler
@@ -134,3 +136,5 @@ Daily backups shouldn’t require scripts or babysitting. With RcloneView, you c
 Download RcloneView and automate your cloud backups today.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

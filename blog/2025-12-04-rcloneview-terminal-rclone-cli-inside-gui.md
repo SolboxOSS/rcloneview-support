@@ -21,8 +21,11 @@ tags:
   - sync
   - file-management
   - CLI
+
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # RcloneView Terminal: Use the Full Power of rclone CLI Inside a GUI
@@ -124,3 +127,5 @@ Use `--dry-run` to simulate changes and `-vv` to spot slow backends or throttlin
 ## Conclusion
 
 The RcloneView Terminal puts the full rclone CLI alongside the visual tools you already use, so beginners can learn faster and experts can move faster. Try it today to keep your cloud operations, automation experiments, and debug logs in one place.
+
+<CloudSupportGrid />

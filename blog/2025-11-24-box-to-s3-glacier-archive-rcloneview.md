@@ -34,6 +34,8 @@ tags:
   - sync
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Box to S3 + Glacier: Tiered Archives with RcloneView
@@ -99,3 +101,5 @@ Box is great for collaboration, but long-term retention and large media librarie
 RcloneView gives you a visual, repeatable way to exit Box, cut storage costs, and keep compliant archives in AWS. Compare first, copy safely, schedule the rest -- and sleep easy.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

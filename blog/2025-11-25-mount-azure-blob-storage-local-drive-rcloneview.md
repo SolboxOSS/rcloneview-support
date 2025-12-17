@@ -22,6 +22,8 @@ tags:
   - macOS
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Map Azure Blob Storage as a Local Drive on Windows & macOS with RcloneView
@@ -112,3 +114,5 @@ RcloneView wraps everything in a GUI: add your Azure remote once, pick a drive l
 ## Conclusion — Azure Blob as a First-Class Drive
 
 With RcloneView, Azure Blob feels like a native drive: mapped letters or `/Volumes`, smart caching, and automation—all without CLI scripts. Add your container once, tune VFS for your workload, and keep your self-hosted and multi-cloud storage in one control panel.
+
+<CloudSupportGrid />

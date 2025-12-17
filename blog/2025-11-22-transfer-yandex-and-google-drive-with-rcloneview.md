@@ -25,6 +25,8 @@ tags:
   - cloud-to-cloud
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Transfer Files Between Yandex Disk and Google Drive with RcloneView
@@ -161,3 +163,5 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
 
 RcloneView makes transferring files between **Yandex Disk** and **Google Drive** simple and reliable.  
 With native login for both services, visual Explorer panes, Compare, Sync, and Jobs, you can migrate or maintain your multi-cloud workflows without touching a command line.
+
+<CloudSupportGrid />

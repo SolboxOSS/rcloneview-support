@@ -23,6 +23,8 @@ tags:
   - S3
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Warm-Standby Disaster Recovery Across Clouds with RcloneView (S3, Wasabi, R2, OneDrive)
@@ -141,3 +143,5 @@ Failover: Mount r2:dr-standby and point workloads to the mount
 ```
 
 Keep your standby warm, tested, and ready so failover is a switch—not a scramble.
+
+<CloudSupportGrid />

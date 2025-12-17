@@ -24,6 +24,8 @@ tags:
   - automation
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Transfer Files Between pCloud and Google Drive with RcloneView
@@ -125,3 +127,5 @@ RcloneView combines rclone’s reliability with a visual workflow so teams and a
 ## Summary
 
 RcloneView delivers fast, reliable, no-CLI transfers between **pCloud** and **Google Drive**. With side-by-side browsing, Compare, Sync, reusable Jobs, and scheduling, you can handle migrations or recurring backups without manual downloads or re-uploads.
+
+<CloudSupportGrid />

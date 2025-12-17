@@ -26,6 +26,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # One App to Rule Them All: Centralize Amazon S3, Wasabi, and Cloudflare R2 with RcloneView

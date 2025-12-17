@@ -24,6 +24,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # From NAS to Cloud: Automate Synology & QNAP Backups with RcloneView

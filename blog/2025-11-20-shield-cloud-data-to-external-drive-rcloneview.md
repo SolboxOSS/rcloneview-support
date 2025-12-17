@@ -24,6 +24,8 @@ tags:
   - Dropbox
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Shield Every Cloud Account with External Drive Backups in RcloneView
@@ -111,3 +113,4 @@ Absolutely. Map the NAS share locally, add it in the Explorer, and treat it like
 
 A disciplined cloud-to-external-drive workflow keeps your business running through outages, ransomware, and travel. RcloneView turns the multi-cloud plumbing into a repeatable playbook, so plug in the drive, schedule the jobs, and relax knowing you own an offline rescue copy.
 
+<CloudSupportGrid />

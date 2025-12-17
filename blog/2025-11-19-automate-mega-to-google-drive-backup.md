@@ -21,6 +21,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Backup MEGA to Google Drive Automatically with RcloneView -- No More Manual Downloads

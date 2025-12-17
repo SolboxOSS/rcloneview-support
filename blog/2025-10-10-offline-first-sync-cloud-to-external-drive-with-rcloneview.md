@@ -22,6 +22,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Offline First: Keep Your Cloud Data Synced Locally on External Drives

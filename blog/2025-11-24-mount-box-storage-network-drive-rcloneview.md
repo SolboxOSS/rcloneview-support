@@ -33,6 +33,8 @@ tags:
   - sync
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount Box Storage as a Network Drive with RcloneView for Seamless Team Access
@@ -100,3 +102,5 @@ Box is excellent for collaboration, but local sync clients can bloat disks and s
 Mount Box once, tune cache, and give teams a fast, low-overhead network drive without heavyweight sync clients. RcloneView keeps everything visible, logged, and easy to manage.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

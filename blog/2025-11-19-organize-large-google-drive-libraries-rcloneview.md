@@ -23,6 +23,8 @@ tags:
   - Workflow
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Organize Large Google Drive Libraries with RcloneView -- Sort, Filter, Compare, and Clean Up Duplicates
@@ -127,3 +129,5 @@ Save a Compare preset per department so you can re-run the same cleanup monthly.
 Once teams see how fast it is to compare, filter, and sort Drive folders in RcloneView, they are more willing to schedule monthly hygiene runs instead of waiting for emergency quotas. Package the cleanup recipe into an SOP, export Compare presets, and share them with every Shared Drive owner so duplicates and junk files never pile up again.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

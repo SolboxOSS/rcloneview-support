@@ -23,6 +23,8 @@ tags:
   - Workspace
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount Google Shared Drives in Windows & macOS with RcloneView -- Full Access, No Sync Client Needed
@@ -153,4 +155,4 @@ RcloneView makes Shared Drive access predictable: no bloated sync folders, no sc
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-
+<CloudSupportGrid />

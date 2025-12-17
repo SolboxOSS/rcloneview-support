@@ -22,6 +22,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Hybrid Cloud Made Easy: Combine NAS, S3, and Cloudflare R2 in One Workflow

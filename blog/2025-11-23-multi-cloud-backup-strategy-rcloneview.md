@@ -27,6 +27,8 @@ tags:
   - s3
   - nas
 ---
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Multi-Cloud Backup Strategy with RcloneView: Google Drive, OneDrive, S3, and NAS
@@ -112,3 +114,5 @@ Tip: Start with one-way copy to a backup target; add pruning only after you conf
 ## Summary
 
 RcloneView makes multi-cloud backups practical: connect Google Drive, OneDrive, S3, Wasabi, and NAS; design one-way copy or sync flows; enable checksum verification; and schedule nightly runs—all without CLI scripts. With clear logs and retries, you can maintain redundant copies and recover quickly when something goes wrong.
+
+<CloudSupportGrid />

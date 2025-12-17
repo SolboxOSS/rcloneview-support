@@ -24,6 +24,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Manage Multiple Cloud Accounts in One View with RcloneView (Google, OneDrive, Dropbox, S3)
@@ -138,3 +139,5 @@ Want help setting up a specific provider? Check these next:
 - Remote Manager overview: /support/howto/rcloneview-basic/remote-manager
 - Real‑time transfer monitoring: /support/howto/rcloneview-basic/real-time-transfer-monitoring
 - Mount clouds as local drives: /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive
+
+<CloudSupportGrid />

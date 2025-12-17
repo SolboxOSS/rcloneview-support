@@ -22,6 +22,8 @@ tags:
   - Integrity
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Checksum-Verified Cloud Migrations with RcloneView (Drive, Dropbox, S3, R2)
@@ -137,3 +139,5 @@ Cutover: Final Sync + Compare, then Mount r2:global-marketing for validation
 ```
 
 Checksum every migration, and you only have to move the data once.
+
+<CloudSupportGrid />

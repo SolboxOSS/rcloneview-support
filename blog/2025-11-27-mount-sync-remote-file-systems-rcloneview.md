@@ -26,18 +26,20 @@ tags:
   - SMB
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount, Sync, and Manage Remote File Systems Easily with RcloneView
 
 > File-system remotes like **SFTP**, **SMB**, and **WebDAV** deserve the same comfort as cloud drives. RcloneView gives you a two-pane Explorer, Compare, Sync, and a mount manager so you can treat remote servers and NAS boxes like local disks—without memorizing rclone flags.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
-
 <!-- truncate -->
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+
 <!-- Image verified: /images/en/howto/rcloneview-basic/rcloneview-user-interface.png exists -->
-<img src="/support/images/en/howto/rcloneview-basic/rcloneview-user-interface.png" alt="RcloneView user interface overview" class="img-medium img-center" />
 
 ## Local FS vs. Remote FS: why it matters
 
@@ -191,3 +193,5 @@ Remote FS copies should be deliberate. Use **Compare** to avoid overwriting newe
 ## Summary
 
 RcloneView turns remote file systems into first-class citizens. Connect SFTP, SMB, WebDAV, NAS, and cloud remotes, mount them like local drives, compare before syncing, and automate backups with Jobs and schedules—all from a GUI built on rclone’s engine. Treat every storage endpoint the same way: visible, verifiable, and automated.
+
+<CloudSupportGrid />

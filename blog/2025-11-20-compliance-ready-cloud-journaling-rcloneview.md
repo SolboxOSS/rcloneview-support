@@ -22,6 +22,8 @@ tags:
   - Automation
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # RcloneView Compliance-Ready Cloud Journaling Blueprint for Regulated Teams
@@ -121,3 +123,5 @@ Scheduler dashboards flag missed runs in yellow. From [Execute and manage job](/
 Absolutely. Create two destinations inside the same job: a hot Wasabi bucket for fast restores and a Glacier/R2 bucket for 7-year retention. Multi-window Explorer views (see [Multi-window operations](/support/howto/rcloneview-advanced/multi-window)) make it easy to drag source folders into both jobs without reconfiguration.
 
 RcloneView turns rclone's proven engine into a guided experience so compliance, IT, and legal teams can all participate in protecting critical records. Build the journal once, schedule it, and you will always have the evidence regulators demand.
+
+<CloudSupportGrid />

@@ -23,6 +23,8 @@ tags:
   - NAS
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount SFTP or SMB Storage as Local Drives with RcloneView — Self-Hosted Cloud Integration
@@ -114,3 +116,5 @@ RcloneView supports both, alongside Google Drive, S3, Dropbox, OneDrive, and mor
 ## Conclusion — Self-Hosted Meets Multi-Cloud
 
 SFTP and SMB no longer need to feel like legacy network drives. With RcloneView you get cloud-like mounts, smart caching, and a unified dashboard that mixes NAS, VPS, and public clouds without scripts. Add your server once, choose a drive letter or `/Volumes` path, and let RcloneView keep the mount alive while you focus on your files.
+
+<CloudSupportGrid />

@@ -23,6 +23,8 @@ tags:
   - automation
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Transfer Files Between OneDrive and Google Drive with RcloneView
@@ -124,3 +126,5 @@ RcloneView layers a guided UI on top of rclone, so even large migrations stay re
 ## Summary
 
 RcloneView removes the download/re-upload shuffle between **OneDrive** and **Google Drive**. With side-by-side browsing, Compare, Sync, reusable Jobs, and scheduling, you can execute one-off moves or recurring backups with confidence—no command line required.
+
+<CloudSupportGrid />

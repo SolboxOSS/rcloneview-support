@@ -26,6 +26,9 @@ tags:
   - s3
   - NAS
 ---
+
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Complete Cloud-to-Cloud Data Migration Guide Using RcloneView
@@ -200,3 +203,5 @@ import RvCta from '../src/components/RvCta';
 ## Summary
 
 RcloneView removes the risk and guesswork from cloud-to-cloud migrations. With Compare, checksum-aware transfers, retries, Jobs, and schedules, you can move from Dropbox, OneDrive, S3, or NAS to new clouds without losing data—or forcing teams into the command line. Standardize your folder map, validate each batch, and flip the switch with confidence.
+
+<CloudSupportGrid />

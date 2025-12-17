@@ -23,7 +23,10 @@ tags:
   - cloud-storage
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
+
 
 # Lock Down RcloneView with App Lock: Protect Remotes, Jobs, and History
 
@@ -31,9 +34,11 @@ import RvCta from '../src/components/RvCta';
 
 RcloneView’s App Lock adds a simple password screen at launch or when reopening the app. It protects the internal database (`rclone_view.db`), which holds your remotes, job definitions, mount settings, job history, and transfer logs—so sensitive automation stays private even if the workstation is shared.
 
+<!-- truncate -->
+
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
 
 ## What App Lock protects
 
@@ -96,3 +101,5 @@ Yes. Once unlocked, the built-in Terminal works normally; App Lock only gates ac
 ## Wrap-up
 
 A password prompt may seem small, but it’s a powerful shield for remotes, automation, and history. Enable App Lock, keep your `rclone_view.db` in a secure location, and run your cloud workflows knowing they stay private—even on shared machines.
+
+<CloudSupportGrid />

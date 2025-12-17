@@ -33,6 +33,8 @@ tags:
   - google-drive
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Sync Yandex Disk with Google Drive Using RcloneView — Multi-Cloud Workflow Made Simple
@@ -115,3 +117,5 @@ import RvCta from '../src/components/RvCta';
 RcloneView makes Yandex Disk ↔ Google Drive sync straightforward: compare first, copy safely, schedule the rest, and monitor everything from one dashboard.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

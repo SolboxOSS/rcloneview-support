@@ -21,6 +21,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Encrypt, Sync, and Protect MEGA Files with RcloneView — GUI for rclone MEGA Users

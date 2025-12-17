@@ -22,6 +22,7 @@ tags:
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Optimize RcloneView Mount Performance for S3 and Cloudflare R2
@@ -157,3 +158,5 @@ Watch for rate limits; if you see 429/503 responses, back off transfers by 25% a
 ---
 
 Mounts feel local when tuned well. With RcloneView's GUI controls for cache, concurrency, and logging, you can keep S3 and R2 performing like on-prem storage - no shell scripts required.
+
+<CloudSupportGrid />

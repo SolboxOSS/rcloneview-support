@@ -22,6 +22,8 @@ tags:
   - Wasabi
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Optimize Plex Performance with RcloneView’s VFS Cache — Smooth Cloud Playback
@@ -119,3 +121,5 @@ Tip: Keep Plex metadata local on SSD; only media lives in the cloud.
 Most Plex buffering on cloud mounts is a cache configuration issue. RcloneView removes the CLI complexity and lets you apply the proven VFS recipes in a few clicks: mount your cloud, set cache to Full (or WriteBack), place the cache on SSD, and increase read‑ahead. The result feels local—even for big libraries.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

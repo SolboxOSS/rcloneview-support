@@ -23,6 +23,8 @@ tags:
   - file-management
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Declutter Cloud Photo Libraries with RcloneView: Compare, Clean, and Protect Every Shot
@@ -81,3 +83,5 @@ If your photo and video history lives in three or more places, drift is inevitab
 Ready to clean up the sprawl and stop paying for duplicate pixels? Mount, compare, and schedule your way to a single, protected library with RcloneView.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

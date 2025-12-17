@@ -25,18 +25,20 @@ tags:
   - SMB
   - WebDAV
 ---
+
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # How to Backup and Archive CCTV/NVR Footage to Cloud Storage Automatically Using RcloneView
 
 > Keep surveillance video safe from theft, fire, or device failure. RcloneView connects NAS/SFTP/SMB NVR folders to Wasabi, S3, or Google Drive, then automates Compare + Sync Jobs so only new footage moves and evidence stays intact.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
-
 <!-- truncate -->
 
-<!-- Image verified: exists -->
-<img src="/support/images/en/howto/rcloneview-basic/rcloneview-user-interface.png" alt="RcloneView user interface overview" class="img-medium img-center" />
+
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 ## 1. Why cloud backup matters for CCTV footage
 
@@ -63,7 +65,7 @@ import RvCta from '../src/components/RvCta';
 - **Sync Jobs + scheduling** run backups automatically, no scripts required.
 
 <!-- Image verified: exists -->
-<img src="/support/images/en/howto/rcloneview-basic/explorer-view-layout.png" alt="Two-pane Explorer layout for CCTV backup" class="img-medium img-center" />
+
 
 ## 4. Step-by-step setup for CCTV/NVR backup
 
@@ -132,57 +134,30 @@ import RvCta from '../src/components/RvCta';
 - **Audit/review:** copy selected days to Google Drive for investigators and managers.  
 - **Franchise or multi-site:** separate buckets/prefixes per store to isolate access.
 
-## 6. Security and compliance
 
-- Add an **encrypted (crypt) remote** before cloud upload if policy demands it.  
-- Limit remote credentials to least privilege; use bucket policies or Drive share controls.  
-- Retain **logs** for chain-of-custody; export job history if required by auditors.  
-- Align retention with privacy rules (e.g., erase after defined periods where mandated).
-
-<!-- Image verified: exists -->
-<img src="/support/images/en/howto/rcloneview-basic/log-tab.png" alt="Log tab for CCTV backup monitoring" class="img-medium img-center" />
-
-## 7. Cost optimization for video archives
+## 6. Cost optimization for video archives
 
 - Store rarely accessed footage on **Wasabi** or S3 infrequent-access tiers.  
 - Keep only active days on Google Drive for quick sharing.  
 - Use lifecycle rules on S3/Wasabi to transition older objects to cheaper tiers.  
 - Exclude camera test clips and motionless segments if your policy allows.
 
-## 8. Restore footage when needed
+## 7. Restore footage when needed
 
 - Browse the cloud remote in Explorer; filter by date folder.  
 - Copy only the relevant hour/day to local disk for review.  
 - Use **Compare** to confirm restored files match originals (size/time or checksum).  
 - For legal holds, duplicate to a separate read-only prefix/bucket.
 
-## 9. Real-world deployment patterns
+## 8. Real-world deployment patterns
 
 - **Small retail:** NVR → Wasabi hourly; keep 30 days in cloud, 7 days local.  
 - **Factory:** CCTV → NAS → nightly Wasabi copy; monthly S3 cold archive.  
 - **Franchise network:** per-location prefixes in one bucket; Drive copies for HQ audits.  
-- **Security provider:** per-customer buckets, scheduled jobs, and encrypted remotes for regulated sites.
+- **Security provider:** per-customer buckets, scheduled jobs, and encrypted remotes for regulated sites. 
 
-## 10. Operational checklist
-
-- [ ] NVR remote (SMB/SFTP) added and browsable.  
-- [ ] Cloud remote (Wasabi/S3/Drive) added and authenticated.  
-- [ ] Folder structure confirmed (YYYY/MM/DD or camera-based).  
-- [ ] Pilot Compare run done; no unexpected mismatches.  
-- [ ] One-way copy executed; deletes disabled initially.  
-- [ ] Job saved and scheduled; bandwidth tuned.  
-- [ ] Logs reviewed; retries clean; checksum enabled where supported.  
-- [ ] Restore test completed for a sample day.  
-- [ ] Retention and encryption policies documented.
-
-## 11. Troubleshooting quick wins
-
-- **429/5xx throttling:** lower concurrency, add bandwidth caps, retry later.  
-- **403/permission denied:** re-auth the remote; check bucket ACLs or Drive sharing.  
-- **Slow LAN → cloud:** run overnight; ensure NAS link is wired and stable.  
-- **Name conflicts:** split cameras into separate folders or append site IDs.  
-- **Partial uploads:** rerun the same job—unchanged files skip automatically.
-
-## 12. Wrap-up
+## 9. Wrap-up
 
 RcloneView turns CCTV/NVR backups into a predictable, no-CLI workflow. Connect your NAS or recorder via SMB/SFTP, pair it with Wasabi/S3/Google Drive, preview deltas with Compare, and schedule checksum-aware Sync Jobs. With automation, logging, and encryption options, you can meet retention, audit, and disaster-recovery needs without babysitting nightly uploads.
+
+<CloudSupportGrid />

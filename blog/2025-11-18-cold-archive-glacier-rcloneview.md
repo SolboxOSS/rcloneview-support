@@ -23,6 +23,8 @@ tags:
   - Wasabi
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Tiered Cloud Backup to S3 Standard, Wasabi, and Glacier Deep Archive with RcloneView
@@ -152,3 +154,5 @@ Canary: keep /canary.txt in all tiers for health checks
 ```
 
 Tier once, schedule always, and keep both costs and RPO under control with RcloneView.
+
+<CloudSupportGrid />

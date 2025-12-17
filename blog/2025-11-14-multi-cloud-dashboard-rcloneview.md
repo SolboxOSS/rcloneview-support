@@ -20,6 +20,8 @@ tags:
   - S3
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Sync Multiple Clouds in One Dashboard — RcloneView for Multi-Cloud Management
@@ -134,3 +136,5 @@ Multi-cloud is the norm; fragmented workflows shouldn’t be. RcloneView gathers
 Try RcloneView today—your all-in-one cloud workspace starts here.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

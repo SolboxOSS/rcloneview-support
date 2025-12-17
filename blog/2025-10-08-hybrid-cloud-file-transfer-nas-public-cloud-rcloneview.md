@@ -26,6 +26,9 @@ tags:
   - smb
   - webdav
 ---
+
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Hybrid Cloud File Transfer Between On-Prem NAS and Public Cloud Using RcloneView
@@ -186,3 +189,5 @@ Hybrid moves can get messy; Compare makes deltas obvious.
 ## Summary
 
 RcloneView turns hybrid cloud work into a repeatable workflow: add NAS and cloud remotes, compare before copying, mount when apps demand local paths, and automate backups with Jobs and schedules. With visible logs, retries, and checksum support, you can keep on-prem performance and cloud resilience without touching the CLI.
+
+<CloudSupportGrid />

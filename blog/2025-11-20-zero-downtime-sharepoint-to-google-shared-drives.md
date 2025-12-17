@@ -23,6 +23,8 @@ tags:
   - Scheduler
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Zero-Downtime SharePoint to Google Shared Drives Migration with RcloneView
@@ -121,4 +123,4 @@ Yes. Leave the Sync job active with weekly cadence, or split Explorer panes into
 
 RcloneView turns multi-cloud migrations into a predictable playbook: set up remotes, preview differences, stage Copy + Sync jobs, automate deltas, and mount for QA. Your teams stay productive on SharePoint until the exact moment you redirect them to Google Shared Drives.
 
-
+<CloudSupportGrid />

@@ -23,6 +23,8 @@ tags:
   - macOS
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount Amazon S3 Buckets as Local Drives with RcloneView (Windows & macOS)
@@ -109,3 +111,4 @@ Use the "Mount path" field to point to `bucket/prefix`, or create Explorer bookm
 
 RcloneView condenses what used to be a README of CLI flags into a few clicks: add your S3 remote once, save the mount template, and let Scheduler reattach it on every boot. Along the way you gain Compare previews, Sync jobs, multi-cloud Explorer panes, and monitoring dashboards from the same app. Download the latest build and give those 22K+ monthly searchers the mount experience they have been looking for.
 
+<CloudSupportGrid />

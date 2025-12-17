@@ -23,6 +23,8 @@ tags:
   - Scheduler
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Zero-Downtime Box to Dropbox Compliance Migration with RcloneView
@@ -114,3 +116,5 @@ Lower `--transfers` and `--checkers`, set bandwidth caps, and let Scheduler stag
 Yes. Leave the Sync job enabled weekly or monthly, or switch to Compare-only mode so you can spot new Box edits without moving data. Multi-window workflows (/support/howto/rcloneview-advanced/multi-window) make it easy to drag specific projects across both clouds when stakeholders request it.
 
 RcloneView turns rclone's enterprise engines into a guided control panel, letting you migrate Box to Dropbox with zero downtime, transparent deltas, and documented checkpoints for every audit.
+
+<CloudSupportGrid />

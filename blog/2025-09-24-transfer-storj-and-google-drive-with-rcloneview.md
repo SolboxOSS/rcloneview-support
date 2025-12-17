@@ -24,6 +24,8 @@ tags:
   - automation
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Transfer Files Between Storj and Google Drive with RcloneView
@@ -126,3 +128,5 @@ RcloneView builds on rclone so you get reliability and advanced options—withou
 ## Summary
 
 RcloneView makes Storj ↔ Google Drive migrations straightforward: connect remotes, browse side-by-side, compare, sync, or schedule recurring jobs—all without the command line.
+
+<CloudSupportGrid />

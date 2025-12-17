@@ -22,8 +22,12 @@ tags:
   - sync
   - backup
   - file-management
+unlisted: true
+
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Troubleshooting rclone Errors with RcloneView: Fix API Limits, Permissions, Timeouts, and More
@@ -32,9 +36,11 @@ import RvCta from '../src/components/RvCta';
 
 If you have ever stared at a wall of rclone output wondering why a job failed, RcloneView can shorten the loop. The built-in Terminal, verbose logs, and Job History help you reproduce issues, isolate failing files, and adjust performance or authentication settings without leaving the app.
 
+<!-- truncate -->
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
+
 
 ## Why rclone errors happen
 
@@ -138,3 +144,5 @@ rclone check source:folder dest:folder --one-way --size-only
 ## Conclusion
 
 RcloneView turns rclone debugging into a guided workflow: autocomplete to avoid syntax mistakes, in-app logs to see what failed, and GUI controls to tune concurrency or schedules. Use the Terminal and Job History together to resolve errors faster and keep transfers moving.
+
+<CloudSupportGrid />

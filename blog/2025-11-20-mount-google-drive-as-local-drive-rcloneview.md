@@ -23,6 +23,8 @@ tags:
   - macOS
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Mount Google Drive as a Local Drive on Windows & macOS with RcloneView
@@ -105,3 +107,5 @@ Yes. Add one remote per account in Remote Manager, then create a mount entry for
 Enable Auto Mount plus Scheduler's "Restart failed jobs" option. You can also add a scheduled Compare action that pings the mount hourly to keep it warm.
 
 Mounting Google Drive is still a top Google Search because the CLI answers are complex. RcloneView gives those 40K+ searchers a no-code path: connect your Google account once, hit Mount, and get a dependable drive letter or Finder volume with all the multi-cloud power (Compare, Sync, Scheduler) you already rely on. Download the latest build and retire your mount scripts today.
+
+<CloudSupportGrid />

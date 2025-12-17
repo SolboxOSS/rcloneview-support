@@ -24,18 +24,18 @@ tags:
   - productivity
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Best Cloud Storage Management Tool: Why RcloneView is the Ultimate Multi-Cloud Explorer
 
-> Stop juggling multiple clients. RcloneView wraps rclone’s 100+ providers in a fast, two-pane Explorer with Compare, bulk copy, scheduling, and rich logging—so you can outpace Cyberduck and WinSCP without touching the CLI.
-
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+> Stop juggling multiple clients. RcloneView wraps rclone’s 100+ providers in a fast, two-pane Explorer with Compare, bulk copy, scheduling, and rich logging.
 
 <!-- truncate -->
 
-<!-- Image placeholder: add `/support/images/en/tutorials/rcloneview-multi-cloud-explorer.png` if available -->
-<img src="/support/images/en/tutorials/new-remote-all-remotes.png" alt="rcloneview multi cloud explorer" class="img-large img-center" />
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 ## 100+ remotes in one place
 
@@ -48,6 +48,9 @@ import RvCta from '../src/components/RvCta';
 
 - [Add Google Drive Remote](/support/howto/#step-2-adding-remote-storage-google-drive-example)
 - [Remote Manager](/support/howto/rcloneview-basic/remote-manager/)
+
+<!-- Image placeholder: add `/support/images/en/tutorials/rcloneview-multi-cloud-explorer.png` if available -->
+<img src="/support/images/en/tutorials/new-remote-all-remotes.png" alt="rcloneview multi cloud explorer" class="img-large img-center" />
 
 ## Two-pane Explorer productivity
 
@@ -107,3 +110,5 @@ import RvCta from '../src/components/RvCta';
 ## Summary
 
 RcloneView is a multi-cloud Explorer that outperforms traditional clients: add 100+ remotes, compare before copying, move data faster, and automate backups or migrations—all with a friendly GUI over rclone. Try it once and retire the tab-hopping workflow.
+
+<CloudSupportGrid />

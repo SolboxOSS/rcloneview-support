@@ -21,6 +21,8 @@ tags:
   - S3
 ---
 
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # Offline First Sync: Keep Your Cloud Data on External Drives with RcloneView
@@ -128,3 +130,5 @@ An external drive copy means you can disconnect from the internet without sacrif
 Your cloud, your drive—available anywhere, even without internet.
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />
