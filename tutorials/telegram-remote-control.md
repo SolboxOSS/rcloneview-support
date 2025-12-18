@@ -224,16 +224,16 @@ Use `/listjobs` to copy the exact job name.
 
 <img src="/support/images/en/tutorials/telegram/telegram-job-start_by_jobname.jpg" alt="telegram start by job name" class="img-large img-center" />
 
-### `/start --index <number>` (Recommended)
+### `/start #<number>` (Recommended)
 
-Starts a job by index from the latest `/listjobs` result:
+Start a job by its number from the latest `/listjobs` result:
 
 ```
-/start --index 2
+/start #2
 ```
 
 :::important Run `/listjobs` first
-The index is based on the current job list output.
+The number is based on the current job list output.
 :::
 
 <img src="/support/images/en/tutorials/telegram/telegram-job-start_by_index_1.jpg" alt="telegram start by index step1" class="img-large img-center" />
