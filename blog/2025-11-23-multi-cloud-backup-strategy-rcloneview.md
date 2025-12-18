@@ -27,6 +27,7 @@ tags:
   - s3
   - nas
 ---
+
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
 import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
@@ -34,13 +35,12 @@ import RvCta from '../src/components/RvCta';
 # Multi-Cloud Backup Strategy with RcloneView: Google Drive, OneDrive, S3, and NAS
 
 > Keep redundant copies across clouds and on-prem without scripting. RcloneView gives you a GUI for Google Drive, OneDrive, S3-compatible storage, and NAS so you can design nightly backups, verify checksums, and monitor retries from one place.
+<!-- truncate -->
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
 
-<!-- Image placeholder: add `/support/images/en/tutorials/multi-cloud-backup-with-rcloneview.png` if available -->
-<img src="/support/images/en/tutorials/multi-cloud-backup-with-rcloneview.png" alt="multi cloud backup with rcloneview" class="img-medium img-center" />
+
 
 ## Why multi-cloud backup?
 
@@ -55,7 +55,10 @@ import RvCta from '../src/components/RvCta';
 - **OneDrive / SharePoint** (OAuth).
 - **S3-compatible**: Amazon S3, Wasabi, Cloudflare R2, Backblaze B2 (access/secret keys).
 - **NAS / SMB / NFS**: mount as a local path, or use SFTP/SMB remotes.
-- **External drives** for offline or air-gapped copies.
+- **External drives** for offline or air-gapped copies.  
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
+  
 
 👉 Remote setup references:  
 - [Add Google Drive Remote](/support/howto/#step-2-adding-remote-storage-google-drive-example)  
@@ -64,11 +67,11 @@ import RvCta from '../src/components/RvCta';
 
 ## Sync vs. Backup: choose the right mode
 
-- **Sync (two-way or directional)**: keeps source and destination matched. Ideal for working sets but can propagate deletes. Use with care for backups.
-- **Backup-style one-way copy**: copy new/changed files only; do not delete at destination. Safer for historical backups.
-- **Versioned/object storage**: pair one-way copy with S3 bucket versioning to retain prior versions.
+- **Sync**: keeps source and destination matched. Ideal for working sets but can propagate deletes. Use with care for backups.
+- **Backup-style one-way copy**: copy new/changed files only; do not delete at destination. Safer for historical backups.  
 
-Tip: Start with one-way copy to a backup target; add pruning only after you confirm retention rules.
+<img src="/support/images/en/blog/cloud-to-cloud-transfer-default.png" alt="cloud to cloud transfer default" class="img-large img-center" />
+   
 
 ## Build an automated backup job (example: Drive → S3 → NAS)
 
@@ -77,36 +80,37 @@ Tip: Start with one-way copy to a backup target; add pruning only after you conf
 3. Click **Sync** (or **Copy** via toolbar) and choose **one-way source → destination**.  
 4. Set filters: exclude temp/cache folders, include key folders, and enable **checksum** if the target supports it.  
 5. Click **Save to Jobs** and name it (e.g., `drive-to-s3-backup`).  
-6. Repeat for **OneDrive → S3** or **S3 → NAS** if you want a local secondary copy.
+6. Repeat for **OneDrive → S3** or **S3 → NAS** if you want a local secondary copy.  
 
-## Verify backup integrity (checksum)
-
-- Enable **checksum** in Sync/Copy options when the destination supports it (S3, Wasabi, many NAS targets).  
-- For large initial runs, keep **--ignore-times** off so RcloneView uses size/time plus checksums for verification.  
-- Spot-check results with **Compare** to confirm hashes and sizes before deleting any source data.
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />  
+   
+👉 Learn more:
+- [Create Sync Jobs](https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs)  
+- [Execute & Manage Jobs](https://rcloneview.com/support/howto/rcloneview-basic/execute-manage-job)  
 
 ## Schedule nightly backups (daily 02:00)
 
 1. Open **Job Manager → Add Job**.  
 2. Select your saved job (e.g., `drive-to-s3-backup`).  
 3. Set schedule to **Daily** at **02:00**.  
-4. Enable the job; RcloneView will run it automatically.  
-5. Optional: stagger multiple jobs (Drive → S3 at 02:00, OneDrive → S3 at 02:30, S3 → NAS at 03:00) to avoid bandwidth contention.
+
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="create job schedule" class="img-large img-center" />
+  
 
 👉 Learn more: [Job Scheduling and Execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
 
 ## Monitor failures and retries
 
 - Open the **Transfer** tab during runs to watch throughput and retry counts.  
-- Check **Job History/Logs** to see which files failed and why (HTTP status, throttling, quota).  
-- For 429/5xx errors, lower concurrency or apply bandwidth limits to reduce throttling.  
-- Re-run the job; only missing/changed files will transfer thanks to hashing and timestamps.
+- Check **Job History/Logs** to see which files failed and why.  
+
+<img src="/support/images/en/tutorials/wasabi-real-time-monitoring-transferring.png" alt="transfer monitoring" class="img-large img-center" />
+  
 
 ## Best practices for a reliable multi-cloud backup
 
 - Keep at least **2–3 copies** across different providers/media.  
 - Use **one-way copy** to backup targets; avoid propagating deletes until you have confirmed retention.  
-- For S3/Wasabi, enable **bucket versioning** plus **lifecycle** rules for cost control.  
 - On NAS, ensure the volume has sufficient snapshots or RAID protection.  
 - Periodically **test restores** from each target to validate integrity and permissions.  
 - Document schedules and destinations so audits and handoffs are easy.

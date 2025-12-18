@@ -20,6 +20,7 @@ tags:
   - Mount
   - Windows
   - macOS
+unlisted: true
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
@@ -34,9 +35,10 @@ Azure Blob is fantastic for offloading media, backups, and static assets—but m
 
 RcloneView wraps everything in a GUI: add your Azure remote once, pick a drive letter or `/Volumes` path, turn on VFS cache for thumbnails and media scrubbing, and let Scheduler remount it on login. No CLI required.
 
+<!-- truncate -->
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
 
 ## Why Mount Azure Blob with RcloneView Instead of Scripts
 
@@ -72,6 +74,10 @@ RcloneView wraps everything in a GUI: add your Azure remote once, pick a drive l
   - Windows → `Z:` (or any free letter)
   - macOS → `/Volumes/AzureMedia`
   - Linux → `/mnt/azure-media`
+- - Toggle **Auto Mount on startup** so RcloneView reconnects after reboot.
+   
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="mount from remote explorer" class="img-large img-center" />
+
 
 ### 4) Tune VFS cache and buffers
 
@@ -79,14 +85,6 @@ RcloneView wraps everything in a GUI: add your Azure remote once, pick a drive l
 - **Cache directory**: Point to an SSD folder.
 - **Read-ahead**: 4–8 MB for photo/video browsing; increase for 4K+ workloads.
 - **Write-back/Buffering**: Enable for large sequential uploads; cap bandwidth if sharing uplink with others.
-
-### 5) Mount and verify
-
-- Click **Mount**. Open Explorer/Finder/Files and browse the container as a local drive.
-- Confirm thumbnails load quickly; stream a sample video to validate buffering.
-- Toggle **Auto Mount on startup** so RcloneView reconnects after reboot.
-
-<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="Mount Azure Blob from RcloneView Explorer" class="img-medium img-center" />
 
 ## Use Cases
 
@@ -103,6 +101,8 @@ RcloneView wraps everything in a GUI: add your Azure remote once, pick a drive l
 - Increase **Read-ahead** and **buffer-size** for sequential reads/writes; lower for random small files.
 - For distributed teams, pair mounts with **Scheduler** to refresh or warm the cache daily.
 - Watch throughput in [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring) to spot throttling.
+
+
 
 ## Troubleshooting
 

@@ -75,6 +75,8 @@ RcloneView covers 100+ providers in one UI and can shift heavy transfers to a cl
 4. Switch the right tab to the next client cloud; reuse the same source-no second local upload.  
 5. Save each flow as a **Job** for repeat clients; run or schedule.
 
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="compare display select" class="img-medium img-center" />
+
 👉 Feature docs:  
 - Compare: [how it works](https://rcloneview.com/support/howto/rcloneview-basic/compare-folder-contents)  
 - Create Jobs: [job creation](https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs)  
@@ -82,7 +84,7 @@ RcloneView covers 100+ providers in one UI and can shift heavy transfers to a cl
 - Scheduling: [scheduling guide](https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution)
 
 <!-- Image placeholder: Compare results showing “missing on OneDrive/Dropbox” before copy. -->
-
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="job run click" class="img-medium img-center" />
 ## Handling common photographer asks
 
 - Agency wants Drive + Wasabi: Copy to Drive, flip the tab to Wasabi, Copy again-no second local upload.  

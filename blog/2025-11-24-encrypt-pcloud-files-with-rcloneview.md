@@ -46,9 +46,11 @@ import RvCta from '../src/components/RvCta';
 
 pCloud already offers built-in security, but some teams need zero-knowledge encryption they fully control. RcloneView wraps rclone’s `crypt` in a friendly workflow: connect pCloud, add an encrypted layer, sync or mount it, and keep an audit trail with logs and checksums.
 
+<!-- truncate -->
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
+
 
 ## What Is crypt?
 
@@ -64,46 +66,38 @@ pCloud already offers built-in security, but some teams need zero-knowledge encr
 
 1) Connect pCloud
 - Add pCloud via `+ New Remote` (WebDAV/OAuth). Guide: [add-oath-online-login](/support/howto/remote-storage-connection-settings/add-oath-online-login).
-- Verify the remote in **Remote Explorer** to confirm access.
+- Verify the remote in **Remote Explorer** to confirm access.  
 
-2) Create the crypt layer
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
+  
+
+1) Create the crypt layer
 - In **Remote Manager**, create a new remote of type **crypt**, pointing to your pCloud remote path (e.g., `pcloud:/secure/`).
-- Choose filename encryption (standard) and set a strong passphrase + salt. Save it securely (password manager).
+- Choose filename encryption (standard) and set a strong passphrase. Save it securely.
 
-3) Optional: Mount the encrypted remote
+1) Optional: Mount the encrypted remote
 - Open **Mount Manager** and select the crypt remote to browse in Explorer/Finder without downloading everything: [mount-cloud-storage-as-a-local-drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive).
 - Windows: pick a drive letter; macOS: pick a mount path.
 
-4) Sync or copy data into the encrypted path
+
+
+1) Sync or copy data into the encrypted path
 - Use **copy** for the first load; switch to **sync** once validated: [create-sync-jobs](/support/howto/rcloneview-basic/create-sync-jobs).
-- For smaller scopes, drag/drop via Remote Explorer, or build a job per folder (e.g., Finance, Legal, Projects).
+- For smaller scopes, drag/drop via Remote Explorer, or build a job per folder (e.g., Finance, Legal, Projects).  
 
-5) Validate before and after
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />
+  
+
+1) Validate before and after
 - Run **Compare** to spot newer/missing files before running a sync: [compare-folder-contents](/support/howto/rcloneview-basic/compare-folder-contents).
-- Enable checksum verification in job options for integrity.
+- Enable checksum verification in job options for integrity.  
 
-6) Schedule protection
-- Turn on the scheduler for nightly runs so encryption stays current: [execute-manage-job](/support/howto/rcloneview-basic/execute-manage-job).
-- Keep bandwidth limits sane for business hours in [general-settings](/support/howto/rcloneview-basic/general-settings).
-
-## Restore or Decrypt Safely
-
-- To decrypt, mount the crypt remote or create a reverse job from the crypt remote to a local folder/NAS using **copy**. Keep the same passphrase and salt.
-- If changing providers, point the crypt remote at a new backend (e.g., S3/Wasabi) and rerun your copy jobs; filenames and contents stay encrypted end-to-end.
-- Test restores regularly: run a small restore job to a temp folder and verify file opens.
-
-## Quick Best Practices
-
-- Store passphrases in a password manager; losing them means losing data.
-- Separate workloads: one crypt remote per department or sensitivity level.
-- Exclude temp/cache folders so you don’t encrypt junk.
-- Use consistent mount paths/drive letters for team workflows to avoid broken shortcuts.
-- Export Job History logs for compliance evidence.
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare shared folder and My Drive contents" class="img-large img-center" />
+  
 
 ## Conclusion
 
 Encrypting pCloud with RcloneView takes minutes: add pCloud, wrap it with crypt, copy or sync data, and schedule ongoing protection. You keep the keys, RcloneView handles the heavy lifting.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 <CloudSupportGrid />

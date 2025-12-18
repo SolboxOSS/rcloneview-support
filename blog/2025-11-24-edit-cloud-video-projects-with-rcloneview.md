@@ -32,9 +32,11 @@ import RvCta from '../src/components/RvCta';
 
 Modern shoots land footage on cameras, recorders, and remote offices at once. Moving it all by hand slows editors and risks broken links. RcloneView wraps the proven rclone engine in a clean UI so you can mount clouds like local disks, stage proxies, sync deliverables, and recover quickly when something goes wrong.
 
+<!-- truncate -->
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
+
 
 ## Why Cloud-First Editing Makes Sense
 
@@ -44,30 +46,36 @@ Modern shoots land footage on cameras, recorders, and remote offices at once. Mo
 
 ## Set Up a Reliable Cloud Mount for NLEs
 
-A stable mount is the backbone of cloud editing. RcloneView makes it two clicks.
+A stable mount is the backbone of cloud editing. RcloneView makes it few clicks.
 
-- Connect remotes: add Google Drive, Dropbox, S3/Wasabi/R2, or your NAS via `+ New Remote`. Guides: [/support/howto/remote-storage-connection-settings/add-oath-online-login](/support/howto/remote-storage-connection-settings/add-oath-online-login), [/support/howto/remote-storage-connection-settings/s3](/support/howto/remote-storage-connection-settings/s3)
-- Create the mount: Remote Explorer or Mount Manager keeps things simple: [/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive)
+- Connect remotes: add Google Drive, Dropbox, S3/Wasabi/R2, or your NAS via `+ New Remote`. Guides: [[Add Google Drive](https://rcloneview.com/support/howto/#step-2-adding-remote-storage-google-drive-example), [Add AWS S3 and S3-Compatible](https://rcloneview.com/support/howto/remote-storage-connection-settings/s3).  
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />. 
+  
+
+- Create the mount: Remote Explorer or Mount Manager keeps things simple: [Mount Cloud Storage as a Local Drive](https://rcloneview.com/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive). 
 - Pick an edit-friendly path: drive letter on Windows (`X:` via `cmount`), `/Volumes/Cloud/Edit` on macOS, `/mnt/edit` on Linux.
 
-<img src="/support/images/en/howto/rcloneview-basic/mount-from-mount-manager.png" alt="Configure a mount from Mount Manager" class="img-medium img-center" />
-
-## Tune Cache and Throughput for Smooth Timelines
-
-Premiere Pro, Final Cut Pro, and DaVinci Resolve want predictable IO.
-
-- Cache mode: set **Cache mode** to `full` so the NLE can scan bins and seek quickly.
-- Cache size: allocate SSD space (10-50 GB) under **Cache max size** for fast scrubbing.
-- Read ahead and buffering: add `--vfs-read-ahead 128M` and `--buffer-size 64M` under Global Rclone Flags for large clips. See [/support/howto/rcloneview-basic/general-settings](/support/howto/rcloneview-basic/general-settings).
-- Bandwidth caps: throttle during office hours so other jobs are unaffected: [/support/howto/rcloneview-basic/general-settings](/support/howto/rcloneview-basic/general-settings).
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-mount-manager.png" alt="Configure a mount from Mount Manager" class="img-large img-center" />. 
 
 ## Keep Projects Safe with Compare, Sync, and Scheduler
 
 Editing is messy; automation keeps it safe.
 
-- Visual diffs before syncing: run **Compare** to spot missing footage or newer renders without CLI flags: [/support/howto/rcloneview-basic/compare-folder-contents](/support/howto/rcloneview-basic/compare-folder-contents).
-- Bidirectional or one-way syncs: build repeatable jobs to push `Projects/` to S3 while pulling fresh proxies from Drive: [/support/howto/rcloneview-basic/create-sync-jobs](/support/howto/rcloneview-basic/create-sync-jobs) and [/support/howto/rcloneview-basic/synchronize-remote-storages](/support/howto/rcloneview-basic/synchronize-remote-storages).
-- Schedule protection: run nightly syncs after editors log off. If a job fails, RcloneView retries and records the log so you can resume fast.
+- Visual diffs before syncing: run **Compare** to spot missing footage or newer renders without CLI flags: [Compare folder contents](https://rcloneview.com/support/howto/rcloneview-basic/compare-folder-contents).  
+
+ <img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare shared folder and My Drive contents" class="img-large img-center" />. 
+    
+
+- syncs: build repeatable jobs to push `Projects/` to S3 while pulling fresh proxies from Drive: [Synchronize Remote Storages Instantly](https://rcloneview.com/support/howto/rcloneview-basic/synchronize-remote-storages), [Create Sync Jobs](https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs), and [Execute & Manage Jobs](https://rcloneview.com/support/howto/rcloneview-basic/execute-manage-job).  
+
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />. 
+  
+
+- Schedule protection: run nightly syncs after editors log off. If a job fails, RcloneView retries and records the log so you can resume fast.  
+
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="create job schedule" class="img-large img-center" />  
+  
 
 ## Share Proxies and Deliverables Across Clouds
 
@@ -81,14 +89,15 @@ Different stakeholders need different copies.
 
 You need to know when transfers slow down or fail.
 
-- Watch throughput live in **Transfer Monitor**: [/support/howto/rcloneview-basic/real-time-transfer-monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring).
-- Review **Job History** to confirm checksums and skipped files: [/support/howto/rcloneview-basic/execute-manage-job](/support/howto/rcloneview-basic/execute-manage-job).
-- Resume interrupted moves automatically; rclone handles retries and chunked uploads so you do not lose partially sent footage.
+- Watch throughput live in **Transfer Monitor**: [Real-time Transfer Monitoring](https://rcloneview.com/support/howto/rcloneview-basic/real-time-transfer-monitoring). 
+
+<img src="/support/images/en/tutorials/wasabi-real-time-monitoring-transferring.png" alt="transfer monitoring" class="img-large img-center" />. 
+  
+- Review **Job History** to confirm checksums and skipped files: [Job History](https://rcloneview.com/support/howto/rcloneview-basic/execute-manage-job#view-job-history). 
+
 
 ## Cloud Drives That Feel Local
 
-RcloneView makes cloud storage behave like an edit-ready drive: mount once, tune cache, automate syncs, and keep every version protected. Your team stops juggling copies and stays focused on the cut.
-
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+RcloneView makes cloud storage behave like an edit-ready drive: mount once, automate syncs, and keep every version protected. Your team stops juggling copies and stays focused on the cut.
 
 <CloudSupportGrid />
