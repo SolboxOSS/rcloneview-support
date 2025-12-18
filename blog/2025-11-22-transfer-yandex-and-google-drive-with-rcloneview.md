@@ -34,9 +34,11 @@ import RvCta from '../src/components/RvCta';
 > Move or sync files between Yandex Disk ↔ Google Drive without using the command line.  
 > RcloneView provides side-by-side Explorer panes, Compare, Sync, and scheduled Jobs—while handling Yandex browser login and Google OAuth for you.
 
+<!-- truncate -->
+
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
 
 ## Why use RcloneView for Yandex ↔ Google Drive transfers?
 
@@ -64,13 +66,15 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
 
 ## Step 1: Add your cloud remotes
 
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />  
+
 ### Connect Yandex Disk (browser-based login)
 
 1. Open **Remote → + New Remote**.
 2. Select **Yandex Disk** as the provider.
 3. Click **Connect**, which opens a Yandex login page in your browser.
 4. Sign in and grant access.
-5. Save the remote once RcloneView confirms the authentication is complete.
+5. Save the remote once RcloneView confirms the authentication is complete.  
 
 ### Connect Google Drive
 
@@ -88,7 +92,9 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
 1. Go to the **Browse** tab.
 2. Click the **+** icon in the left pane → select **Yandex Disk**.
 3. Click the **+** icon in the right pane → select **Google Drive**.
-4. Navigate to the folders you want to move or sync.
+4. Navigate to the folders you want to move or sync.  
+
+<img src="/support/images/en/blog/cloud-to-cloud-transfer-default.png" alt="cloud to cloud transfer default" class="img-large img-center" />  
 
 ---
 
@@ -98,9 +104,14 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
 
 1. In the Yandex pane, select files or folders.
 2. Drag them into the Google Drive pane (or the opposite direction).
-3. Watch progress under **Transfer**.
+3. Watch progress under **Transfer**.  
 
-👉 Reference: [Browse & Manage Remote Storage](/support/howto/rcloneview-basic/browse-and-manage-remote-storage)
+<img src="/support/images/en/tutorials/wasabi-drag-and-drop.png" alt="drag and drop" class="img-large img-center" />  
+
+
+👉 Reference:  
+[Browse & Manage Remote Storage](/support/howto/rcloneview-basic/browse-and-manage-remote-storage)  
+[Drag & Drop files](https://rcloneview.com/support/howto/rcloneview-basic/browse-and-manage-remote-storage#copying-files-using-drag-and-drop)  
 
 ---
 
@@ -113,9 +124,13 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
    - Items that differ in size
    - Matching files
 4. Click **Copy →** or **← Copy** depending on direction.
-5. Use **Delete** carefully when cleaning up duplicates.
+5. Use **Delete** carefully when cleaning up duplicates.  
 
-👉 Guide: [Compare Folder Contents](/support/howto/rcloneview-basic/compare-folder-contents)
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare shared folder and My Drive contents" class="img-large img-center" />  
+
+
+👉 Guide: [Compare Folder Contents](/support/howto/rcloneview-basic/compare-folder-contents)  
+
 
 ---
 
@@ -129,6 +144,9 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
    - Two-way sync
 4. Preview the planned operations using dry-run.
 5. Run the sync, or click **Save to Jobs** to reuse it later.
+
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />  
+
 
 👉 Learn more:
 
@@ -144,7 +162,9 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
 2. Select Yandex as the source and Google Drive as the destination (or reverse).
 3. Set an interval (e.g., daily, hourly, weekly).
 4. Enable the job.
-5. Review logs and Job History for results.
+5. Review logs and Job History for results.  
+
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="create job schedule" class="img-large img-center" />  
 
 👉 Learn more: [Job Scheduling and Execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
 
@@ -154,7 +174,6 @@ RcloneView builds a visual workflow on top of rclone so even complex multi-cloud
 
 - Use **dry-run** before large one-way syncs.
 - Google Drive API may throttle very large bursts; reduce concurrency if needed.
-- For shared Google Drive folders, ensure you have **Editor** permissions.
 - Keep RcloneView running for scheduled Jobs.
 
 ---
