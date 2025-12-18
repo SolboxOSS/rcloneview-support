@@ -91,7 +91,8 @@ Use these to show the actual UI (sourced from Jay-authored posts). Copy-paste th
 ## Core How-to Links (use descriptive link text)
 
 - Remote setup  
-  - [Add Google Drive](https://rcloneview.com/support/howto/#step-2-adding-remote-storage-google-drive-example)  
+  - [Add Google Drive](https://rcloneview.com/support/howto/#step-2-adding-remote-storage-google-drive-example)  d
+  - [Add Remote via Browse-based Log-in(OAuth)](https://rcloneview.com/support/howto/remote-storage-connection-settings/add-oath-online-login)
   - [Add OneDrive headless](https://rcloneview.com/support/howto/remote-storage-connection-settings/ec2-onedrive-headless)  
   - [Add AWS S3 and S3-Compatible](https://rcloneview.com/support/howto/remote-storage-connection-settings/s3)  
   - [Add WebDAV](https://rcloneview.com/support/howto/remote-storage-connection-settings/webdav)
