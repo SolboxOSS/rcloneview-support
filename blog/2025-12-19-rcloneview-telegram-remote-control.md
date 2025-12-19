@@ -24,7 +24,9 @@ tags:
   - automation
 ---
 
+
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
+import cloudIcons from '../src/contexts/cloudIcons';
 import RvCta from '../src/components/RvCta';
 
 # RcloneView Telegram Remote Control: Manage Cloud Jobs from Your Phone
@@ -63,7 +65,7 @@ RcloneView must be running (desktop or headless) to process Telegram commands.
    Example: `RcloneView_test_bot` / `rcloneview_test_bot`.  
    <img src="/support/images/en/tutorials/telegram/telegram-newbot_rcloneview_test_bot.jpg" alt="telegram create new bot" class="img-large img-center" />
 
-3. Copy the **Bot Token** shown by BotFather. Keep it secret—RcloneView needs it for setup.  
+3. Copy the **Bot Token** shown by BotFather. Keep it secret-RcloneView needs it for setup.  
    <img src="/support/images/en/tutorials/telegram/telegram-bot-token.jpg" alt="telegram bot token" class="img-large img-center" />
 
 ## Start your bot (important)
@@ -93,7 +95,7 @@ Treat the Bot Token and Chat ID like passwords. Only the configured Chat ID is a
 
 ## Enable Telegram Remote Control in RcloneView
 
-1. Open **Settings → Interfaces & Notifications**.
+1. Open **Settings -> Interfaces & Notifications**.
 2. Turn on **Telegram Remote Control**.  
    <img src="/support/images/en/tutorials/telegram/rcloneview-telegram-enable.png" alt="rcloneview telegram enable" class="img-large img-center" />
 
@@ -107,23 +109,23 @@ Treat the Bot Token and Chat ID like passwords. Only the configured Chat ID is a
 
 Use these in the bot chat:
 
-- `/help` — Show all commands.  
+- `/help` - Show all commands.  
   <img src="/support/images/en/tutorials/telegram/telegram-help.jpg" alt="telegram help" class="img-large img-center" />
 
-- `/listjobs` — List jobs for the current connection.  
+- `/listjobs` - List jobs for the current connection.  
   <img src="/support/images/en/tutorials/telegram/telegram-listjobs.jpg" alt="telegram listjobs" class="img-large img-center" />
 
-- `/start <jobName>` — Start a job by its exact name.  
+- `/start <jobName>` - Start a job by its exact name.  
   <img src="/support/images/en/tutorials/telegram/telegram-job-start_by_jobname.jpg" alt="telegram start by job name" class="img-large img-center" />
 
-- `/start #<n>` (recommended) — Start by list index from the latest `/listjobs`.  
+- `/start #<n>` (recommended) - Start by list index from the latest `/listjobs`.  
   <img src="/support/images/en/tutorials/telegram/telegram-job-start_by_index_1.jpg" alt="telegram start by index step1" class="img-large img-center" />
   <img src="/support/images/en/tutorials/telegram/telegram-job-start_by_index_2.jpg" alt="telegram start by index step2" class="img-large img-center" />
 
-- `/stop <jobId>` — Stop a running job.  
+- `/stop <jobId>` - Stop a running job.  
   <img src="/support/images/en/tutorials/telegram/telegram-job-stop.jpg" alt="telegram job stop" class="img-large img-center" />
 
-- `/status <jobId>` — Check progress and transferred size.  
+- `/status <jobId>` - Check progress and transferred size.  
   <img src="/support/images/en/tutorials/telegram/telegram-job-status.jpg" alt="telegram job status" class="img-large img-center" />
 
 ## Why it matters for automation
@@ -141,12 +143,12 @@ Use these in the bot chat:
 
 ## Related resources
 
-- [How to use Telegram Remote Control (tutorial)](/support/tutorials/telegram-remote-control)
-- [Create and manage jobs](/support/howto/rcloneview-basic/create-sync-jobs)
-- [Execute and manage jobs](/support/howto/rcloneview-basic/execute-manage-job)
-- [Job scheduling](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
-- [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring)
-- [Use the built-in Terminal](/support/tutorials/2025-12-04-rcloneview-terminal-rclone-cli-inside-gui) <!-- replace with actual link if different -->
+- [How to use Telegram Remote Control (tutorial)](https://rcloneview.com/support/tutorials/telegram-remote-control)
+- [Create and manage jobs](https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs)
+- [Execute and manage jobs](https://rcloneview.com/support/howto/rcloneview-basic/execute-manage-job)
+- [Job scheduling](https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution)
+- [Real-time transfer monitoring](https://rcloneview.com/support/howto/rcloneview-basic/real-time-transfer-monitoring)
+- [Use the built-in Terminal](https://rcloneview.com/support/tutorials/rcloneview-terminal-rclone-cli-inside-gui) <!-- replace with actual link if different -->
 
 ## Wrap-up
 
