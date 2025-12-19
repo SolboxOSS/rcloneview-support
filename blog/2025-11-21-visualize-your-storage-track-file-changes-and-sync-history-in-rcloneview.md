@@ -30,9 +30,9 @@ import RvCta from '../src/components/RvCta';
 
 Managing cloud storage via the command line (CLI) is efficient for scripts, but it's a nightmare for visibility. When you run `rclone sync`, you see a stream of text, but understanding the *state* of your data requires mental gymnastics. RcloneView bridges the gap between the raw power of rclone and the human need for visual confirmation.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
-
 <!-- truncate -->
+
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## The Problem with "Black Box" Syncing
 
@@ -52,7 +52,9 @@ Every job you run in RcloneView is tracked. The **Job History** tab provides a p
 
 -   **Status at a Glance**: Instantly see which jobs succeeded, failed, or completed with warnings.
 -   **Detailed Logs**: Click into any job to see exactly which files were transferred, skipped, or deleted.
--   **Audit Trail**: Keep a historical record of your backups for compliance and peace of mind.
+-   **Audit Trail**: Keep a historical record of your backups for compliance and peace of mind.  
+  
+<img src="/support/images/en/howto/rcloneview-basic/job-history.png" alt="job history" class="img-large img-center" />  
 
 ### 2. Side-by-Side Version Comparison
 
@@ -60,7 +62,9 @@ The **Compare** feature is your visual diff tool for cloud storage. Instead of r
 
 -   **Color-Coded Differences**: Files that are missing, newer, or larger are highlighted.
 -   **Interactive Decision Making**: Select specific files to sync based on visual cues. Don't want to overwrite that newer file? Uncheck it.
--   **Pre-Sync Validation**: Run a compare job *before* a sync to visualize exactly what will change.
+-   **Pre-Sync Validation**: Run a compare job *before* a sync to visualize exactly what will change.   
+
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare shared folder and My Drive contents" class="img-large img-center" />  
 
 ### 3. Real-Time Transfer Dashboard
 
@@ -68,7 +72,9 @@ Watch your data move in real-time. The transfer dashboard gives you immediate fe
 
 -   **Live Throughput**: See your current upload/download speeds.
 -   **File-Level Progress**: Watch individual files complete. If a large video file is stalling the queue, you'll know immediately.
--   **Error Highlighting**: Failures aren't buried in a wall of text; they are flagged instantly so you can take action.
+-   **Error Highlighting**: Failures aren't buried in a wall of text; they are flagged instantly so you can take action.  
+  
+<img src="/support/images/en/tutorials/wasabi-real-time-monitoring-transferring.png" alt="transfer monitoring" class="img-large img-center" />  
 
 ## Why Visualization Matters for Retention
 

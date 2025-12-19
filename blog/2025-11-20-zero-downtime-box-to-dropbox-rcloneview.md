@@ -55,26 +55,30 @@ RcloneView addresses all of it with Remote Manager, the dual-pane Explorer, Comp
 
 ## Step 1 -- Prepare Connectors and Access Controls
 
-- Configure the Box and Dropbox OAuth remotes with delegated admin accounts. Store tokens securely by setting a config password plus OS keychain storage inside [General settings](/support/howto/rcloneview-basic/general-settings).
-- Prefix remote names (for example `box-legal`, `box-studio`, `dropbox-hq`) and document them in the job memo so change records map remotes to business units.
-- Export the Box folder permission matrix and attach it to your migration ticket; it helps auditors confirm that Dropbox member folders received the correct access.
+- Configure the Box and Dropbox OAuth remotes with delegated admin accounts.  
+- Prefix remote names (for example `box-legal`, `box-studio`, `dropbox-hq`).  
 
 ## Step 2 -- Baseline with Compare Snapshots
 
 1. Open the dual-pane Explorer, load the Box library on the left and the empty Dropbox destination on the right.
-2. Run **Compare** to capture object counts, sizes, and timestamps. Save the report for compliance teams.
+2. Run **Compare** to capture object counts, sizes, and timestamps.
 3. Highlight stale folders and decide whether they should land in Dropbox or a cold archive bucket.
 
-<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare Box to Dropbox folders inside RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare Box to Dropbox folders inside RcloneView" class="img-large img-center" />
 
-The Compare snapshot is your starting inventory and becomes the reference for later delta runs.
+The Compare snapshot is your starting inventory.
 
 ## Step 3 -- Seed Copy Jobs and Preserve Metadata
 
 - Build Copy jobs for each business unit using the templates in [Create sync jobs](/support/howto/rcloneview-basic/create-sync-jobs); Copy ensures Box remains untouched.
-- Enable Box Docs filters (documented in the same guide) so ephemeral Box Notes or website shortcuts do not clutter Dropbox.
-- Turn on retries, checksum verification, and `--backup-dir dropbox:/_box-deletes` so removed files stay recoverable during the coexistence period.
-- Run each job once manually, observe throughput in [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring), and adjust `transfers`/`checkers` to respect Box limits.
+- Enable Box Docs filters (documented in the same guide) so ephemeral Box Notes or website shortcuts do not clutter Dropbox.  
+
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />  
+    
+- Run each job once manually, observe throughput in [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring).  
+
+  <img src="/support/images/en/tutorials/wasabi-real-time-monitoring-transferring.png" alt="transfer monitoring" class="img-large img-center" />  
+    
 
 ## Step 4 -- Automate Delta Windows with Scheduler
 
@@ -82,38 +86,31 @@ Open **Scheduler**, enable it globally, and assign the following cadences (all d
 
 - **Intraday mini-syncs** for fast-changing folders (creative briefs, deal rooms). Keep concurrency low to avoid Box throttling.
 - **Nightly full sync** for the rest of the library so Dropbox is always within a few minutes of Box before the final cutover.
-- **Daily Compare-only job** that emails or messages drift summaries when users keep editing after the freeze notice.
 
-<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Schedule Box to Dropbox deltas inside RcloneView" class="img-medium img-center" />
-
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Schedule Box to Dropbox deltas inside RcloneView" class="img-large img-center" />
+  
 Scheduler gives you centralized visibility: missed runs are highlighted, and every execution is logged for audits.
 
 ## Step 5 -- Cutover and Mount-Based QA
 
 1. Announce a write freeze for Box (read-only access stays available) and trigger the final Sync + Compare sequence.
 2. Mount the Dropbox destination read-only via [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive) so business owners can validate folder depth, previews, and sharing shortcuts.
-3. Update bookmarks, Dropbox groups, and automation scripts. Keep the Box remote for two weeks in read-only mode for safety.
-4. Export job histories from [Execute and manage job](/support/howto/rcloneview-basic/execute-manage-job) and attach them to your migration record.
 
+
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="mount from remote explorer" class="img-large img-center" />
+  
 ## Compliance Runbook
 
 | Cadence | RcloneView action | Evidence produced |
 | --- | --- | --- |
 | Nightly | Scheduler Copy job from Box to Dropbox + Compare report | Transfer log (CSV), Compare export, checksum summary |
-| Weekly | Checksum verification (see [Checksum-Verified Cloud Migrations](https://rcloneview.com/support/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview)) | `rclone check` log, remediation notes |
 | Cutover day | Manual Sync + Compare + mount-based validation | Screenshot of mount, execution log, stakeholder sign-off |
 | 2 weeks post | Archive Box remote to Wasabi/S3 via Copy job for legal hold | Job memo, backup-dir inventory, retention ticket |
 
 ## FAQ
 
-**Does RcloneView keep file versions or comments from Box?**  
-File contents, timestamps, and hashes copy over, but Box version history stays in Box. Export version reports from Box and store them next to the RcloneView logs for full evidence.
-
-**What if Box throttles or Dropbox rejects bursts?**  
-Lower `--transfers` and `--checkers`, set bandwidth caps, and let Scheduler stagger jobs across time zones. Monitor retries in [Execute and manage job](/support/howto/rcloneview-basic/execute-manage-job) and capture lessons learned in your runbook.
-
 **Can I keep Box and Dropbox in sync long term?**  
-Yes. Leave the Sync job enabled weekly or monthly, or switch to Compare-only mode so you can spot new Box edits without moving data. Multi-window workflows (/support/howto/rcloneview-advanced/multi-window) make it easy to drag specific projects across both clouds when stakeholders request it.
+Yes. Leave the Sync job enabled weekly or monthly. 
 
 RcloneView turns rclone's enterprise engines into a guided control panel, letting you migrate Box to Dropbox with zero downtime, transparent deltas, and documented checkpoints for every audit.
 

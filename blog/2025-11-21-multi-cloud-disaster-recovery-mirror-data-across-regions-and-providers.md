@@ -32,9 +32,11 @@ Multi-cloud disaster recovery is a strategic approach that ensures the availabil
 
 RcloneView simplifies this complex process, offering a powerful GUI to manage, sync, and automate your multi-cloud DR strategy without the need for complex scripts.
 
+<!-- truncate -->
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
+
 
 ## Why You Need a Multi-Cloud Redundancy Strategy
 
@@ -51,15 +53,24 @@ The first step in building a multi-cloud DR plan is to connect your various stor
 1.  Open **Remote Manager** in RcloneView.
 2.  Add your primary storage (e.g., AWS S3 us-east-1).
 3.  Add your secondary/backup storage (e.g., Google Drive, Azure Blob Storage, or a different AWS region like eu-west-1).
-4.  Use the [Remote Storage Connection Settings](/support/howto/remote-storage-connection-settings/s3) guide to ensure secure and correct configuration for each provider.
+4.  Use the [Remote Storage Connection Settings](/support/howto/remote-storage-connection-settings/s3) guide to ensure secure and correct configuration for each provider.  
+   
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />  
 
 ## Step 2 -- Configure Cross-Region and Cross-Provider Sync
 
 Once your remotes are connected, you need to set up the mirroring process. RcloneView's **Sync** function ensures your backup location is an exact mirror of your primary data.
 
--   Navigate to the **Sync** tab or use the **Dual-Pane Explorer** to drag and drop for ad-hoc transfers.
+-   Navigate to the **Sync** tab or use the **Dual-Pane Explorer** to drag and drop for ad-hoc transfers.  
+
+<img src="/support/images/en/blog/cloud-to-cloud-transfer-default.png" alt="cloud to cloud transfer default" class="img-large img-center" />   
+   
+
 -   For a true DR strategy, create a saved **Sync Job**. Select your source (Primary Cloud) and destination (DR Cloud).
--   Choose **Sync** mode (makes destination identical to source) or **Copy** mode (adds new files only). *Note: Sync mode will delete files in the destination that are not in the source, which is ideal for mirroring but requires caution.*
+-   Choose **Sync** mode (makes destination identical to source) or **Copy** mode (adds new files only). *Note: Sync mode will delete files in the destination that are not in the source, which is ideal for mirroring but requires caution.*  
+
+
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />  
 
 ## Step 3 -- Automate Your Disaster Recovery with Scheduler
 
@@ -68,7 +79,10 @@ A DR plan is only effective if it's up-to-date. Manual backups are prone to huma
 1.  Go to the **Scheduler** tab in RcloneView.
 2.  Create a new task using the Sync Job you configured in Step 2.
 3.  Set the frequency based on your Recovery Point Objective (RPO). For critical data, you might sync every hour; for archives, daily or weekly might suffice.
-4.  Enable **email notifications** or check the logs to ensure your sync jobs are completing successfully. See [Job scheduling and execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution) for more details.
+4.  Enable **email notifications** or check the logs to ensure your sync jobs are completing successfully. See [Job scheduling and execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution) for more details.  
+
+
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="create job schedule" class="img-large img-center" />  
 
 ## Step 4 -- Verify Data Integrity
 
@@ -76,7 +90,9 @@ Trust but verify. It's essential to ensure that your replicated data is intact a
 
 -   Use RcloneView's **Compare** feature to analyze the differences between your source and destination.
 -   Run a checksum verification to ensure file integrity during transfer.
--   Periodically perform a "fire drill" by mounting your backup remote as a local drive (see [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive)) and verifying you can access and open critical files.
+-   Periodically perform a "fire drill" by mounting your backup remote as a local drive (see [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive)) and verifying you can access and open critical files.  
+
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="mount from remote explorer" class="img-large img-center" />  
 
 ## Conclusion
 

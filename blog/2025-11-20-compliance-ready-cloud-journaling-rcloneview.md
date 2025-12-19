@@ -34,9 +34,11 @@ Financial, healthcare, broadcast, and legal teams live and die by audit-ready ev
 
 With multi-cloud Explorer panes, Compare previews, Sync/Copy/Mount templates, and a reliable scheduler, you can build an always-on journal that feeds warm storage for restores and cold storage for legal holds using the same declarative job.
 
+<!-- truncate -->
+
+
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
-<!-- truncate -->
 
 ## Why Regulated Teams Need a Cloud Journal Layer
 
@@ -50,19 +52,21 @@ RcloneView centralizes those needs by orchestrating rclone's mature transports b
 
 1. **Multi-cloud collectors** — Register every tenant, share, and bucket in [Remote Manager](/support/howto/rcloneview-basic/remote-manager) using vendor-specific guides such as [Add SharePoint for Business](/support/howto/remote-storage-connection-settings/connect-using-cli/add-sharepoint-for-business) or [Add Google Shared Drive](/support/howto/remote-storage-connection-settings/connect-using-cli/add-google-shared-drive). Connection templates keep refresh tokens isolated per business unit.
 2. **Journal pipelines** — Use the Copy and Sync recipes from [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs) and [Synchronize Remote Storages](/support/howto/rcloneview-basic/synchronize-remote-storages) to mirror production folders into S3, Wasabi, Backblaze B2, or Cloudflare R2 buckets with Object Lock turned on.
-3. **Automated verification** — Scheduled [Compare folder contents](/support/howto/rcloneview-basic/compare-folder-contents) views and checksum jobs surface drift and late edits before they break retention.
-4. **Controlled reviewer access** — Legal or audit teams mount vaults in read-only mode via [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive) so they can open exhibits without copying data elsewhere.
+3. **Controlled reviewer access** — Legal or audit teams mount vaults in read-only mode via [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive) so they can open exhibits without copying data elsewhere.
 
 This pattern satisfies the multi-cloud, compare, sync, mount, and scheduler pillars baked into RcloneView's product DNA.
 
 ## Step 1 — Harden Connectors and Identity Controls
 
 - Launch Remote Manager and add service accounts for each regulated workload. The per-provider wizards ensure OAuth scopes stay minimal while still supporting journaling.
-- Visit [General Settings](/support/howto/rcloneview-basic/general-settings) to set a config password and hardware-backed keychain storage so rclone configuration files remain encrypted at rest.
+- Visit [General Settings](/support/howto/rcloneview-basic/general-settings) to set a config password so rclone configuration files remain encrypted at rest.
 - Label remotes by business unit (`workspace-journal`, `sharepoint-clients`, `wasabi-litigation`) and keep their root paths scoped to only the folders that need journaling. See [Browse and manage remote storage](/support/howto/rcloneview-basic/browse-and-manage-remote-storage) for naming conventions.
 - When a platform lacks APIs (legacy SMB, lab NAS), mount it once with system credentials and expose the path through RcloneView; the journal job treats it like another remote.
 
-Once connectors are locked down, export an encrypted backup of your `rclone.conf` and drop it into the immutable vault for disaster recovery.
+Once connectors are locked down, export an encrypted backup of your `rclone.conf` and drop it into the immutable vault for disaster recovery.  
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
+  
 
 ## Step 2 — Build Write-Once Journaling Jobs
 
@@ -70,12 +74,9 @@ RcloneView's job designer lets you choose Copy, Sync, or Move. For compliance, u
 
 1. Open **Jobs → New** and select the Copy or Sync template documented in [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs).
 2. Pick source and target remotes in the dual-pane Explorer. Use [Compare folder contents](/support/howto/rcloneview-basic/compare-folder-contents) to preview additions, removals, and changed hashes before anything is written.
-3. Force `--immutable`, `--backup-dir`, or `--suffix` flags to journal deletes instead of purging them. These switches are exposed directly inside the advanced options tray.
-4. Attach metadata in the Job memo (`SEC17a4`, `FDA21CFR`, `LitHold`) so auditors can search by policy later on.
 
-<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Preview changed records in RcloneView before journaling" class="img-medium img-center" />
+    <img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Preview changed records in RcloneView before journaling" class="large img-center" />
 
-Publish the job, run it once manually to seed the vault, and review the transfer log to confirm throughput, API usage, and destination paths.
 
 ## Step 3 — Automate Evidence Capture with Scheduler
 
@@ -83,20 +84,15 @@ The scheduler keeps journals running even when laptops sleep or admins rotate. O
 
 - **Intraday** for trading desks or collaborative design folders. Limit concurrency to avoid API throttles and cap bandwidth so production traffic stays smooth.
 - **Nightly** for general document hubs plus database dumps arriving on NAS shares.
-- **Weekly compare audits** that run the Compare action only, alerting you to drift without moving data.
 
-<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure immutable journal schedules inside RcloneView" class="img-medium img-center" />
-
-Because schedules live inside RcloneView, you do not need Task Scheduler, cron, or custom daemons. Export the schedule list as part of your change-management record each quarter.
+  <img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure immutable journal schedules inside RcloneView" class="img-large img-center" />
 
 ## Step 4 — Verify, Seal, and Surface Proof
 
 Verification is what convinces examiners that the journal is trustworthy:
 
-- Pair each Copy job with a scheduled Compare-only run and the checksum routine outlined in [Checksum-Verified Cloud Migrations with RcloneView](https://rcloneview.com/support/blog/2025-11-18-checksum-verified-cloud-migrations-rcloneview).
 - Watch progress via [Real-time transfer monitoring](/support/howto/rcloneview-basic/real-time-transfer-monitoring) so you can capture timestamps and throughput in screenshots.
 - Use [Execute and manage job](/support/howto/rcloneview-basic/execute-manage-job) to export execution logs; store them next to the journaled data for nonrepudiation.
-- When regulators request samples, mount the immutable bucket read-only and export checksums for the requested folders.
 
 These steps create a chain of custody that links the source workload, transfer job, verification report, and storage location.
 
@@ -104,23 +100,19 @@ These steps create a chain of custody that links the source workload, transfer j
 
 | Cadence | RcloneView action | Evidence produced |
 | --- | --- | --- |
-| Daily | Nightly Copy job (Workspace → Wasabi Object Lock) + Compare diff email | Transfer log, compare screenshot, checksum CSV |
-| Weekly | Scheduler-triggered Check job (SharePoint → S3 Glacier) | `rclone check` report, job execution export |
-| Monthly | Mount evidence vault read-only, sample 10% of folders, and archive logs | Read-only mount screenshot, reviewer sign-off |
+| Daily | Nightly Copy job (Workspace → Wasabi Object Lock) + Compare diff email | Transfer log, compare screenshot |
+| Weekly | Scheduler-triggered Check job (SharePoint → S3 Glacier) | job execution export |
 | Quarterly | Review scheduler matrix, rotate service credentials, and retest restores | Updated credential inventory, restore transcript |
 
-Document each runbook item inside your GRC platform and link back to the specific RcloneView job ID.
 
 ## FAQ: Share Evidence Without Breaking Chain of Custody
 
 **Can reviewers browse data without copying it?**  
 Yes. Use Mount Manager plus the tutorial in [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive) to attach the immutable bucket in read-only mode for paralegals, QA, or regulators.
 
-**What if a journal job misses a window?**  
-Scheduler dashboards flag missed runs in yellow. From [Execute and manage job](/support/howto/rcloneview-basic/execute-manage-job), rerun the job immediately, capture the log, and note the remediation time in your incident tracker.
 
 **Can we keep hot and cold copies simultaneously?**  
-Absolutely. Create two destinations inside the same job: a hot Wasabi bucket for fast restores and a Glacier/R2 bucket for 7-year retention. Multi-window Explorer views (see [Multi-window operations](/support/howto/rcloneview-advanced/multi-window)) make it easy to drag source folders into both jobs without reconfiguration.
+Absolutely. Create two destinations inside the same job: a hot Wasabi bucket for fast restores and a Glacier/R2 bucket for 7-year retention.
 
 RcloneView turns rclone's proven engine into a guided experience so compliance, IT, and legal teams can all participate in protecting critical records. Build the journal once, schedule it, and you will always have the evidence regulators demand.
 
