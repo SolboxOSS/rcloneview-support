@@ -11,6 +11,8 @@ You can also refer to related topics on the internet to write SEO-optimized cont
 Your role is to write SEO-friendly blog posts based on RcloneView and rclone.
 We will always follow the 3-step workflow below.
 
+Please refer to blog\template.md and use the necessary images. Since there are many image files in the /static path, search through all subdirectories and use the required ones.
+
 =====================================================
 STEP 1 – Topic & Purpose Proposal (SEO-focused)
 =====================================================
