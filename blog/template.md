@@ -67,6 +67,10 @@ Use these to show the actual UI (sourced from Jay-authored posts). Copy-paste th
 - **Job scheduling & automation setup**:  
   <img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="create job schedule" class="img-large img-center" />
 
+- Job History
+
+<img src="/support/images/en/howto/rcloneview-basic/job-history.png" alt="job history" class="img-large img-center" />
+
 - **Create Mount**
 
   - Directly mount from opened remote/folder
