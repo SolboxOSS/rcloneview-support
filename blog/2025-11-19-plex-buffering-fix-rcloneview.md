@@ -30,56 +30,70 @@ import RvCta from '../src/components/RvCta';
 Plex buffering has multiple culprits—slow disks, underpowered VFS cache, aggressive scanners, or Google Drive throttling. RcloneView layers a GUI over rclone so you can mount clouds, dial in cache modes, and watch real-time throughput without memorizing flags. This article gives Plex admins a checklist to eliminate stutters and reclaim binge nights.
 
 <!-- truncate -->
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Quick triage: is it Plex, network, or the mount?
 
 | Symptom | Likely cause | What to check in RcloneView |
 | --- | --- | --- |
-| Buffering after 30–60 seconds | Cache empty or cache on slow HDD | Mount details → Cache Mode (should be **Full** or **WriteBack**) and cache path (SSD) |
-| Buffering when skipping chapters | Low read-ahead / chunk size | Advanced mount options → `VFS read ahead`, `Buffer size`, `--vfs-cache-max-age` |
-| Streams fine locally but stalls remotely | Bandwidth throttled | Settings → Transfers → Bandwidth limit, plus ISP uplink |
-| Plays SD but 4K fails | Concurrency hitting provider limits | Mount options → `--transfers`, `--tpslimit`, watch transfer pane for Google Drive 403 errors |
-| Library scans freeze Plex | Plex hitting mount faster than VFS can supply | Schedule scans, split libraries, or use Compare/Sync to curate media first |
+| Buffering after 30–60 seconds | Cache not holding the whole file or cache on a slow disk | Mount details → Cache Mode (**Full**) and **Cache max size** large enough on SSD |
+| Buffering when skipping chapters | Cached data expiring too quickly | Advanced mount options → **Cache max age** longer window and **Dir cache time** (5–15 minutes) |
+| Streams fine locally but stalls remotely | Network/ISP bottleneck | Confirm mount is on fast storage; check LAN/ISP. Use Mount Manager to verify it stays mounted. |
+| Plays SD but 4K fails | Cache size too small for big files or mount path changed | Advanced options → Increase **Cache max size** and keep a fixed **Target** or **Mount to local path** for Plex |
+| Library scans freeze Plex | Repeated directory fetches | Advanced options → **Dir cache time** (e.g., 5–15 minutes); schedule scans during off-hours |
 
 If the mount is the bottleneck, the fix lives in RcloneView.
 
 ## Step 1 — Mount clouds with the right defaults
 
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
+
 1. Add your cloud remote (Google Drive, Dropbox, Wasabi, S3, etc.) in **Explorer → + New Remote**. Need a refresher? See [/support/howto/remote-storage-connection-settings/add-oath-online-login](/support/howto/remote-storage-connection-settings/add-oath-online-login).
 2. Open **Mount Manager → Add Mount**.
 3. Choose the remote folder that holds media (`gdrive-media:Movies`) and set a mount path visible to Plex (drive letter on Windows or `/Volumes/CloudMovies` on macOS/Linux).
-4. Under **Cache mode**, pick **Full** (best for Plex). This keeps entire files in the VFS cache so seeking is instant.
-5. Store the cache on SSD: set **Cache path** to `D:\PlexCache` or similar—avoid spinning disks.
-6. Enable **Auto start on launch** so mounts return when the server reboots.
+4. Keep **Target** on `Auto` unless Plex needs a fixed drive letter. To lock it in, choose a letter (Windows) or enable **Mount to local path** and point to a persistent folder (Linux/macOS).
+5. In **Advanced**, keep **Mount type** on `cmount` for Windows; use `nfsmount` only if you already rely on NFS on Linux/macOS. Check **Network drive** on Windows so the Plex service sees the mount. Use **Allow other** on Linux when Plex runs as another user. Leave **Read only** off if you add files or subtitles through the mount.
+6. Under **Cache mode**, pick **Full** (best for Plex). Set **Cache max size**, **Cache max age**, and **Dir cache time** in the same dialog to keep large media cached.
+7. Enable **Auto start on launch** so mounts return when the server reboots.
 
-<CloudSupportGrid />
+  <img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="mount from remote explorer" class="img-large img-center" />
 
-## Step 2 — Tune VFS cache and read-ahead for Plex
 
-Borrow proven values from the [Optimize Plex VFS cache guide](https://rcloneview.com/support/blog/2025-11-12-plex-vfs-cache-rcloneview):
+### Advanced mount options translated for Plex users
 
-- **Read ahead**: 256 MB for 1080p, 512 MB for 4K HEVC libraries. Plex reads ahead aggressively when scrubbing, so extra buffer matters.
-- **Cache max size**: 75–100 GB per active user if you routinely stream 4K remuxes. Plan SSD space accordingly.
-- **Cache writes**: If you edit metadata or drop new files via the mount, switch to **WriteBack** so uploads happen after playback finishes.
-- **`--buffer-size`**: Set to 64–128 MB. Larger buffers smooth bitrates that peak above your average connection.
-- **`--dir-cache-time`**: 5m–15m keeps directory metadata hot while Plex scans; refresh manually when new files are added.
+These field names match RcloneView’s Mount dialog. Defaults follow the [Mount Cloud Storage as a Local Drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive) guide; the “Plex-friendly” column clarifies how to set them for streaming.
 
-RcloneView exposes each value with human-friendly tooltips, so you no longer hunt through `rclone mount` manuals.
+| RcloneView field | What it controls | Plex-friendly setting |
+| --- | --- | --- |
+| Volume name | Label shown by the OS/file manager. | Optional; use a clear name like `Plex Cloud`. |
+| Mount type | Backend engine (`cmount` default on Windows, `nfsmount` mostly Linux/macOS). | Keep `cmount` unless you already use NFS; switching rarely improves buffering. |
+| Target | Drive letter or auto-assigned mount target. | `Auto` is fine; pick a fixed letter/path if Plex runs as a service. |
+| Mount to local path | Custom mount location. | Use when Plex expects a stable Unix path (e.g., `/mnt/plex-media`). |
+| Network drive | Marks mount as network drive on Windows. | Enable so Plex service accounts can see the mount. |
+| Read only | Blocks writes to the remote. | Leave off to allow subtitle downloads or metadata touches; enable only for playback-only mounts. |
+| Allow other | Lets other OS users access the mount (Linux). | Enable if Plex runs under a different user than your login. |
+| Cache mode | VFS cache behavior: `off`, `minimal`, `writes`, `full` (default `writes`). | Use **Full** for Plex to keep whole files cached and speed seeking. |
+| Cache max size | Max VFS cache size (bytes). `-1` = no limit. | Set an explicit size (e.g., `75000000000` for ~75 GB) to protect SSD space. |
+| Cache max age | How long cached data stays valid (nanoseconds). | 3600000000000 = 1h, 21600000000000 = 6h. Start with 6–12h so 4K files stay warm. |
+| Dir cache time | How long directory listings stay cached (nanoseconds). | 300000000000 = 5m, 900000000000 = 15m. Match your scan frequency (5–15m typical). |
+
+## Step 2 — Tune VFS cache size and freshness for Plex
+
+RcloneView exposes cache knobs that directly affect Plex playback. Enter time values in **nanoseconds**.
+
+- **Cache mode**: Use **Full** for Plex so the whole file stays in cache for smooth seeking. If you also write subtitles/metadata through the mount, Full still works; leave **Read only** unchecked so writes are allowed.
+- **Cache max size**: Reserve enough SSD for concurrent streams (e.g., ~75–100 GB per active 4K user). Example: `107374182400` ≈ 100 GB.
+- **Cache max age**: Keep cached media warm for hours so returning to an episode skips refetching. Example: `21600000000000` = 6 hours; `43200000000000` = 12 hours.
+- **Dir cache time**: Reduce directory churn during Plex scans. Example: `300000000000` = 5 minutes; `900000000000` = 15 minutes. Refresh manually after adding content.
+- RcloneView does not surface `VFS read ahead`, `buffer-size`, or `--tpslimit`; focus on the cache fields above for the biggest Plex gains.
 
 ## Step 3 — Match RcloneView throughput to Plex demand
 
-### Control transfers and TPS
-
-- In the mount’s **Advanced** tab, set **Transfers** to 4–6. Too high can trigger Google Drive’s rate limits; too low can starve Plex prefetch.
-- Enable **`--tpslimit`** (e.g., 8) for Google Drive to cap API bursts. Pair with **`--drive-pacer-min-sleep=10ms`** for steadier throughput.
-
-### Watch live traffic
-
-Use the **Transfer panel** to observe read/write speeds in real time. If playback uses less than 20–30 Mbps but your mount reports spikes over 200 Mbps, Plex is likely scanning or generating thumbnails—split those tasks from prime viewing hours.
-
-### Schedule heavy tasks
-
-RcloneView’s Scheduler (see [Job Scheduling & Execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution)) can queue sync jobs or cache warm-ups during low-traffic windows. For instance, schedule a **Compare & Sync** job at 03:00 to pull new episodes locally so the mount stays focused on playback the rest of the day.
+- Keep a **fixed Target or Mount to local path** so Plex libraries never lose their mount path after reboot.
+- Use **Auto start on launch** so mounts come back before Plex services start.
+- On Windows, enable **Network drive**; on Linux, enable **Allow other** so the Plex service account can see the mount.
+- Watch **Mount Manager** status. If a mount flips to Unmounted, re-mount from there or the system tray menu instead of rebuilding libraries.
+- For multi-library setups, create separate mounts (e.g., Movies vs. Shows) and set **Cache max size** per mount to prevent one library from evicting another’s cache.
 
 ## Step 4 — Harden network + OS settings
 
@@ -88,57 +102,45 @@ RcloneView’s Scheduler (see [Job Scheduling & Execution](/support/howto/rclone
 - **Linux/macOS**: Use `/etc/fstab` or a launch agent only after verifying RcloneView’s auto-mount works—consistency matters more than manual scripts.
 - **Bandwidth caps**: In **Settings → Transfers**, leave bandwidth uncapped for LAN streaming, but set an upper bound (e.g., 300 Mbps) if other workloads share the pipe.
 
-## Step 5 — Monitor cache health and logs
-
-- **Mount dashboard**: Each mount entry shows cache usage, last activity, and whether Auto start succeeded.
-- **Logs**: Right-click a mount → **Open Log** to inspect warnings (e.g., `vfs cache: slow read`). Use this log when tuning read sizes.
-- **Job History**: If you pair mounts with sync jobs, history exposes exactly when new content arrived—helpful for correlating with Plex scans.
 
 ## Troubleshooting cheatsheet
 
 | Problem | Fix |
 | --- | --- |
-| Buffering after idle period | Increase `--vfs-read-chunk-size` to 64–128 MB so Plex doesn’t refetch tiny segments |
-| Buffering when multiple users stream | Raise cache size, set `--vfs-cache-max-age` to longer interval, ensure SSD is not full |
-| Drive un-mounts overnight | Enable **Launch at login** (Settings → General) and confirm Auto start is on |
-| Plex can’t see mount | On Windows, check “Mount as network drive” and run Plex service with same credentials |
-| Google Drive 403 errors | Turn on `--drive-stop-on-upload-limit`, lower transfers, spread library scans across the day |
+| Buffering after idle period | Increase **Cache max age** (e.g., 6–12 hours) and keep **Cache mode** on Full so cached chunks stay warm |
+| Buffering when multiple users stream | Raise **Cache max size** to fit simultaneous 4K files and ensure the SSD has free space |
+| Drive un-mounts overnight | Enable **Auto start on launch** and use a fixed **Target** or **Mount to local path** |
+| Plex can’t see mount | On Windows, check **Network drive** and run Plex with the same credentials; on Linux, enable **Allow other** |
+| Library scans are slow | Increase **Dir cache time** to 5–15 minutes; refresh cache after adding new content |
 
 ## Real-world buffering fixes
 
 1. **4K HDR collectors**  
    - Cache Mode: Full  
-   - Read ahead: 512 MB  
-   - Cache path: NVMe SSD  
+   - Cache max size: 120 GB (SSD/NVMe)  
+   - Cache max age: 12 hours (`43200000000000` ns)  
+   - Dir cache time: 15 minutes (`900000000000` ns)  
    Result: Instant chapter skips, &lt;1s buffer for Dolby Vision remuxes.
 
 2. **Family server with mixed 1080p/4K**  
-   - Two mounts: `Movies`, `Shows`, each with dedicated cache folder  
+   - Two mounts: `Movies`, `Shows`, each with its own cache sizing  
    - Scheduler job warms frequently watched folders nightly  
    Result: Separate caches prevent kids’ cartoons from evicting movie caches.
 
 3. **Traveling users on LTE**  
    - Bandwidth cap: 80 Mbps  
    - Plex transcoding set to 8 Mbps 1080p  
-   - RcloneView mount uses WriteBack so paused uploads resume later  
+   - RcloneView mount stays on **Full** cache mode; writes still queue until connectivity returns  
    Result: Stable streams even over cellular hotspots.
 
 ## FAQ
 
 **Do I need a separate mount per library?**  
-Not required, but splitting large libraries keeps caches manageable and lets you tune settings (e.g., higher read-ahead for 4K movies than for TV episodes).
-
-**Where should I place the cache on NAS setups?**  
-Use an SSD tier or NVMe cache inside the NAS. Avoid spinning disks; cache thrashing there reintroduces buffering.
-
-**Can I pre-buffer upcoming episodes?**  
-Yes. Mount the cloud, then run a scheduled **Copy** job to a local SSD staging area before prime time. Plex plays from the local path while RcloneView syncs back after viewing.
-
-**How do I know if Google Drive is throttling?**  
-Transfer logs will show `userRateLimitExceeded` or `drive: rateLimitExceeded`. Lower transfers, enable `--tpslimit`, and space out scans.
+Not required, but splitting large libraries keeps caches manageable and lets you tune cache size/age per library (e.g., longer cache age for 4K movies than for TV episodes).
 
 ## Play without pauses
 
 Plex buffering is solvable once you tame mounts, cache, and quotas. RcloneView provides the GUI to configure VFS cache correctly, monitor throughput, and automate warm-ups—no guessing at shell scripts. Dial in the settings above, watch your transfer graphs, and enjoy Plex libraries that behave like local storage.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
+<CloudSupportGrid />

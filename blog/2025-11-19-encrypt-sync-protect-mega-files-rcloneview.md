@@ -18,6 +18,7 @@ tags:
   - mega
   - encryption
   - automation
+unlisted: true
 ---
 
 import CloudSupportGrid from '../src/components/CloudSupportGrid';
@@ -36,6 +37,7 @@ Keyword research keeps pointing to a single pain point for MEGA users:
 Security-minded teams want a GUI-driven way to stack encryption, schedule backups, and keep MEGA data synced everywhere without touching the command line. This article shows how to wrap MEGA remotes with rclone Crypt, operate them through RcloneView, and automate multi-cloud copies so you can sleep on stronger defenses.
 
 <!-- truncate -->
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Why MEGA power users layer encryption and automation
 
@@ -55,20 +57,18 @@ Unlike ad-hoc exports, RcloneView keeps every transfer auditable with timestamps
 1. [Download RcloneView](https://rcloneview.com/src/download.html) for Windows, macOS, or Linux.
 2. Add MEGA via **`+ New Remote`** following the [MEGA connection guide](/support/howto/remote-storage-connection-settings/mega). Bring either a session ID or email/password with 2FA.
 3. (Optional) Add a destination cloud such as Google Drive, S3, Wasabi, or a local NAS using the same wizard.
-4. In **Settings → General**, enable **Config Password** if you want the rclone configuration itself encrypted (see `howto/rcloneview-basic/general-settings.md` lines 119+).
-5. Toggle checksum comparison defaults under **Settings → Transfers** so every run verifies blocks instead of relying on timestamps.
+4. In **Settings → General**, enable **Config Password** if you want the rclone configuration itself encrypted (see `howto/rcloneview-basic/general-settings.md`).
 
-<CloudSupportGrid />
+
 
 ## Step 1 — Wrap MEGA with rclone Crypt inside RcloneView
 
 Rclone Crypt gives you filename and content encryption on top of whatever the upstream cloud already does. You can build it entirely in the GUI:
 
 1. Open **Explorer → + New Remote**.
-2. Choose **Crypt (Encrypted Storage)** as the remote type. Refer to the [encrypted backups playbook](https://rcloneview.com/support/blog/2025-10-13-how-to-encrypt-cloud-backups-secure-google-drive-onedrive-s3) if you need screenshots.
-3. When prompted for **Remote to encrypt/decrypt**, pick the MEGA remote you created earlier (e.g., `mega-prod:`).
-4. Set a mount path such as `mega-crypt:` and define file/folder name encryption (standard or off) plus salt lengths.
-5. Store the passphrase and salt securely; RcloneView can remember them in its encrypted config so you do not retype each launch.
+2. Choose **Crypt (Encrypted Storage)** as the remote type. Refer to the Crypt how-to if you need screenshots.
+3. When prompted for **Remote (folder to encrypt)**, pick the MEGA remote you created earlier (e.g., `mega-prod:`) and select the folder to protect.
+4. Set a Crypt remote name such as `mega-crypt:` and enter the passphrase. RcloneView can store it in the encrypted config so you do not retype each launch.
 
 Now, the Explorer shows two entries:
 - `mega-prod:` (plain MEGA remote for legacy workflows)
@@ -83,53 +83,37 @@ With `mega-crypt:` ready, you can work visually without CLI memorization.
 ### Compare and preview
 
 1. Split Explorer so the left pane shows `mega-crypt:` and the right pane shows the target (e.g., `gdrive-vault:` or a local NAS).
-2. Click **Compare** to preview deltas, filter out cache folders, and confirm versioning rules. The [Compare folders guide](/support/howto/rcloneview-basic/compare-folder-contents) covers advanced include/exclude logic.
-3. Run a **Dry Run** copy to ensure filenames, sizes, and timestamps look correct before committing.
+2. Click **Compare** to preview deltas. If you have a Plus license, use the **Filter** icon to hide cache/temp folders. The [Compare folders guide](/support/howto/rcloneview-basic/compare-folder-contents) covers include/exclude logic.
+3. Review the Compare results and filters before running copy or sync so filenames, sizes, and timestamps match expectations.
 
 ### Save as a reusable Job
 
 1. Highlight the source/destination, then right-click → **Sync** (for mirroring) or **Copy** (for append-only backups).
-2. Configure key options:
-   - **`--check-first`** and **`--checksum`**: verify before transferring.
-   - **`--drive-stop-on-upload-limit`** when targeting Google Drive to honor 750 GB/day quotas.
-   - **Versioned target folder** if you need `YYYY-MM-DD` snapshots.
+2. Configure key options in the wizard:
+   - **Advanced Settings**: set number of file transfers, multi-threaded transfers, and enable checksum comparison.
+   - **Filtering Settings**: limit by size, age, or depth, and add predefined or custom filters to skip cache/temp folders.
+   - **Create empty directories** if you want blank source folders mirrored on the destination.
 3. Give the job a descriptive name such as `Mega-Encrypted-to-Drive-Nightly`.
 
 ## Step 3 — Automate with the Scheduler
 
-The Scheduler lives on Step 4 of the Job wizard and transforms security policies into reality:
+The Scheduler (Plus license) lives on **Step 4: Scheduling** of the Job wizard:
 
-1. Toggle **Enable Scheduler** and choose a cadence (hourly, daily, weekly, or cron-like patterns).
-2. Stagger high-volume transfers to off-peak hours so MEGA throttling is less likely.
-3. Enable **Retries** and **Notifications** (email/webhook) so failures never go unnoticed.
-4. Turn on **Launch at login** in Settings so the agent runs after reboot and keeps the schedule alive.
-
-Under the hood, RcloneView surfaces the precise command, which you can reuse for automation audits:
-
-```bash
-rclone sync mega-crypt:Projects gdrive-vault:MEGA-Encrypted ^
-  --check-first ^
-  --checksum ^
-  --create-empty-src-dirs ^
-  --transfers=6 ^
-  --drive-stop-on-upload-limit
-```
-
-You never type this manually—the GUI builds it—but security reviewers appreciate seeing the exact flags.
+1. Check **Run whenever time units ~** to enable a schedule and set minute/hour/day fields (crontab-style).
+2. Use **Simulate** to preview upcoming runs.
+3. Save the job. Make sure **Launch at login** is enabled in Settings if you want scheduled jobs to resume after reboot.
 
 ## Step 4 — Monitor, verify, and recover
 
 - **Job History**: shows every Scheduler run with timestamps, bytes, exit codes, and log links. Export logs for compliance.
 - **Transfer panel**: real-time bandwidth, throughput, and per-file visibility eliminate blind spots common with manual downloads.
 - **Compare after automation**: rerun Compare to confirm zero deltas or intentionally skipped folders.
-- **Resume & retries**: if MEGA or the destination throttles, RcloneView pauses gracefully and resumes on the next window.
-- **Audit-ready storage**: keep encrypted logs or send them to SIEM tools for long-term retention.
+- **Resume & retries**: if MEGA or the destination throttles, rerun the saved job; history shows previous outcomes.
 
 ## Hardening checklist for MEGA + Crypt deployments
 
 - Protect the rclone config with a password (Settings → General) so secrets stay encrypted at rest.
 - Store Crypt passphrases in a hardware security module or password manager; never paste them into chat apps.
-- Use **Bandwidth limits** when syncing from shared offices so encryption jobs do not trigger network alarms.
 - Pair Copy jobs (MEGA → Drive) with periodic Sync jobs back to MEGA if you also need disaster recovery for collaborative folders.
 - Keep RcloneView up to date; releases often include new rclone flags, Crypt improvements, and security patches.
 
@@ -148,10 +132,10 @@ You never type this manually—the GUI builds it—but security reviewers apprec
 No. Crypt encrypts locally before files leave your machine, so MEGA still stores ciphertext. You effectively add another envelope.
 
 **Can I decrypt files elsewhere?**  
-Yes. Import the same `rclone.conf` into any machine (or run the raw rclone command shown above) to decrypt. Guard the passphrases carefully.
+Yes. Import the same `rclone.conf` into any machine and use the Crypt remote to decrypt. Guard the passphrases carefully.
 
 **What if MEGA throttles API calls?**  
-Lower `--transfers`, use bandwidth caps, and schedule off-peak hours. RcloneView logs throttles and retries automatically.
+Lower transfer concurrency in Advanced Settings and schedule off-peak hours. If a run fails, rerun the saved job from Job Manager.
 
 **Is there a way to verify nothing changed?**  
 Run Compare, enable checksum syncs, and review Job History. Everything is timestamped so you can prove integrity.
@@ -160,4 +144,4 @@ Run Compare, enable checksum syncs, and review Job History. Everything is timest
 
 RcloneView gives MEGA power users a GUI-native way to combine rclone Crypt, Scheduler, Compare, and logging. Instead of juggling CLIs or downloading archives, you can encrypt once, automate forever, and keep every action auditable.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+<CloudSupportGrid />
