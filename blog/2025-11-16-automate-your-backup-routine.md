@@ -43,6 +43,8 @@ RcloneView rides on the rclone engine but wraps it with Jobs, Compare, and sched
 
 **Keywords to include:** *scheduled cloud sync*, *automate cloud transfers*, *daily backup app*, *RcloneView jobs*.
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 ---
 
 ## Reference setup
@@ -50,7 +52,9 @@ RcloneView rides on the rclone engine but wraps it with Jobs, Compare, and sched
 1. **Sources:** NAS shares, on-prem file servers, Google Drive/OneDrive/Dropbox.  
 2. **Targets:** Amazon S3/Glacier, Wasabi, Cloudflare R2, Backblaze B2, or another S3-compatible.  
 3. **Network:** Ensure outbound HTTPS and stable bandwidth during your backup window.  
-4. **Permissions:** Create least-privilege API users for each destination bucket.
+4. **Permissions:** Create least-privilege API users for each destination bucket.  
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
 
 ---
 
@@ -61,7 +65,12 @@ RcloneView rides on the rclone engine but wraps it with Jobs, Compare, and sched
 3. Name them clearly (`NAS_Main`, `S3_Backup`, `R2_Secondary`).  
 4. Confirm connectivity in the Explorer pane.
 
-🔍 Helpful link: [How to Add S3-Compatible Storage](/support/howto/remote-storage-connection-settings/s3)
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-remote.png" alt="add new remote" class="img-large img-center" />
+
+🔍 Helpful links:
+- [How to Add S3-Compatible Storage](/support/howto/remote-storage-connection-settings/s3)
+- [Add a new remote (OAuth)](/support/howto/remote-storage-connection-settings/add-oath-online-login)
+- [Browse & Manage Remote Storage](/support/howto/rcloneview-basic/browse-and-manage-remote-storage)
 
 ---
 
@@ -74,6 +83,13 @@ RcloneView rides on the rclone engine but wraps it with Jobs, Compare, and sched
 
 > Tip: If you need versioned backups, set `--backup-dir` to a dated prefix (e.g., `/backups/{date}`) so older files stay preserved.
 
+<img src="/support/images/en/howto/rcloneview-basic/add-job-in-job-manager.png" alt="add job in job manager" class="img-large img-center" />
+
+👉 Learn more:
+- [Synchronize Remote Storages](/support/howto/rcloneview-basic/synchronize-remote-storages)
+- [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs)
+- [Execute & Manage Jobs](/support/howto/rcloneview-basic/execute-manage-job)
+
 ---
 
 ## Step 3 – Schedule and throttle
@@ -84,6 +100,10 @@ RcloneView rides on the rclone engine but wraps it with Jobs, Compare, and sched
 4. Configure **notifications** (email/Slack) for success, warnings, or failures.  
 5. Set **retry** and **backoff** options for unreliable links.
 
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="configure job schedule" class="img-large img-center" />
+
+👉 Learn more: [Job Scheduling and Execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
+
 ---
 
 ## Step 4 – Monitor and audit
@@ -93,9 +113,12 @@ RcloneView rides on the rclone engine but wraps it with Jobs, Compare, and sched
 - **Logs:** Export logs weekly for compliance (RPO/RTO evidence).  
 - **Health checks:** Quarterly restore tests to a staging bucket or NAS.
 
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="compare view" class="img-large img-center" />
+
+👉 Learn more: [Compare Folder Contents](/support/howto/rcloneview-basic/compare-folder-contents)
+
 ---
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Pro tips for rock-solid schedules
 

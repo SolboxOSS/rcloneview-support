@@ -37,8 +37,9 @@ import RvCta from '../src/components/RvCta';
 
 <!-- truncate -->
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 <!-- Image placeholder: two-pane RcloneView with local "Client_Finals" on the left and tabs for Drive, Dropbox, OneDrive, Box, and Wasabi on the right. -->
-<img src="/support/images/en/tutorials/new-remote-all-remotes.png" alt="rcloneview multi cloud explorer" class="img-large img-center" />
+
 
 ## Why photographers need this
 
@@ -50,7 +51,9 @@ import RvCta from '../src/components/RvCta';
 
 RcloneView covers 100+ providers in one UI and can shift heavy transfers to a cloud-hosted rclone when your uplink is the bottleneck.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+<img src="/support/images/en/tutorials/new-remote-all-remotes.png" alt="rcloneview multi cloud explorer" class="img-large img-center" />
+
+
 
 ## Quick setup (10 minutes)
 
@@ -66,6 +69,7 @@ RcloneView covers 100+ providers in one UI and can shift heavy transfers to a cl
 - Add S3/Wasabi: [S3-compatible setup](https://rcloneview.com/support/howto/remote-storage-connection-settings/s3)  
 
 <!-- Image placeholder: “Add Remote” dialog with Drive, Dropbox, OneDrive, Box, Wasabi tiles highlighted. -->
+<img src="/support/images/en/blog/cloud-to-cloud-transfer-default.png" alt="cloud to cloud transfer default" class="img-large img-center" />
 
 ## Delivery flow: stage once, deliver everywhere
 
@@ -75,7 +79,7 @@ RcloneView covers 100+ providers in one UI and can shift heavy transfers to a cl
 4. Switch the right tab to the next client cloud; reuse the same source-no second local upload.  
 5. Save each flow as a **Job** for repeat clients; run or schedule.
 
-<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="compare display select" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="compare display select" class="img-large img-center" />
 
 👉 Feature docs:  
 - Compare: [how it works](https://rcloneview.com/support/howto/rcloneview-basic/compare-folder-contents)  
@@ -84,7 +88,7 @@ RcloneView covers 100+ providers in one UI and can shift heavy transfers to a cl
 - Scheduling: [scheduling guide](https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution)
 
 <!-- Image placeholder: Compare results showing “missing on OneDrive/Dropbox” before copy. -->
-<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="job run click" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="job run click" class="img-large img-center" />
 ## Handling common photographer asks
 
 - Agency wants Drive + Wasabi: Copy to Drive, flip the tab to Wasabi, Copy again-no second local upload.  

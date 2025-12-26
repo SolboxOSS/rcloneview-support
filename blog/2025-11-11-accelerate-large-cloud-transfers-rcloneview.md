@@ -47,6 +47,8 @@ RcloneView builds on the proven rclone engine so you can optimize speed visually
 
 **Primary keywords:** *faster cloud sync*, *optimize transfer speed*, *rclone parallel transfers*, *chunked uploads*.
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 ---
 
 ## Step 1 – Baseline your transfer path
@@ -97,7 +99,7 @@ RcloneView builds on the proven rclone engine so you can optimize speed visually
 
 ---
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 ## Monitoring and continuous improvement
 

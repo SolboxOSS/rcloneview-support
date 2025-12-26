@@ -72,13 +72,13 @@ Tip: Keep Plex metadata local on SSD; only media lives in the cloud.
 - Use Remote Explorer or Mount Manager to map a folder to a drive/path Plex can see.  
   See: /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive#method-1-mount-from-remote-explorer and /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive#method-2-mount-via-mount-manager
 
-<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="Mount from Remote Explorer in RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="Mount from Remote Explorer in RcloneView" class="img-large img-center" />
 
 2. Open Advanced Options
 
 - In the Mount dialog, open Advanced Options and locate VFS settings (cache mode, size, ages, dir cache time).
 
-<img src="/support/images/en/blog/mount-advanced.png" alt="Configure mount from Mount Manager" class="img-medium img-center" />
+<img src="/support/images/en/blog/mount-advanced.png" alt="Configure mount from Mount Manager" class="img-large img-center" />
 
 3. Select the cache mode
 

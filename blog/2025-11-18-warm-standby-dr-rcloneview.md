@@ -38,10 +38,9 @@ Warm-standby DR pairs a primary location (e.g., AWS S3 or OneDrive) with a conti
 **Relevant docs**
 
 - Create Sync Jobs: https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs
-- Job Scheduling & Execution: https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
-- Compare and Verify: https://rcloneview.com/support/tutorials/new-window-with-external-rclone
-- External rclone flags (S3 & R2): https://rcloneview.com/support/tutorials/new-window-external-rclone-s3-and-r2
-- Synology/NAS to cloud patterns: https://rcloneview.com/support/tutorials/synology-nas-cloud-transfer
+- Job Scheduling & Execution (Plus): https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
+- Mount as local drive: https://rcloneview.com/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive
+- Compare folders: https://rcloneview.com/support/howto/rcloneview-basic/compare-folder-contents
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
@@ -52,6 +51,9 @@ Warm-standby DR pairs a primary location (e.g., AWS S3 or OneDrive) with a conti
 - No scripts: Build jobs in a wizard, not YAML/cron.
 - Visible drift: Compare highlights mismatches before you need to fail over.
 - Safer restores: Mount the standby and copy back without touching production.
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
+  
 
 ## Strategy and architecture
 
@@ -65,6 +67,8 @@ Warm-standby DR pairs a primary location (e.g., AWS S3 or OneDrive) with a conti
 - Standby: another region/provider with versioning (R2/Wasabi/S3/B2).
 - Control: RcloneView runs sync on intervals; Compare checks integrity; Mount enables rapid access during failover.
 
+<img src="/support/images/en/blog/cloud-to-cloud-transfer-default.png" alt="cloud to cloud transfer default" class="img-large img-center" />
+
 ## Prerequisites
 
 - Two remotes configured in RcloneView (e.g., `s3:prod-bucket` and `r2:standby-bucket`).
@@ -76,71 +80,47 @@ Warm-standby DR pairs a primary location (e.g., AWS S3 or OneDrive) with a conti
 
 1. Create a Sync job: Source = primary, Destination = standby.
 2. Use one-way Sync to mirror new/updated files; keep deletes if you want strict parity.
-3. Add filters for noisy paths (e.g., cache/temp).
-4. Optional performance flags (Advanced Options):
+3. Add filters for noisy paths (e.g., cache/temp) in the Filtering step.
+4. In **Advanced Settings**, adjust transfer counts and enable checksum comparison if both sides support hashes.
+5. Save the job so the same settings apply to every run (Job Manager).
 
-```
---s3-chunk-size=64M --s3-upload-concurrency=8 --checkers=8 --transfers=8
-```
-
-5. Save the job so the same settings apply to every run.
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />
 
 ## Step 2: Schedule continuous updates
 
-1. Open Scheduler > select the DR job.
-2. Choose cadence: hourly for app data, nightly for archives.
-3. Enable retries/backoff for flaky links.
-4. Turn on logging so you can prove RPO compliance.
-5. Add a second scheduled Compare weekly to detect drift early.
+1. In the Job wizard (Step 4: Scheduling, Plus license), enable scheduling for the DR job.
+2. Choose cadence: hourly for app data, nightly for archives, and use **Simulate** to preview upcoming runs.
+3. Set retry attempts in Advanced Settings for flaky links.
+4. Keep a manual weekly Compare to detect drift early.
 
-<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure the job scheduler in RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure the job scheduler in RcloneView" class="img-large img-center" />
 
 ## Step 3: Verify and monitor
 
-- Use Compare to ensure object counts and checksums match.
-- In logs, watch for throttling; tune `--s3-upload-concurrency` if needed.
+- Use Compare to ensure object counts align before declaring the standby ready.
+- Review Job History for failures or retries and rerun the job if a window was missed.
 - Keep versioning on the standby so accidental deletes can be recovered.
 
 ## Step 4: Failover playbook
 
-1. Mount the standby: Mount destination remote to a path your app can read.
+1. Mount the standby: use Mount Manager to mount the destination remote to a stable path/drive letter.
 2. Point workloads to the mounted path or to the standby bucket endpoint.
 3. Keep the primary in read-only or offline until incident triage is done.
-4. Run a one-time Copy back to primary when it is healthy; disable delete flags during the return to avoid data loss.
 
-```
---dry-run --checksum --no-traverse  # verify before cutover
-```
 
 ## Tuning tips
 
-- Latency-sensitive apps: lower chunk size and concurrency; schedule during low traffic.
-- Compliance: pair with Object Lock (see immutable guide) to block ransomware deletes.
-- Cost control: exclude staging/temp folders and enable lifecycle policies after retention windows.
-- Multi-cloud: keep two standbys (e.g., R2 + Wasabi) from the same primary using separate jobs.
+- Latency-sensitive apps: lower transfer counts in Advanced Settings and schedule during low traffic.
+- Compliance: keep versioning on the standby and export Job History for audits.
+- Cost control: exclude staging/temp folders via Filters and apply lifecycle policies on the standby cloud.
+- Multi-cloud: run separate jobs if you need two standbys (e.g., R2 + Wasabi) from the same primary.
 
 ## Troubleshooting checklist
 
-- Slow replications: reduce `--transfers` and enable bandwidth limits; check peering to standby region.
-- Mismatched counts: rerun Compare with `--checksum`; confirm both remotes use versioning.
-- Permission errors: ensure API keys allow multipart uploads and listing on both clouds.
+- Mismatched counts: rerun Compare and review Job History for skipped items; confirm versioning is on.
+- Permission errors: ensure API keys allow list/read/write on both clouds.
 - Restore deletes data: use Copy (not Sync) when bringing data back to production.
 
-## Quick-start template
-
-```
-Job: Warm-Standby Sync (S3 -> R2)
-Source: s3:prod-app-data
-Destination: r2:dr-standby
-Flags:
-  --s3-chunk-size=64M
-  --s3-upload-concurrency=8
-  --checkers=8
-  --transfers=8
-Schedule: Hourly at :15 with 2 retries (10m backoff)
-Verification: Weekly Compare + email notification on mismatch
-Failover: Mount r2:dr-standby and point workloads to the mount
-```
 
 Keep your standby warm, tested, and ready so failover is a switch—not a scramble.
 

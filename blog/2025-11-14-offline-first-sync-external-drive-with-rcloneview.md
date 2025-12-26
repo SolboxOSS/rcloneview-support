@@ -32,6 +32,7 @@ import RvCta from '../src/components/RvCta';
 Travel, field shoots, or simply wanting a physical backup often collide with cloud-only workflows. Official sync apps throttle large libraries or demand selective sync. If you need the _entire_ folder tree offline—and a plug-in drive as part of your backup strategy—RcloneView turns rclone’s sync power into a friendly GUI. Connect a remote, pick your external path, and schedule automatic refreshes so your drive is always ready, even if your account gets locked or you lose connectivity.
 
 <!-- truncate -->
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 **Offline-first perks**
 
@@ -40,7 +41,6 @@ Travel, field shoots, or simply wanting a physical backup often collide with clo
 - Restore data quickly if cloud copies become corrupted.
 - Carry terabytes of media for editing on the go.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Offline First vs. Cloud-Only
 
@@ -64,9 +64,11 @@ Helpful guides
 
 - Browse/manage sources: https://rcloneview.com/support/howto/rcloneview-basic/browse-and-manage-remote-storage
 - Instant sync basics: https://rcloneview.com/support/howto/rcloneview-basic/synchronize-remote-storages
-- Save and schedule jobs: https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs, https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
+- Save and schedule jobs:
+  - https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs
+  - https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
 
-<img src="/support/images/en/blog/open-multiple-google-drive-remotes.png" alt="Browse cloud and local folders side by side in RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-remote.png" alt="add new remote" class="img-medium img-center" />
 
 ## Step-by-Step — Sync Cloud Data to an External Drive
 
@@ -79,7 +81,13 @@ Helpful guides
 ### Step 2 — Connect your cloud remote
 
 - Click **`+ New Remote`**, choose Google Drive/Dropbox/OneDrive for OAuth sign-in, or enter keys for S3/Wasabi/R2.
-- Verify the remote appears in Explorer. \nSee: /support/howto/remote-storage-connection-settings/add-oath-online-login and /support/howto/remote-storage-connection-settings/s3
+- Verify the remote appears in Explorer.
+
+<img src="/support/images/en/howto/remote-storage-connection-settings/remote-manager-mega-view.png" alt="remote manager view" class="img-large img-center" />
+
+👉 Learn more:
+- [Add a new remote (OAuth)](/support/howto/remote-storage-connection-settings/add-oath-online-login)
+- [How to Add S3-Compatible Storage](/support/howto/remote-storage-connection-settings/s3)
 
 ### Step 3 — Build a sync job
 
@@ -88,7 +96,12 @@ Helpful guides
 - Destination: pick the external folder (e.g., `E:/ProjectsOffline/`).
 - Choose the operation (Copy, Sync, or Move). For most users, **Sync** mirrors the cloud; **Copy** keeps existing external files intact.
 
-<img src="/support/images/en/howto/rcloneview-basic/add-job-configure-storage.png" alt="Configure source and destination when creating a job" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/add-job-configure-storage.png" alt="Configure source and destination when creating a job" class="img-large img-center" />
+
+👉 Learn more:
+- [Synchronize Remote Storages](/support/howto/rcloneview-basic/synchronize-remote-storages)
+- [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs)
+- [Execute & Manage Jobs](/support/howto/rcloneview-basic/execute-manage-job)
 
 ### Step 4 — Fine-tune options
 
@@ -96,17 +109,23 @@ Helpful guides
 - Versioned backups: copy into a date-stamped folder if you want history.
 - Performance: adjust threads/bandwidth to match your link speed.
 
+<img src="/support/images/en/howto/rcloneview-basic/add-job-advnaced-settings.png" alt="advanced sync settings" class="img-large img-center" />
+
 ### Step 5 — Run once or schedule
 
 - Run an initial sync to populate the drive. Use **Dry run** to preview changes.
 - Enable scheduling (daily at 3 AM, after-work hours, etc.) so the drive stays fresh whenever the PC and drive are connected.
 
-<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Set daily schedules for your sync job" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Set daily schedules for your sync job" class="img-large img-center" />
+
+👉 Learn more: [Job Scheduling and Execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
 
 ### Step 6 — Monitor and unplug
 
 - Watch the transfer panel for progress; check Job History for success logs.
 - Safely eject the drive when done; plug it back in later and let the scheduled job catch up automatically.
+
+<img src="/support/images/en/tutorials/wasabi-real-time-monitoring-transferring.png" alt="transfer monitoring" class="img-large img-center" />
 
 ## Advanced Offline Scenarios
 
@@ -129,6 +148,6 @@ An external drive copy means you can disconnect from the internet without sacrif
 
 Your cloud, your drive—available anywhere, even without internet.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 <CloudSupportGrid />

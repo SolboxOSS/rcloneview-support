@@ -53,6 +53,7 @@ By layering a modern GUI over the proven **rclone engine**, it unifies your S3, 
 
 In short: if you rely on any combination of **S3**, **Wasabi**, or **R2**, you can now treat them as one cohesive storage fabric.
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 ---
 
 ## Understanding the three players
@@ -78,7 +79,6 @@ RcloneView is the missing piece that connects them.
 
 ---
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Step 1 – Preparation
 
@@ -104,8 +104,11 @@ RcloneView makes multi-provider setup straightforward:
 3. Name each clearly (e.g., `S3_Prod`, `Wasabi_Archive`, `R2_Distribution`).  
 4. Confirm connectivity—each remote should appear in the left pane’s Explorer.
 
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-remote.png" alt="Add S3, Wasabi, and R2 remotes in RcloneView" class="img-large img-center" />
+
 🔍 Helpful links:  
 - [How to Add S3-Compatible Storage](/support/howto/remote-storage-connection-settings/s3)  
+- [Cloudflare R2 credentials setup](/support/howto/cloud-storage-setting/cloudflare-r2-credential)
 
 ---
 
@@ -120,11 +123,15 @@ RcloneView supports multiple workflows for S3, Wasabi, and R2:
 
 👉 See: [Copying Files using Drag and Drop](/support/howto/rcloneview-basic/browse-and-manage-remote-storage#copying-files-using-drag-and-drop)
 
+  <img src="/support/images/en/tutorials/wasabi-drag-and-drop.png" alt="drag and drop" class="img-large img-center" />
+
 ### B) **Compare & Copy**
 - Use **Compare** to preview object differences before syncing.  
 - Copy only changed files to reduce API calls and transfer times.
 
 👉 See: [Compare and Manage Files](/support/howto/rcloneview-basic/compare-folder-contents#compare-results-and-manage-files)
+
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare buckets before copying" class="img-large img-center" />
 
 ### C) **Sync & Schedule**
 - Automate full bucket mirrors (e.g., nightly Wasabi backups from S3).  
@@ -136,6 +143,8 @@ RcloneView supports multiple workflows for S3, Wasabi, and R2:
 - [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs)  
 - [Job Scheduling and Execution](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
 
+<img src="/support/images/en/howto/rcloneview-basic/add-job-configure-storage.png" alt="Configure sync jobs for S3, Wasabi, and R2" class="img-large img-center" />
+
 ---
 
 ## Step 4 – Pro tips for smoother operations
@@ -145,6 +154,7 @@ RcloneView supports multiple workflows for S3, Wasabi, and R2:
 - **Monitor egress and API usage**—some tiers charge per request.  
 - Use **Job History** to audit and troubleshoot syncs.  
 - Leverage RcloneView’s **Compare Mode** before big merges.
+
 
 ---
 

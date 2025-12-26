@@ -37,9 +37,9 @@ Copying from Google Drive to Dropbox or S3 to R2 is easy—proving every object 
 **Relevant docs**
 
 - Create Sync Jobs: https://rcloneview.com/support/howto/rcloneview-basic/create-sync-jobs
-- Job Scheduling & Execution: https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
-- Compare and Verify: https://rcloneview.com/support/tutorials/new-window-with-external-rclone
-- External rclone flags (S3 & R2): https://rcloneview.com/support/tutorials/new-window-external-rclone-s3-and-r2
+- Job Scheduling & Execution (Plus): https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
+- Compare folders: https://rcloneview.com/support/howto/rcloneview-basic/compare-folder-contents
+- Mount as local drive: https://rcloneview.com/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive
 
 <RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
@@ -48,12 +48,14 @@ Copying from Google Drive to Dropbox or S3 to R2 is easy—proving every object 
 - Avoid silent corruption: checksums detect bitrot and partial uploads.
 - Faster cutovers: Compare highlights mismatches before you flip endpoints.
 - Multi-cloud ready: Works across Drive, Dropbox, OneDrive, S3, Wasabi, R2, B2, and NAS.
-- Zero scripting: Build, schedule, and re-run jobs visually.
+- Zero scripting: Build, schedule, and re-run jobs visually.  
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
 
 ## Migration blueprint
 
 ```
-[Source cloud/NAS] --(RcloneView Sync with --checksum)--> [Target cloud]
+[Source cloud/NAS] --(RcloneView Sync with checksum enabled)--> [Target cloud]
                                            \
                                             --(RcloneView Compare)--> [Drift report]
 ```
@@ -67,76 +69,58 @@ Copying from Google Drive to Dropbox or S3 to R2 is easy—proving every object 
 
 - Remotes added in RcloneView for both source and target (e.g., `drive:team`, `dropbox:prod`, `s3:archive`, `r2:mirror`).
 - Target has enough quota and, if S3-compatible, versioning enabled for safety.
-- API/IAM keys allow list/read/write and, for S3, multipart uploads.
+- API/IAM keys allow list/read/write and, for S3, multipart uploads.  
+
+<img src="/support/images/en/blog/cloud-to-cloud-transfer-default.png" alt="cloud to cloud transfer default" class="img-large img-center" />
+  
 
 ## Step 1: Create a checksum Sync job
 
 1. New Sync job: Source = current system, Destination = target cloud.
-2. Open Advanced Options and enable checksum verification:
+2. In **Advanced Settings**, enable checksum comparison if both remotes support hashes, and set transfer/checker counts to fit your link.
+3. In **Filtering Settings**, add include/exclude filters for cache/temp folders.
+4. Save the job so reruns keep the same integrity settings (Job Manager).  
 
-```
---checksum --checkers=8 --transfers=8 --s3-chunk-size=64M --s3-upload-concurrency=8
-```
-
-3. Add include/exclude filters for cache/temp folders.
-4. Save the job so reruns keep the same integrity flags.
+<img src="/support/images/en/howto/rcloneview-basic/job-run-click.png" alt="Running an encrypted sync job in RcloneView" class="img-large img-center" />
 
 ## Step 2: Schedule incremental runs
 
-1. Open Scheduler > select the migration job.
-2. Run nightly or hourly to reduce the final cutover delta.
-3. Enable retries/backoff to ride through throttling.
-4. Turn on logging for audit and rollback notes.
+1. In the Job wizard (Step 4: Scheduling, Plus), enable scheduling for the migration job.
+2. Run nightly or hourly to reduce the final cutover delta; use **Simulate** to preview runs.
+3. Set retry attempts in Advanced Settings for throttling.
+4. Logging and history are saved automatically; review Job History for audit notes.
 
-<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure the job scheduler in RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure the job scheduler in RcloneView" class="img-large img-center" />
 
 ## Step 3: Verify with Compare
 
-- After the baseline, run Compare between source and target with `--checksum` to validate content, not just size.
-- Use the weekly scheduled Compare pattern from the scheduler to catch late drift.
-- Check the report/logs for mismatches; re-run Sync to fix only the differences.
+- After the baseline, run Compare between source and target to validate content, not just size.
+- Add a weekly Compare routine to catch late drift (run manually from Compare; scheduler applies to jobs only).
+- Check the report/logs for mismatches; re-run Sync to fix only the differences.  
+
+<img src="/support/images/en/howto/rcloneview-basic/compare-display-select.png" alt="Compare shared folder and My Drive contents" class="img-large img-center" />
+  
 
 ## Step 4: Cutover safely
 
 1. Freeze writes on the source (maintenance window).
-2. Run a final Sync with `--checksum --fast-list` to close the gap.
+2. Run a final Sync with checksum enabled to close the gap.
 3. Run Compare one last time; expect zero mismatches.
-4. Mount the target in RcloneView so apps/users can validate paths before DNS/endpoint changes.
-
-```
---dry-run --checksum --no-traverse  # quick validation before cutover
-```
 
 ## Tuning tips
 
-- High latency links: lower `--s3-upload-concurrency`; increase `--s3-chunk-size` for large media.
-- Mixed clouds: if a provider lacks checksums, pair `--checksum` with `--size-only` fallback cautiously.
-- Bandwidth caps: set `--bwlimit` during business hours; schedule heavier runs overnight.
-- Safety net: keep versioning/object lock on the target if ransomware is a concern.
+- High latency links: lower transfer counts; for large media, keep multi-thread transfers enabled if the backend supports it.
+- Mixed clouds: if a provider lacks checksums, rely on size/time matching and confirm critical data manually.
+- Bandwidth caps: set limits in settings during business hours; schedule heavier runs overnight.
+- Safety net: keep versioning on the target; use Object Lock where supported.
 
 ## Troubleshooting checklist
 
-- Mismatch counts: rerun Compare with `--checksum`; verify both sides expose hashes (MD5/SHA/Dropbox content hash).
-- Slow verifies: reduce `--checkers` or use `--fast-list` where supported.
+- Mismatch counts: rerun Compare; verify both sides expose hashes (some providers lack checksum support).
+- Slow verifies: reduce checker/transfer counts if the link is saturated.
 - AccessDenied on S3 uploads: ensure multipart and list permissions are granted.
 - Deleted files reappear: remove delete flags only after the final cutover if you need strict mirroring.
 
-## Quick-start template
-
-```
-Job: Checksum Migration (Drive -> R2)
-Source: drive:marketing-hub
-Destination: r2:global-marketing
-Flags:
-  --checksum
-  --checkers=8
-  --transfers=8
-  --s3-chunk-size=64M
-  --s3-upload-concurrency=8
-Schedule: Nightly at 01:00, 2 retries with 10m backoff
-Verification: Weekly Compare with --checksum + email notification on mismatch
-Cutover: Final Sync + Compare, then Mount r2:global-marketing for validation
-```
 
 Checksum every migration, and you only have to move the data once.
 

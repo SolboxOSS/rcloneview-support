@@ -47,10 +47,10 @@ Text diagram
 
 Helpful docs
 
-- Mount basics in RcloneView: /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive
-- Advanced flags via Embedded Rclone: /support/howto/rcloneview-basic/general-settings
-- Add OAuth logins (Google): /support/howto/remote-storage-connection-settings/add-oath-online-login
-- S3/Wasabi/R2 setup: /support/howto/remote-storage-connection-settings/s3 and /support/howto/cloud-storage-setting/cloudflare-r2-credential
+- Mount basics in RcloneView: [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive)
+- Advanced flags via Embedded Rclone: [General settings](/support/howto/rcloneview-basic/general-settings)
+- Add OAuth logins (Google/Dropbox/OneDrive): [Connect via browser login](/support/howto/remote-storage-connection-settings/add-oath-online-login)
+- S3/Wasabi/R2 setup: [Configure S3 storage](/support/howto/remote-storage-connection-settings/s3) · [Cloudflare R2 credentials](/support/howto/cloud-storage-setting/cloudflare-r2-credential)
 
 ## Mount and Stream in a Few Clicks
 
@@ -59,14 +59,16 @@ Connect a cloud, create a mount, and point Plex to it. That’s it.
 1. Connect a remote
 
 - Google Drive, OneDrive, Dropbox, S3/Wasabi/R2 are all supported. Add each via `+ New Remote`.
-- Guides: /support/howto/remote-storage-connection-settings/add-oath-online-login, /support/howto/remote-storage-connection-settings/s3, https://rclone.org/dropbox/
+- Guides: [OAuth-based providers](/support/howto/remote-storage-connection-settings/add-oath-online-login) · [S3-compatible storage](/support/howto/remote-storage-connection-settings/s3) · [Dropbox backend notes](https://rclone.org/dropbox/)
+
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-remote.png" alt="Add a new remote in RcloneView" class="img-large img-center" />
 
 2. Create a mount
 
-- Method 1 — From Remote Explorer: /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive#method-1-mount-from-remote-explorer
-- Method 2 — Via Mount Manager: /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive#method-2-mount-via-mount-manager
+- Method 1 — From Remote Explorer: [Mount from Remote Explorer](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive#method-1-mount-from-remote-explorer)
+- Method 2 — Via Mount Manager: [Mount via Mount Manager](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive#method-2-mount-via-mount-manager)
 
-<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="Mount from Remote Explorer in RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-remote-explorer.png" alt="Mount from Remote Explorer in RcloneView" class="img-large img-center" />
 
 3. Choose the mount target
 
@@ -88,7 +90,7 @@ Connect a cloud, create a mount, and point Plex to it. That’s it.
 
 - Plex → Libraries → Add Library → Add folders → choose your mounted path (`X:\Movies` or `/Volumes/Cloud/Movies`). Let Plex scan and index.
 
-<img src="/support/images/en/howto/rcloneview-basic/mount-from-mount-manager.png" alt="Configure mount from Mount Manager" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-basic/mount-from-mount-manager.png" alt="Configure mount from Mount Manager" class="img-large img-center" />
 
 ## Performance Tuning for Smooth Playback
 
@@ -111,9 +113,9 @@ Note: Cache size and read‑ahead are workload‑dependent. Start conservative a
 ## Troubleshooting Essentials
 
 - Library path not visible in Plex: Confirm the mount is active and the OS user running Plex can access the mount path.
-- Mount disappears after reboot: Enable **Auto mount** in the Mount dialog, and consider “Launch at login” in Settings. See: /support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive and /support/howto/rcloneview-basic/general-settings
+- Mount disappears after reboot: Enable **Auto mount** in the Mount dialog, and consider “Launch at login” in Settings. → [Mount cloud storage as a local drive](/support/howto/rcloneview-basic/mount-cloud-storage-as-a-local-drive) · [General settings](/support/howto/rcloneview-basic/general-settings)
 - Slow scans or stuttering: Use `Cache mode: full`, increase cache size and `--vfs-read-ahead`, keep metadata local.
-- API limits or throttling: Schedule scans off‑hours; use Compare & Sync to curate what Plex scans if your library is enormous. See: /support/howto/rcloneview-basic/compare-folder-contents and /support/howto/rcloneview-basic/create-sync-jobs
+- API limits or throttling: Schedule scans off‑hours; use Compare & Sync to curate what Plex scans if your library is enormous. → [Compare Folder Contents](/support/howto/rcloneview-basic/compare-folder-contents) · [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs)
 
 ## Cloud Movies, Local Experience
 
@@ -121,6 +123,5 @@ Mounting with RcloneView lets Plex treat your cloud like a fast local drive. You
 
 Ready to try it? Download RcloneView and build your cloud‑powered Plex library today.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 <CloudSupportGrid />

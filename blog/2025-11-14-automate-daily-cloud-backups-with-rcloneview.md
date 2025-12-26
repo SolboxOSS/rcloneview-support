@@ -33,6 +33,8 @@ Manual cloud backups rarely happen on time—someone forgets, a laptop is asleep
 
 <!-- truncate -->
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 **Typical workflows**
 
 - Local PC ➜ Google Drive or OneDrive
@@ -51,7 +53,6 @@ Relevant docs
 - Job Scheduling & Execution: https://rcloneview.com/support/howto/rcloneview-advanced/job-scheduling-and-execution
 - Versioned backup strategies: https://rcloneview.com/support/blog/2025-10-28-versioned-backups-with-rcloneview
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Understanding Cloud Backup Automation
 
@@ -77,19 +78,28 @@ RcloneView supports all three, and the scheduler can trigger them daily, hourly,
   - Job history showing last/next run and logs
   - Multiple jobs can run concurrently with separate schedules
 
-<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure the job scheduler in RcloneView" class="img-medium img-center" />
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="Configure the job scheduler in RcloneView" class="img-large img-center" />
 
 ## Step-by-Step — Automate Daily Cloud Backups
 
 ### Step 1 — Connect your remotes
 
 Add the services you plan to use (Google Drive, Dropbox, OneDrive, S3/Wasabi/R2, NAS via SFTP, external drives, etc.). Use `+ New Remote` and follow the provider wizard.  
-Helpful links: /support/howto/remote-storage-connection-settings/add-oath-online-login, /support/howto/remote-storage-connection-settings/s3, /support/howto/cloud-storage-setting/cloudflare-r2-credential
+
+<img src="/support/images/en/howto/remote-storage-connection-settings/add-new-remote.png" alt="Add a new remote in RcloneView" class="img-large img-center" />
+
+Helpful links:
+- [Connect OAuth-based providers (Google Drive/Dropbox/OneDrive)](/support/howto/remote-storage-connection-settings/add-oath-online-login)
+- [Add S3-compatible storage (AWS/Wasabi/R2/B2)](/support/howto/remote-storage-connection-settings/s3)
+- [Cloudflare R2 credentials setup](/support/howto/cloud-storage-setting/cloudflare-r2-credential)
 
 ### Step 2 — Create a backup or sync job
 
 Open **Job Manager** → **Add Job**. Select source and destination folders. Choose job type (Copy, Sync, Move) depending on your desired behavior.  
-See: /support/howto/rcloneview-basic/create-sync-jobs
+
+<img src="/support/images/en/howto/rcloneview-basic/add-job-configure-storage.png" alt="Configure source and destination when creating a backup job" class="img-large img-center" />
+
+👉 Learn more: [Create Sync Jobs](/support/howto/rcloneview-basic/create-sync-jobs)
 
 ### Step 3 — Configure preferences
 
@@ -97,18 +107,26 @@ See: /support/howto/rcloneview-basic/create-sync-jobs
 - Versioning rules (copy into date-stamped subfolders) if you want history.
 - Throttle bandwidth or set transfer threads for busy networks.
 
+<img src="/support/images/en/howto/rcloneview-basic/add-job-filtering-settings.png" alt="add-job-filtering-settings.png" class="img-large img-center" />
+
 ### Step 4 — Enable the scheduler
 
 In Step 4 of the job wizard, toggle scheduling, choose **Daily**, and set a time (e.g., 03:00). Add retries (e.g., 3 attempts) for resilience.  
-See: /support/howto/rcloneview-advanced/job-scheduling-and-execution
+
+👉 Learn more: [Job Scheduling & Execution (Plus)](/support/howto/rcloneview-advanced/job-scheduling-and-execution)
+
+<img src="/support/images/en/howto/rcloneview-advanced/create-job-schedule.png" alt="create-job-schedule.png" class="img-large img-center" />
 
 ### Step 5 — Dry run
 
 Use the **Dry run / Simulate** option to preview which files will transfer. Confirm the delta looks correct before letting it run unattended.
 
+
 ### Step 6 — Save and monitor
 
 Save the job. RcloneView runs it automatically each day while the app is running (enable “Launch at login” in Settings for hands-free operation). Review logs and history in Job Manager to confirm success or investigate failures.
+
+<img src="/support/images/en/howto/rcloneview-advanced/view-history-of-scheduled-job.png" alt="view-history-of-scheduled-job.png" class="img-large img-center" />
 
 ## Advanced Settings for Power Users
 
@@ -135,6 +153,6 @@ Daily backups shouldn’t require scripts or babysitting. With RcloneView, you c
 
 Download RcloneView and automate your cloud backups today.
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 <CloudSupportGrid />

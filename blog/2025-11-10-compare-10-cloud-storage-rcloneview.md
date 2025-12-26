@@ -46,6 +46,7 @@ Multi-cloud backups are no longer optional. Teams want the flexibility to mix hy
 - Will you automate nightly syncs, on-demand migrations, or hybrid workflows?  
 - Which providers already have data you can import via `rclone.conf`?
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 ---
 
 ## Top 10 Rclone-supported providers at a glance
@@ -121,7 +122,7 @@ Multi-cloud backups are no longer optional. Teams want the flexibility to mix hy
 
 ---
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 
 ## How to choose your mix in 30 minutes
 

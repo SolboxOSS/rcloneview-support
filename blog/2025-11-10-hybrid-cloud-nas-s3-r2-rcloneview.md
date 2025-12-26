@@ -47,6 +47,8 @@ Juggling these manually is painful—different portals, scripts, and cron jobs. 
 
 **Keywords to remember:** *hybrid cloud storage*, *multi-cloud backup automation*, *S3 compatible NAS*, *RcloneView workflows*.
 
+<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
+
 ---
 
 ## Reference architecture
@@ -70,6 +72,8 @@ RcloneView becomes the control plane. You can visually orchestrate:
 3. **Cloudflare R2:** Generate API tokens scoped to the required buckets.  
 4. **Connectivity:** Verify NAS can reach the internet via HTTPS; open ports if running reverse proxies.  
 5. **Cost planning:** Model data flows—NAS→S3 traffic leaves your ISP, S3→R2 incurs egress from S3 only.
+
+<img src="/support/images/en/blog/new-remote.png" alt="Open multiple cloud remotes in RcloneView" class="img-large img-center" />
 
 ---
 
@@ -106,7 +110,6 @@ RcloneView becomes the control plane. You can visually orchestrate:
 
 ---
 
-<RvCta imageSrc="/img/rcloneview-preview.png" downloadUrl="https://rcloneview.com/src/download.html" />
 
 ## Automation playbook
 
