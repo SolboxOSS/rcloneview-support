@@ -3,19 +3,18 @@
 sidebar_position: 10
 description: Use Slack Remote Control in RcloneView to receive job notifications and remotely list, start, stop, and check job status from Slack.
 keywords:
-
-* rcloneview
-* slack remote control
-* slack bot
-* job notifications
-* remote job control
-* rclone job manager
+  - rcloneview
+  - slack remote control
+  - slack bot
+  - job notifications
+  - remote job control
+  - rclone job manager
 tags:
-* RcloneView
-* Tutorial
-* Slack
-* Remote-Control
-* Job-Management
+  - RcloneView
+  - Tutorial
+  - Slack
+  - Remote-Control
+  - Job-Management
 date: 2026-01-19
 author: steve
 
