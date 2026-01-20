@@ -161,7 +161,17 @@ RcloneView requires two types of tokens. **Treat these like passwords.**
 
 ---
 
-## Step 3: Find Your Slack Member ID
+### Step 3: Enable Messages Tab
+
+1. Click **App Home** in the left menu.
+2. Turn on `Messages Tab`
+3. Check `Allow users to send Slash commands and messages from the messages tab`
+
+This will allow you to send slash commands to your bot directly.
+
+---
+
+## Step 4: Find Your Slack Member ID
 
 The bot needs your unique ID to know which user should receive notifications.
 
@@ -172,14 +182,14 @@ The bot needs your unique ID to know which user should receive notifications.
 
 ---
 
-## Step 4: Enable Slack Remote Control in RcloneView
+## Step 5: Enable Slack Remote Control in RcloneView
 
-### 4-1 Open Settings
+### 5-1 Open Settings
 
 1. Launch RcloneView.
 2. Go to **Settings** -> **Interfaces & Notifications**.
 
-### 4-2 Enter Credentials
+### 5-2 Enter Credentials
 
 1. Toggle on **Slack Remote Control**.
 2. Enter your tokens and ID:
@@ -187,15 +197,13 @@ The bot needs your unique ID to know which user should receive notifications.
 * **Slack Bot Token**: `xoxb-...`
 * **My Member ID**: `U...`
 
-
-
-### 4-3 Send Test Message
+### 5-3 Send Test Message
 
 Click **Send Test Message**. If successful, you will receive a message on your phone.
 
 ---
 
-## Step 5: Slack Commands (Job Control)
+## Step 6: Slack Commands (Job Control)
 
 Type these commands in any chat where the bot is installed.
 
