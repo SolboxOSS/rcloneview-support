@@ -62,12 +62,28 @@ For maximum security, RcloneView uses a “bring your own bot” approach. Your 
 
 ---
 
-## Step 2: Install the Bot to Your Server
+## Step 2: Create a Server and Install the Bot
 
-1. Open **OAuth2 > URL Generator**.
-2. Select scopes like **bot** (and **applications.commands** if you want slash commands).
-3. Under **Bot Permissions**, choose only what you need (e.g., **Send Messages**, **Read Messages/View Channels**).
-4. Copy the generated URL, open it, pick your server, and authorize. The bot now lives in that guild and can DM members who share a server with it.
+To use the bot, you need a Discord server (also called a "Guild") where the bot can live. If you don't have a private server for your RcloneView logs, follow the steps below.
+
+### Step 2-1 Create a New Discord Server
+
+1. Open your **Discord app** (Desktop or Web).
+2. Click the **plus (+) icon** (Add a Server) at the bottom of your server list on the left.
+   
+3. Select **Create My Own**.
+4. Choose **For me and my friends**.
+5. Give your server a name (e.g., `RcloneView Control Center`) and click **Create**.
+   
+
+### Step 2-2 Install the Bot to Your Server
+
+1. Go back to the **Discord Developer Portal**.
+2. Open **OAuth2 > URL Generator**.
+3. Select scopes: **bot** and **applications.commands**.
+4. In **Bot Permissions**, select **Send Messages**, **Use Slash Commands**, and **Attach Files** (if you want to receive log files).
+5. Copy the generated URL at the bottom and paste it into your browser.
+6. Select the server you just created (e.g., `RcloneView Control Center`) and click **Authorize**.
 
 ---
 
