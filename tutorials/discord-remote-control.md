@@ -92,7 +92,6 @@ To use the bot, you need a Discord server (also called a "Guild") where the bot 
 
 1. Open your **Discord app** (Desktop or Web).
 2. Click the **plus (+) icon** (Add a Server) at the bottom of your server list on the left.
-   
 3. Select **Create My Own**.
 4. Choose **For me and my friends**.
 5. Give your server a name (e.g., `RcloneView Control Center`) and click **Create**.
