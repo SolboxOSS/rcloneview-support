@@ -22,7 +22,7 @@ author: Jay
 
 # How to Use a Discount Coupon
 
-:::note Discount Coupon Policy
+:::info Discount Coupon Policy
 A discount coupon is issued per user (email address) and can be applied regardless of purchase quantity. It can be used only once.
 :::
 
