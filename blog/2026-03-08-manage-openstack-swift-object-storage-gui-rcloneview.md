@@ -118,9 +118,9 @@ RcloneView transforms Swift from a CLI-only storage system into a modern, user-f
 
 ## Related Guides
 
-- [Connecting Multiple Cloud Storage Systems to RcloneView](/docs/connections)
-- [Using RcloneView's Sync Features for Data Migration](/docs/sync-guide)
-- [Scheduling Automated Cloud Backups](/docs/job-scheduler)
-- [Mounting Cloud Storage as Virtual Drives](/docs/mount-guide)
+- RcloneView Documentation Introduction
+- Creating and Organizing Documentation
+- Publishing a New Page
+- Using Markdown Features
 
 <CloudSupportGrid />

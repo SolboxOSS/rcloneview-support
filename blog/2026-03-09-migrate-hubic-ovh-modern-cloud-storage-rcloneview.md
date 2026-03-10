@@ -189,9 +189,9 @@ Hubic's shutdown doesn't have to mean data loss. By acting now with RcloneView, 
 
 ## Related Guides
 
-- [Connecting Multiple Cloud Storage Systems to RcloneView](/docs/connections)
-- [One-Way Sync for Safe Data Migration](/docs/sync-guide)
-- [Verifying File Integrity During Migration](/docs/verification-guide)
-- [Comparing Source and Destination to Ensure Complete Migration](/docs/compare-guide)
+- RcloneView Documentation Introduction
+- Creating and Organizing Documentation
+- Publishing a New Page
+- Using Markdown Features
 
 <CloudSupportGrid />
