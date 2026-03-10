@@ -154,9 +154,9 @@ Terabox's massive free storage tier is now truly unlocked. You're no longer mana
 
 ## Related Guides
 
-- [Connecting Multiple Cloud Storage Systems to RcloneView](/docs/connections)
-- [Bidirectional Sync Between Cloud Providers](/docs/sync-guide)
-- [Using Scheduled Jobs for Automated Backups](/docs/job-scheduler)
-- [Mounting Cloud Storage as Virtual Drives](/docs/mount-guide)
+- RcloneView Documentation Introduction
+- Creating and Organizing Documentation
+- Publishing a New Page
+- Using Markdown Features
 
 <CloudSupportGrid />

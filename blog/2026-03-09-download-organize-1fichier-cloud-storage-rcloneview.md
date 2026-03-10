@@ -182,9 +182,9 @@ This is way less painful than managing 1Fichier separately.
 
 ## Related Guides
 
-- [Connecting Multiple Cloud Storage Systems to RcloneView](/docs/connections)
-- [One-Way Sync for Backups and Archives](/docs/sync-guide)
-- [Setting Up Automated Cloud Backup Jobs](/docs/job-scheduler)
-- [Comparing Cloud Folders to Verify Migration Success](/docs/compare-guide)
+- RcloneView Documentation Introduction
+- Creating and Organizing Documentation
+- Publishing a New Page
+- Using Markdown Features
 
 <CloudSupportGrid />
