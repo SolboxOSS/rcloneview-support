@@ -17,9 +17,9 @@ keywords:
   - multi cloud explorer
 tags:
   - RcloneView
-  - GoogleDrive
-  - Mount
-  - Windows
+  - google-drive
+  - mount
+  - windows
   - macOS
 ---
 

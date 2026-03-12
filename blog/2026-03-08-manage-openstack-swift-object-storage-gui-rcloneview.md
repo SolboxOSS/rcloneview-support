@@ -4,12 +4,17 @@ title: "Manage OpenStack Swift Object Storage with a Desktop GUI Using RcloneVie
 authors: [tayson]
 description: "Ditch the CLI: Learn how to manage OpenStack Swift containers with RcloneView's intuitive desktop GUI. Browse, sync, and mount Swift storage in minutes."
 keywords: ["openstack swift gui", "swift storage manager", "openstack swift file manager", "swift object storage gui", "openstack swift rclone", "swift storage desktop tool", "openstack swift backup", "swift container browser", "rclone swift", "object storage management"]
-tags: [OpenStack, Swift, Object Storage, Cloud Management, File Synchronization]
+tags:
+  - RcloneView
+  - openstack
+  - swift
+  - object-storage
+  - cloud-storage
 ---
 
-import CloudSupportGrid from '@site/src/components/CloudSupportGrid';
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
 import cloudIcons from '../src/contexts/cloudIcons';
-import RvCta from '@site/src/components/RvCta';
+import RvCta from '../src/components/RvCta';
 
 # Manage OpenStack Swift Object Storage with a Desktop GUI Using RcloneView
 

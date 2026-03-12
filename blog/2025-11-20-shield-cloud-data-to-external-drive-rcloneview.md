@@ -17,10 +17,10 @@ keywords:
   - dropbox backup
 tags:
   - RcloneView
-  - ExternalDrive
-  - Backup
-  - GoogleDrive
-  - OneDrive
+  - external-drive
+  - backup
+  - google-drive
+  - onedrive
   - Dropbox
 ---
 
