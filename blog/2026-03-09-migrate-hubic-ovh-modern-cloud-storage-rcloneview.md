@@ -4,12 +4,17 @@ title: "Migrate from Hubic to Modern Cloud Storage Before It's Too Late with Rcl
 authors: [tayson]
 description: "Hubic is shutting down. Don't lose your data. Learn how to migrate from Hubic to Google Drive, OneDrive, or S3 with RcloneView—safely and quickly."
 keywords: ["hubic migration", "hubic alternative", "hubic to google drive", "hubic export data", "hubic ovh migration", "hubic backup tool", "hubic rclone transfer", "cloud migration", "data preservation", "legacy cloud storage"]
-tags: [Hubic, Cloud Migration, Data Preservation, Legacy Storage, Cloud Backup]
+tags:
+  - RcloneView
+  - hubic
+  - cloud-migration
+  - cloud-backup
+  - cloud-storage
 ---
 
-import CloudSupportGrid from '@site/src/components/CloudSupportGrid';
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
 import cloudIcons from '../src/contexts/cloudIcons';
-import RvCta from '@site/src/components/RvCta';
+import RvCta from '../src/components/RvCta';
 
 # Migrate from Hubic to Modern Cloud Storage Before It's Too Late with RcloneView
 

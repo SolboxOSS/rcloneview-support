@@ -17,9 +17,9 @@ keywords:
   - audit logs
 tags:
   - RcloneView
-  - Box
-  - Dropbox
-  - Migration
+  - box
+  - dropbox
+  - migration
   - Scheduler
 ---
 

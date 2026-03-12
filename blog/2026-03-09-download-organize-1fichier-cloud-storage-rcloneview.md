@@ -4,12 +4,17 @@ title: "Download and Organize 1Fichier Files to Cloud Storage Automatically with
 authors: [tayson]
 description: "1Fichier is convenient for file sharing, but organizing that mess is painful. Learn how RcloneView lets you download 1Fichier files to Google Drive, OneDrive, or S3 and automate the entire process."
 keywords: ["1fichier download manager", "1fichier to cloud", "1fichier to google drive", "1fichier file manager", "1fichier rclone", "1fichier sync tool", "1fichier backup", "organize 1fichier files", "file hosting integration", "cloud backup"]
-tags: ["1Fichier", "File Organization", "Cloud Backup", "Cloud Integration", "File Management"]
+tags:
+  - RcloneView
+  - 1fichier
+  - file-management
+  - cloud-backup
+  - cloud-storage
 ---
 
-import CloudSupportGrid from '@site/src/components/CloudSupportGrid';
+import CloudSupportGrid from '../src/components/CloudSupportGrid';
 import cloudIcons from '../src/contexts/cloudIcons';
-import RvCta from '@site/src/components/RvCta';
+import RvCta from '../src/components/RvCta';
 
 # Download and Organize 1Fichier Files to Cloud Storage Automatically with RcloneView
 
